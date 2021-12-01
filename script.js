@@ -20,6 +20,7 @@ const addBookBtn = document.querySelector('#js-add-btn');
 const submitBookCard = document.querySelector('#js-submit-book-card');
 
 addBookBtn.addEventListener('click', () => {
+    document.querySelector('#js-new-book-card').style.display = 'block';
 });
 
 
@@ -29,4 +30,5 @@ submitBookCard.addEventListener('click', () => {
     const inputFields = Array.from(document.querySelector('#js-new-book-card').querySelectorAll('input'));
     inputFields.forEach(i => i.type !== 'submit' ? i.value = '' : i);
     document.querySelector('#js-have-read').checked = false;
+    document.querySelector('#js-new-book-card').style.display = 'none';
 });
