@@ -11,7 +11,7 @@ Book.prototype.getInfo = function() {
     return `${this.title} by ${this.author}, ${this.pagesTotal} pages, ${this.haveRead ? 'read' : 'not read yet'}`;
 };
 
-function test() {
+function addNewBook() {
 
     library.push(new Book(this.title, this.author, this.pagesTotal, this.haveRead));
 }
@@ -25,7 +25,7 @@ addBookBtn.addEventListener('click', () => {
 
 
 submitBookCard.addEventListener('click', () => {
-    test();
+    addNewBook();
 
     const inputFields = Array.from(document.querySelector('#js-new-book-card').querySelectorAll('input'));
     inputFields.forEach(i => i.type !== 'submit' ? i.value = '' : i);
