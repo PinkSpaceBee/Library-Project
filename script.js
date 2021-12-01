@@ -1,3 +1,5 @@
+const library = [];
+
 function Book(title, author, pagesTotal, haveRead) {
     this.title = title;
     this.author = author;
