@@ -12,8 +12,16 @@
             <p>Books total:</p>
             <p>Books read:</p>
             <p>Not read yet:</p>
-            <button>add a new book</button>
+            <button id="js-add-btn">add a new book</button>
         </section>
-        <main id="js-bookshelf"></main>
+        <main id="js-bookshelf">
+            <div id="js-new-book-card">
+                <label for="title">Title:<input type="text" id="js-title"></label>
+                <label for="author">Author:<input type="text" id="js-author"></label>
+                <label for="number-of-pages">Number of pages:<input type="number" id="js-pages-total"></label>
+                <label for="have-read">Have you read it?<input type="checkbox" id="js-have-read"></label>
+                <input type="submit" id="js-submit-book-card" value="Submit">
+            </div>
+        </main>
     </body>
 </html>
