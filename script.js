@@ -20,6 +20,8 @@ function addNewBook() {
 let article;
 function showBookCard(obj) {
     article = bookshelf.appendChild(document.createElement('article'));
+    let id = `id${Math.random().toString().slice(2,7)}`;
+    article.setAttribute('id', id);
 
     removeBtn = document.createElement('button');
     article.appendChild(removeBtn);
