@@ -1,26 +1,39 @@
+'use strict';
 const library = [];
 const bookshelf = document.querySelector('#js-bookshelf');
 
-
-function Book() {
-    this.title = document.querySelector('#js-title').value;
-    this.author = document.querySelector('#js-author').value;
-    this.pagesTotal = document.querySelector('#js-pages-total').value;
-    this.haveRead = document.querySelector('#js-have-read').checked ? 'read' : 'not read yet';
+function Book(title, author, pagesTotal, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pagesTotal = pagesTotal;
+    this.haveRead = haveRead;
 }
+
 
 function addNewBook() {
-
-    library.push(new Book(this.title, this.author, this.pagesTotal, this.haveRead));
+    library.push(new Book(document.querySelector('#js-title').value, 
+    document.querySelector('#js-author').value, 
+    document.querySelector('#js-pages-total').value, 
+    document.querySelector('#js-have-read').checked ? 'read' : 'not read yet'));
 }
-
-function addBookCard(obj) {
+let removeBtn;
+function showBookCard(obj) {
     const article = bookshelf.appendChild(document.createElement('article'));
+    //article.appendChild(removeBtn);
+    //removeBtn.textContent = 'x';
+    const x = document.createElement('p');
+    removeBtn = document.createElement('button');
+    article.appendChild(removeBtn);
+    removeBtn.textContent = 'hi';
 
     for (const [key, value] of Object.entries(obj)) {
         const p = article.appendChild(document.createElement('p'));
         p.textContent = `${key}: ${value}`;
     }
+}
+
+function removeBook() {
+
 }
 
 const addBookBtn = document.querySelector('#js-add-btn');
@@ -41,5 +54,5 @@ submitBookCard.addEventListener('click', () => {
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
 
-    addBookCard(library[library.length-1]);
+    showBookCard(library[library.length-1]);
 });
