@@ -20,7 +20,7 @@ function addNewBook() {
 let article;
 function showBookCard(obj) {
     article = bookshelf.appendChild(document.createElement('article'));
-    let id = `id${Math.random().toString().slice(2,7)}`;
+    let id = library.length-1;
     article.setAttribute('id', id);
 
     removeBtn = document.createElement('button');
@@ -34,7 +34,6 @@ function showBookCard(obj) {
 
     // it doesn't remove the element from an array
     removeBtn.addEventListener('click', () => {
-        bookshelf.removeChild(article);
     })
 }
 
