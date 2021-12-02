@@ -6,19 +6,15 @@ function Book() {
     this.title = document.querySelector('#js-title').value;
     this.author = document.querySelector('#js-author').value;
     this.pagesTotal = document.querySelector('#js-pages-total').value;
-    this.haveRead = document.querySelector('#js-have-read').value;
+    this.haveRead = document.querySelector('#js-have-read').checked ? 'read' : 'not read yet';
 }
-
-Book.prototype.getInfo = function() {
-    return `${this.title} by ${this.author}, ${this.pagesTotal} pages, ${this.haveRead ? 'read' : 'not read yet'}`;
-};
 
 function addNewBook() {
 
     library.push(new Book(this.title, this.author, this.pagesTotal, this.haveRead));
 }
 
-function showBookCard(obj) {
+function addBookCard(obj) {
     const article = bookshelf.appendChild(document.createElement('article'));
 
     for (const [key, value] of Object.entries(obj)) {
@@ -45,5 +41,5 @@ submitBookCard.addEventListener('click', () => {
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
 
-    showBookCard(library[library.length-1]);
+    addBookCard(library[library.length-1]);
 });
