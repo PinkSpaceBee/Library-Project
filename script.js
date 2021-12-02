@@ -1,6 +1,8 @@
 'use strict';
+
 const library = [];
 const bookshelf = document.querySelector('#js-bookshelf');
+let removeBtn;
 
 function Book(title, author, pagesTotal, haveRead) {
     this.title = title;
@@ -9,31 +11,33 @@ function Book(title, author, pagesTotal, haveRead) {
     this.haveRead = haveRead;
 }
 
-
 function addNewBook() {
     library.push(new Book(document.querySelector('#js-title').value, 
     document.querySelector('#js-author').value, 
     document.querySelector('#js-pages-total').value, 
     document.querySelector('#js-have-read').checked ? 'read' : 'not read yet'));
 }
-let removeBtn;
+let article;
 function showBookCard(obj) {
-    const article = bookshelf.appendChild(document.createElement('article'));
-    //article.appendChild(removeBtn);
-    //removeBtn.textContent = 'x';
-    const x = document.createElement('p');
+    article = bookshelf.appendChild(document.createElement('article'));
+
     removeBtn = document.createElement('button');
     article.appendChild(removeBtn);
-    removeBtn.textContent = 'hi';
+    removeBtn.textContent = 'x';
 
     for (const [key, value] of Object.entries(obj)) {
         const p = article.appendChild(document.createElement('p'));
         p.textContent = `${key}: ${value}`;
     }
+
+    // it doesn't remove the element from an array
+    removeBtn.addEventListener('click', () => {
+        bookshelf.removeChild(article);
+    })
 }
 
-function removeBook() {
-
+function removeBookCard() {
+    
 }
 
 const addBookBtn = document.querySelector('#js-add-btn');
@@ -56,3 +60,4 @@ submitBookCard.addEventListener('click', () => {
 
     showBookCard(library[library.length-1]);
 });
+
