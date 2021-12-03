@@ -17,9 +17,11 @@ function addNewBook() {
     document.querySelector('#js-pages-total').value, 
     document.querySelector('#js-have-read').checked ? 'read' : 'not read yet'));
 }
-let article;
+
+//let article;
+let article = document.createElement('article');
 function showBookCard(obj) {
-    article = bookshelf.appendChild(document.createElement('article'));
+    bookshelf.appendChild(article);
     let id = library.length-1;
     article.setAttribute('id', id);
 
