@@ -30,9 +30,8 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard(obj) {
     const article = document.createElement('article');
     bookshelf.appendChild(article);
-    // should I make it a function? 
-    //let id = `id${Date.now()}`;
-    //article.setAttribute('id', this.id);
+    //why can't I access the property using this keyword? Test later
+    article.setAttribute('id', obj.id);
 
     removeBtn = document.createElement('button');
     article.appendChild(removeBtn);
@@ -42,10 +41,6 @@ function showBookCard(obj) {
         const p = article.appendChild(document.createElement('p'));
         p.textContent = `${key}: ${value}`;
     }
-
-    // it doesn't remove the element from an array
-    removeBtn.addEventListener('click', () => {
-    })
 }
 
 function removeBookCard() {
