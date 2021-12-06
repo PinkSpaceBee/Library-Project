@@ -1,7 +1,7 @@
 'use strict';
 
-const library = [];
 const bookshelf = document.querySelector('#js-bookshelf');
+const library = [];
 let removeBtn;
 
 function Book(title, author, pagesTotal, haveRead, id) {
@@ -30,36 +30,43 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard(obj) {
     const article = document.createElement('article');
     bookshelf.appendChild(article);
-    //why can't I access the property using this keyword? Test later
     article.setAttribute('id', obj.id);
-    //article.lastChild.hidden = true;
-
 
     removeBtn = document.createElement('button');
     article.appendChild(removeBtn);
     removeBtn.textContent = 'x';
+    //why can't I access the property using this keyword? Test it later
 
     for (const [key, value] of Object.entries(obj)) {
         const p = article.appendChild(document.createElement('p'));
         p.textContent = `${key}: ${value}`;
     }
 
-    article.lastChild.hidden = true;
-}
+    article.lastChild.hidden = true; 
 
-function removeBookCard() {
-    
+    removeBtn.addEventListener('click', (e) => {
+        removeBookCard(e);
+    })
+
+    function removeBookCard(e) {
+        //library.splice(obj);
+        console.log(library[Object.values(obj).includes(e.target.parentElement.id)]);
+        //console.log(library.includes(obj));
+        e.target.parentElement.remove();
+    }   
 }
 
 const addBookBtn = document.querySelector('#js-add-btn');
-const submitBookCard = document.querySelector('#js-submit-book-card');
+const submitBookBtn = document.querySelector('#js-submit-book-card');
+//const removeBookBtn = document.querySelector('')
+
 
 addBookBtn.addEventListener('click', () => {
     // show a form to add a new book 
     document.querySelector('#js-new-book-card').style.display = 'block';
 });
 
-submitBookCard.addEventListener('click', () => {
+submitBookBtn.addEventListener('click', () => {
     addNewBook();
 
     const inputFields = Array.from(document.querySelector('#js-new-book-card').querySelectorAll('input'));
