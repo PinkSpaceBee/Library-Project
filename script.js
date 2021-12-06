@@ -18,11 +18,16 @@ function addNewBook() {
     document.querySelector('#js-have-read').checked ? 'read' : 'not read yet'));
 }
 
-//let article;
-let article = document.createElement('article');
+/* 
+did you know that when you use the appendChild method to move a child from one parent element to another, you actually moving it, i. e. removing from one parent and moving it to another, and not just cloning it! I had no idea, wow. It's actually really neat and makes total sense! Like, if a child was cloned, which parent would it inherit from (it can't have two parents, according to the spec, poor thing)? Which parent would be referenced? What about possible duplicated IDs? What about the deep cloning? Shit, now I'm reading about the place of Event interface in the DOM hierarchy, like, I have a function to write but this stuff is just so captivating :( I'm fucking hopeless 
+*/
+
+
+
 function showBookCard(obj) {
+    const article = document.createElement('article');
     bookshelf.appendChild(article);
-    let id = library.length-1;
+    let id = `id${Date.now()}`;
     article.setAttribute('id', id);
 
     removeBtn = document.createElement('button');
@@ -55,13 +60,13 @@ submitBookCard.addEventListener('click', () => {
     addNewBook();
 
     const inputFields = Array.from(document.querySelector('#js-new-book-card').querySelectorAll('input'));
-    //I'm not removing the last element's value because it's a submit button. 
-    //Maybe I should've made it a button? 
-    //inputFields.forEach(i => i.type !== 'submit' ? i.value = '' : i);
+
+    // clear input fields after creating a new book card
     inputFields.forEach(i => i.value = '');
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
 
+    // show the last added book
     showBookCard(library[library.length-1]);
 });
 
