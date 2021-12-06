@@ -4,18 +4,21 @@ const library = [];
 const bookshelf = document.querySelector('#js-bookshelf');
 let removeBtn;
 
-function Book(title, author, pagesTotal, haveRead) {
+function Book(title, author, pagesTotal, haveRead, id) {
     this.title = title;
     this.author = author;
     this.pagesTotal = pagesTotal;
     this.haveRead = haveRead;
+    // should I made it a method?? Ok, I'll deal with it later
+    this.id = id;
 }
 
 function addNewBook() {
     library.push(new Book(document.querySelector('#js-title').value, 
     document.querySelector('#js-author').value, 
     document.querySelector('#js-pages-total').value, 
-    document.querySelector('#js-have-read').checked ? 'read' : 'not read yet'));
+    document.querySelector('#js-have-read').checked ? 'read' : 'not read yet',
+    `id${Date.now()}`)); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
 }
 
 /* 
@@ -27,8 +30,9 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard(obj) {
     const article = document.createElement('article');
     bookshelf.appendChild(article);
-    let id = `id${Date.now()}`;
-    article.setAttribute('id', id);
+    // should I make it a function? 
+    //let id = `id${Date.now()}`;
+    //article.setAttribute('id', this.id);
 
     removeBtn = document.createElement('button');
     article.appendChild(removeBtn);
