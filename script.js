@@ -32,6 +32,8 @@ function showBookCard(obj) {
     bookshelf.appendChild(article);
     //why can't I access the property using this keyword? Test later
     article.setAttribute('id', obj.id);
+    //article.lastChild.hidden = true;
+
 
     removeBtn = document.createElement('button');
     article.appendChild(removeBtn);
@@ -41,6 +43,8 @@ function showBookCard(obj) {
         const p = article.appendChild(document.createElement('p'));
         p.textContent = `${key}: ${value}`;
     }
+
+    article.lastChild.hidden = true;
 }
 
 function removeBookCard() {
