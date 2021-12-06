@@ -57,7 +57,8 @@ submitBookCard.addEventListener('click', () => {
     const inputFields = Array.from(document.querySelector('#js-new-book-card').querySelectorAll('input'));
     //I'm not removing the last element's value because it's a submit button. 
     //Maybe I should've made it a button? 
-    inputFields.forEach(i => i.type !== 'submit' ? i.value = '' : i);
+    //inputFields.forEach(i => i.type !== 'submit' ? i.value = '' : i);
+    inputFields.forEach(i => i.value = '');
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
 
