@@ -2,7 +2,6 @@
 
 const bookshelf = document.querySelector('#js-bookshelf');
 let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedLibrary')) : [];
-let removeBtn;
 
 function Book(title, author, pagesTotal, haveRead, id) {
     this.title = title;
@@ -31,32 +30,56 @@ did you know that when you use the appendChild method to move a child from one p
 
 
 
-function showBookCard(obj) {
+function showBookCard() {
+
     const article = document.createElement('article');
-    bookshelf.appendChild(article);
-    article.setAttribute('id', obj.id);
+    article.setAttribute('id', library[library.length - 1].id);
 
-    removeBtn = document.createElement('button');
-    article.appendChild(removeBtn);
+    const removeBtn = document.createElement('button');
     removeBtn.textContent = 'x';
-    //why can't I access the property using this keyword? Test it later
 
-    for (const [key, value] of Object.entries(obj)) {
-        const p = article.appendChild(document.createElement('p'));
-        p.textContent = `${key}: ${value}`;
+    if (bookshelf.querySelector('article')) {
+        bookshelf.appendChild(article);
+        article.appendChild(removeBtn);
+
+        for (const [key, value] of Object.entries(library[library.length - 1])) {
+            const p = article.appendChild(document.createElement('p'));
+            p.textContent = `${key}: ${value}`;
+        }
+        article.lastChild.hidden = true; 
+        console.log(`case 0`);
+    } else {
+        for (const obj of Object.values(library)) {
+            const article = document.createElement('article');
+            bookshelf.appendChild(article);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'x';
+            article.appendChild(removeBtn);
+
+            removeBtn.addEventListener('click', (e) => {
+                removeBookCard(e);
+            })
+
+            for (const [key, value] of Object.entries(obj)) {
+                const p = article.appendChild(document.createElement('p'));
+                p.textContent = `${key}: ${value}`;
+            }
+            article.lastChild.hidden = true; 
+        }
+
+        console.log(`case 1`);
     }
-
-    article.lastChild.hidden = true; 
 
     removeBtn.addEventListener('click', (e) => {
         removeBookCard(e);
     })
 
     function removeBookCard(e) {
-        //library.splice(obj);
-        console.log(library[Object.values(obj).includes(e.target.parentElement.id)]);
-        //console.log(library.includes(obj));
-        e.target.parentElement.remove();
+        //e.target.parentElement.remove();
+        //localStorage.clear();
+        const objId = e.target.parentElement.lastChild.textContent;
+        console.log(objId);
     }   
     console.dir(library);
 }
@@ -82,6 +105,8 @@ submitBookBtn.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'none';
 
     // show the last added book
-    showBookCard(library[library.length-1]);
+    showBookCard();
 });
+
+showBookCard();
 
