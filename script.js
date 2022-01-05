@@ -1,7 +1,7 @@
 'use strict';
 
 const bookshelf = document.querySelector('#js-bookshelf');
-let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedArr')) : [];
+let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedLibrary')) : [];
 let removeBtn;
 
 function Book(title, author, pagesTotal, haveRead, id) {
@@ -14,12 +14,14 @@ function Book(title, author, pagesTotal, haveRead, id) {
 }
 
 function addNewBook() {
-    library.push(new Book(document.querySelector('#js-title').value, 
+    
+    const entry = new Book(document.querySelector('#js-title').value, 
     document.querySelector('#js-author').value, 
     document.querySelector('#js-pages-total').value, 
     document.querySelector('#js-have-read').checked ? 'read' : 'not read yet',
-    `id${Date.now()}`)); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
-
+    `id${Date.now()}`); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
+    
+    library.push(entry);
     localStorage.setItem('storedLibrary', JSON.stringify(library));
 }
 
