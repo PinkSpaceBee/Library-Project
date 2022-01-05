@@ -1,7 +1,7 @@
 'use strict';
 
 const bookshelf = document.querySelector('#js-bookshelf');
-const library = [];
+let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedArr')) : [];
 let removeBtn;
 
 function Book(title, author, pagesTotal, haveRead, id) {
@@ -19,6 +19,8 @@ function addNewBook() {
     document.querySelector('#js-pages-total').value, 
     document.querySelector('#js-have-read').checked ? 'read' : 'not read yet',
     `id${Date.now()}`)); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
+
+    localStorage.setItem('storedLibrary', JSON.stringify(library));
 }
 
 /* 
@@ -54,6 +56,7 @@ function showBookCard(obj) {
         //console.log(library.includes(obj));
         e.target.parentElement.remove();
     }   
+    console.dir(library);
 }
 
 const addBookBtn = document.querySelector('#js-add-btn');
