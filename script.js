@@ -33,7 +33,7 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard() {
 
     const article = document.createElement('article');
-    article.setAttribute('id', library[library.length - 1].id);
+    //article.setAttribute('id', library[library.length - 1].id);
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'x';
@@ -51,6 +51,7 @@ function showBookCard() {
     } else {
         for (const obj of Object.values(library)) {
             const article = document.createElement('article');
+            //article.setAttribute('id', library[library.length - 1].id);
             bookshelf.appendChild(article);
 
             const removeBtn = document.createElement('button');
@@ -76,10 +77,16 @@ function showBookCard() {
     })
 
     function removeBookCard(e) {
-        //e.target.parentElement.remove();
         //localStorage.clear();
-        const objId = e.target.parentElement.lastChild.textContent;
-        console.log(objId);
+        const objId = e.target.parentElement.lastChild.textContent.slice(4);
+        const found = library.find(elem => elem.id === objId);
+
+        library.splice(library.indexOf(found), 1);
+        localStorage.setItem('storedLibrary', JSON.stringify(library));
+
+        e.target.parentElement.remove();
+        console.dir(library);
+        //console.log(`${objId} ${library.indexOf(found)}`);
     }   
     console.dir(library);
 }
