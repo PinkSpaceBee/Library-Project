@@ -32,27 +32,28 @@ did you know that when you use the appendChild method to move a child from one p
 
 function showBookCard() {
 
-        function createToggleBtn(elem) {
-            const toggleBtn = document.createElement('input');
-            toggleBtn.setAttribute('type', 'checkbox');
-            elem.appendChild(toggleBtn);
-        }
-        function createRemoveBtn(elem) {
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'x';
-            elem.appendChild(removeBtn);
-        }
-        // for every prop of obj
-        function addText(obj, elem) {
-                for (const [key, value] of Object.entries(obj)) {
-                    const p = elem.appendChild(document.createElement('p'));
-                    p.textContent = `${key}: ${value}`;
-                }
-                elem.lastChild.hidden = true;
-        }
+    function createToggleBtn(elem) {
+        const toggleBtn = document.createElement('input');
+        toggleBtn.setAttribute('type', 'checkbox');
+        elem.appendChild(toggleBtn);
+    }
+    function createRemoveBtn(elem) {
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'x';
+        elem.appendChild(removeBtn);
+    }
+    // for every prop of obj
+    function addText(obj, elem) {
+            for (const [key, value] of Object.entries(obj)) {
+                const p = elem.appendChild(document.createElement('p'));
+                p.textContent = `${key}: ${value}`;
+            }
+            elem.lastChild.hidden = true;
+    }   
 
+    // add new book card    
     if (bookshelf.querySelector('article')) {
-        const currArr = library.splice(-1)[0];
+        const currArr = library.slice(-1)[0];
 
         const article = document.createElement('article');
         bookshelf.appendChild(article);
@@ -60,6 +61,9 @@ function showBookCard() {
         createToggleBtn(article);
         createRemoveBtn(article);
         addText(currArr, article);
+
+        console.log(`case 0 ${library.length}`);
+    // show all book cards    
     } else {
         for (const obj of Object.values(library)) {
             const article = document.createElement('article');
@@ -69,6 +73,7 @@ function showBookCard() {
             createRemoveBtn(article);
             addText(obj, article);
         }
+        console.log(`case 1 ${library.length}`);
     }
     // const article = document.createElement('article');
 
