@@ -32,81 +32,119 @@ did you know that when you use the appendChild method to move a child from one p
 
 function showBookCard() {
 
-    const article = document.createElement('article');
+        function createToggleBtn(elem) {
+            const toggleBtn = document.createElement('input');
+            toggleBtn.setAttribute('type', 'checkbox');
+            elem.appendChild(toggleBtn);
+        }
+        function createRemoveBtn(elem) {
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'x';
+            elem.appendChild(removeBtn);
+        }
+        // for every prop of obj
+        function addText(obj, elem) {
+                for (const [key, value] of Object.entries(obj)) {
+                    const p = elem.appendChild(document.createElement('p'));
+                    p.textContent = `${key}: ${value}`;
+                }
+                elem.lastChild.hidden = true;
+        }
 
-    const toggleBtn = document.createElement('input');
-    toggleBtn.setAttribute('type', 'checkbox');
-
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'x';
-
-    // show new book
     if (bookshelf.querySelector('article')) {
+        const currArr = library.splice(-1)[0];
+
+        const article = document.createElement('article');
         bookshelf.appendChild(article);
 
-        article.appendChild(toggleBtn);
-        article.appendChild(removeBtn);
-
-        for (const [key, value] of Object.entries(library[library.length - 1])) {
-            const p = article.appendChild(document.createElement('p'));
-            p.textContent = `${key}: ${value}`;
-        }
-        article.lastChild.hidden = true; 
-
-    // show all books
+        createToggleBtn(article);
+        createRemoveBtn(article);
+        addText(currArr, article);
     } else {
         for (const obj of Object.values(library)) {
-
             const article = document.createElement('article');
             bookshelf.appendChild(article);
 
-            const toggleBtn = document.createElement('input');
-            toggleBtn.setAttribute('type', 'checkbox');
-            article.appendChild(toggleBtn);
-            toggleBtn.addEventListener('click', (e) => {
-                toggleBtn.checked ? changeReadStatus(e) : console.log('y');
-            });
-
-            const removeBtn = document.createElement('button'); 
-            removeBtn.textContent = 'x';
-            article.appendChild(removeBtn);
-            removeBtn.addEventListener('click', (e) => {
-                removeBookCard(e);
-            })
-
-            for (const [key, value] of Object.entries(obj)) {
-                const p = article.appendChild(document.createElement('p'));
-                p.textContent = `${key}: ${value}`;
-            }
-            article.lastChild.hidden = true; 
+            createToggleBtn(article);
+            createRemoveBtn(article);
+            addText(obj, article);
         }
     }
+    // const article = document.createElement('article');
 
-    toggleBtn.addEventListener('click', (e) => {
-        toggleBtn.checked ? changeReadStatus(e) : console.log('y');
-    });
+    // const toggleBtn = document.createElement('input');
+    // toggleBtn.setAttribute('type', 'checkbox');
 
-    removeBtn.addEventListener('click', (e) => {
-        removeBookCard(e);
-    });
+    // const removeBtn = document.createElement('button');
+    // removeBtn.textContent = 'x';
 
-    function changeReadStatus(e) {
-        //const objReadStatus = e.target.parentElement;
-        console.log('x');
-    }
+    // // show new book
+    // if (bookshelf.querySelector('article')) {
+    //     bookshelf.appendChild(article);
 
-    function removeBookCard(e) {
-        console.log('x');
-        /*
-        const objId = e.target.parentElement.lastChild.textContent.slice(4);
-        const found = library.find(elem => elem.id === objId);
+    //     article.appendChild(toggleBtn);
+    //     article.appendChild(removeBtn);
 
-        library.splice(library.indexOf(found), 1);
-        localStorage.setItem('storedLibrary', JSON.stringify(library));
+    //     for (const [key, value] of Object.entries(library[library.length - 1])) {
+    //         const p = article.appendChild(document.createElement('p'));
+    //         p.textContent = `${key}: ${value}`;
+    //     }
+    //     article.lastChild.hidden = true; 
 
-        e.target.parentElement.remove();
-        */
-    }   
+    // // show all books
+    // } else {
+    //     for (const obj of Object.values(library)) {
+
+    //         const article = document.createElement('article');
+    //         bookshelf.appendChild(article);
+
+    //         const toggleBtn = document.createElement('input');
+    //         toggleBtn.setAttribute('type', 'checkbox');
+    //         article.appendChild(toggleBtn);
+    //         toggleBtn.addEventListener('click', (e) => {
+    //             toggleBtn.checked ? changeReadStatus(e) : console.log('y');
+    //         });
+
+    //         const removeBtn = document.createElement('button'); 
+    //         removeBtn.textContent = 'x';
+    //         article.appendChild(removeBtn);
+    //         removeBtn.addEventListener('click', (e) => {
+    //             removeBookCard(e);
+    //         })
+
+    //         for (const [key, value] of Object.entries(obj)) {
+    //             const p = article.appendChild(document.createElement('p'));
+    //             p.textContent = `${key}: ${value}`;
+    //         }
+    //         article.lastChild.hidden = true; 
+    //     }
+    // }
+
+    // toggleBtn.addEventListener('click', (e) => {
+    //     toggleBtn.checked ? changeReadStatus(e) : console.log('y');
+    // });
+
+    // removeBtn.addEventListener('click', (e) => {
+    //     removeBookCard(e);
+    // });
+
+    // function changeReadStatus(e) {
+    //     //const objReadStatus = e.target.parentElement;
+    //     console.log('x');
+    // }
+
+    // function removeBookCard(e) {
+    //     console.log('x');
+    //     /*
+    //     const objId = e.target.parentElement.lastChild.textContent.slice(4);
+    //     const found = library.find(elem => elem.id === objId);
+
+    //     library.splice(library.indexOf(found), 1);
+    //     localStorage.setItem('storedLibrary', JSON.stringify(library));
+
+    //     e.target.parentElement.remove();
+    //     */
+    // }   
 }
 
 const addBookBtn = document.querySelector('#js-add-btn');
