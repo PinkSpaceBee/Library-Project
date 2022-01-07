@@ -63,8 +63,11 @@ function showBookCard() {
             const toggleBtn = document.createElement('input');
             toggleBtn.setAttribute('type', 'checkbox');
             article.appendChild(toggleBtn);
+            toggleBtn.addEventListener('click', (e) => {
+                toggleBtn.checked ? changeReadStatus(e) : console.log('y');
+            });
 
-            const removeBtn = document.createElement('button');
+            const removeBtn = document.createElement('button'); 
             removeBtn.textContent = 'x';
             article.appendChild(removeBtn);
             removeBtn.addEventListener('click', (e) => {
@@ -80,16 +83,21 @@ function showBookCard() {
     }
 
     toggleBtn.addEventListener('click', (e) => {
-        changeReadStatus(e);
+        toggleBtn.checked ? changeReadStatus(e) : console.log('y');
     });
 
     removeBtn.addEventListener('click', (e) => {
         removeBookCard(e);
     });
 
-    function changeReadStatus(e) {}
+    function changeReadStatus(e) {
+        //const objReadStatus = e.target.parentElement;
+        console.log('x');
+    }
 
     function removeBookCard(e) {
+        console.log('x');
+        /*
         const objId = e.target.parentElement.lastChild.textContent.slice(4);
         const found = library.find(elem => elem.id === objId);
 
@@ -97,6 +105,7 @@ function showBookCard() {
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
         e.target.parentElement.remove();
+        */
     }   
 }
 
