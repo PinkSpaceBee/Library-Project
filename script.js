@@ -18,7 +18,7 @@ function addNewBook() {
     document.querySelector('#js-author').value, 
     document.querySelector('#js-pages-total').value, 
     document.querySelector('#js-have-read').checked ? 'read' : 'not read yet',
-    `id${Date.now()}`); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
+    `id${Date.now()}`,); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
     
     library.push(entry);
     localStorage.setItem('storedLibrary', JSON.stringify(library));
@@ -33,13 +33,18 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard() {
 
     const article = document.createElement('article');
-    //article.setAttribute('id', library[library.length - 1].id);
+
+    const toggleBtn = document.createElement('input');
+    toggleBtn.setAttribute('type', 'checkbox');
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'x';
 
+    // show new book
     if (bookshelf.querySelector('article')) {
         bookshelf.appendChild(article);
+
+        article.appendChild(toggleBtn);
         article.appendChild(removeBtn);
 
         for (const [key, value] of Object.entries(library[library.length - 1])) {
@@ -47,17 +52,21 @@ function showBookCard() {
             p.textContent = `${key}: ${value}`;
         }
         article.lastChild.hidden = true; 
-        console.log(`case 0`);
+
+    // show all books
     } else {
         for (const obj of Object.values(library)) {
+
             const article = document.createElement('article');
-            //article.setAttribute('id', library[library.length - 1].id);
             bookshelf.appendChild(article);
+
+            const toggleBtn = document.createElement('input');
+            toggleBtn.setAttribute('type', 'checkbox');
+            article.appendChild(toggleBtn);
 
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'x';
             article.appendChild(removeBtn);
-
             removeBtn.addEventListener('click', (e) => {
                 removeBookCard(e);
             })
@@ -68,16 +77,19 @@ function showBookCard() {
             }
             article.lastChild.hidden = true; 
         }
-
-        console.log(`case 1`);
     }
+
+    toggleBtn.addEventListener('click', (e) => {
+        changeReadStatus(e);
+    });
 
     removeBtn.addEventListener('click', (e) => {
         removeBookCard(e);
-    })
+    });
+
+    function changeReadStatus(e) {}
 
     function removeBookCard(e) {
-        //localStorage.clear();
         const objId = e.target.parentElement.lastChild.textContent.slice(4);
         const found = library.find(elem => elem.id === objId);
 
@@ -85,10 +97,7 @@ function showBookCard() {
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
         e.target.parentElement.remove();
-        console.dir(library);
-        //console.log(`${objId} ${library.indexOf(found)}`);
     }   
-    console.dir(library);
 }
 
 const addBookBtn = document.querySelector('#js-add-btn');
