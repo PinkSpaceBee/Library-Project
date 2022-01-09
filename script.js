@@ -34,10 +34,27 @@ function showBookCard() {
         const toggleBtn = document.createElement('input');
         toggleBtn.setAttribute('type', 'checkbox');
         elem.appendChild(toggleBtn);
+        //I'm so so so hungry :(
 
-        toggleBtn.addEventListener('click', (e) => {
-            console.log('y');
-        });
+        // sets all checkboxes as checked
+        //toggleBtn.checked = localStorage.getItem('toggleBtn') ? true : false;
+        //localStorage.setItem('toggleBtn', 'true');
+        console.log(toggleBtn.parentElement);
+        
+          toggleBtn.addEventListener('click', (e) => {
+              console.log(e.target.checked);
+ 
+            if (e.target.checked) {
+                localStorage.setItem('toggleBtn', 'true');
+            } else {
+                localStorage.removeItem('toggleBtn');
+            }
+            console.log(localStorage.getItem('toggleBtn'));
+            //e.target.checked = true;
+            e.target.checked = localStorage.getItem('toggleBtn') ? true : false;
+            x = e.target.checked;
+            console.log(x);
+          });
     }
 
     function createRemoveBtn(elem) {
