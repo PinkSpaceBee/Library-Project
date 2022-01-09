@@ -55,6 +55,10 @@ function showBookCard() {
             x = e.target.checked;
             console.log(x);
           });
+
+        toggleBtn.addEventListener('click', (e) => {
+            console.log('y');
+        });
     }
 
     function createRemoveBtn(elem) {
@@ -112,7 +116,6 @@ function showBookCard() {
 
 const addBookBtn = document.querySelector('#js-add-btn');
 const submitBookBtn = document.querySelector('#js-submit-book-card');
-//const removeBookBtn = document.querySelector('')
 
 
 addBookBtn.addEventListener('click', () => {
@@ -130,7 +133,6 @@ submitBookBtn.addEventListener('click', () => {
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
 
-    // show the last added book
     showBookCard();
 });
 
