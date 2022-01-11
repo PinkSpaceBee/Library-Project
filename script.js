@@ -1,6 +1,10 @@
 'use strict';
 
 const bookshelf = document.querySelector('#js-bookshelf');
+const statsSection = document.querySelector('#js-stats');
+const addBookBtn = document.querySelector('#js-add-btn');
+const submitBookBtn = document.querySelector('#js-submit-book-card');
+
 let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedLibrary')) : [];
 
 function Book(title, author, pagesTotal, haveRead, id) {
@@ -10,12 +14,6 @@ function Book(title, author, pagesTotal, haveRead, id) {
     this.haveRead = haveRead;
     this.id = id;
 }
-
-function getBaseLog(i,j) {
-    return Math.log(j)/Math.log(i);
-}
-
-console.log(getBaseLog(2,1000));
 
 function addNewBook() {
     
@@ -111,20 +109,22 @@ function showBookCard() {
     }
 }
 
-function getStats(arr) {
+function showStats(arr) {
     const booksTotal = arr.length;
-    console.log(booksTotal);
     const readBooksTotal = arr.filter(obj => obj.haveRead === true).length;
-    console.log(readBooksTotal);
     const notReadTotal = booksTotal - readBooksTotal;
-    console.log(notReadTotal);
+    
+    const pElems = Array.from(statsSection.querySelectorAll('p'));
+
+    pElems.forEach(p => p.children.length === 0 ? p.appendChild(document.createElement('span')) : p);
+
+    const stats = Array.from(statsSection.querySelectorAll('span'));
+
+    stats[0].textContent = booksTotal;
+    stats[1].textContent = readBooksTotal;
+    stats[2].textContent = notReadTotal;
+
 }
-
-
-
-const addBookBtn = document.querySelector('#js-add-btn');
-const submitBookBtn = document.querySelector('#js-submit-book-card');
-
 
 addBookBtn.addEventListener('click', () => {
     // show a form to add a new book 
@@ -142,9 +142,9 @@ submitBookBtn.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'none';
 
     showBookCard();
-    getStats(library);
+    showStats(library);
 });
 
 showBookCard();
-getStats(library);
+showStats(library);
 
