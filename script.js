@@ -8,7 +8,6 @@ function Book(title, author, pagesTotal, haveRead, id) {
     this.author = author;
     this.pagesTotal = pagesTotal;
     this.haveRead = haveRead;
-    // should I made it a method?? Ok, I'll deal with it later
     this.id = id;
 }
 
@@ -17,9 +16,9 @@ function addNewBook() {
     const entry = new Book(document.querySelector('#js-title').value, 
     document.querySelector('#js-author').value, 
     document.querySelector('#js-pages-total').value, 
-    document.querySelector('#js-have-read').checked ? 'read' : 'not read yet',
-    `id${Date.now()}`,); /* shit, I spend 20 minutes trying to figure out why the hell the id returns undefined and then I realized that I was typing it behind the closing parentheses*/ 
-    
+    document.querySelector('#js-have-read').checked,
+    `id${Date.now()}`,); /* shit, I spent 20 minutes trying to figure out why the hell the id returns undefined, and then I realized that I was typing it behind the closing parentheses*/ 
+
     library.push(entry);
     localStorage.setItem('storedLibrary', JSON.stringify(library));
 }
@@ -37,14 +36,15 @@ function showBookCard() {
         elem.appendChild(toggleBtn);
         //I'm so so so hungry :(
 
-        console.log(elem.children[3]);
-        console.log(library.forEach(item => console.log(item.id)));
-        console.log(elem.id)
-        //sets all checkboxes as checked
-        //toggleBtn.checked = localStorage.getItem('toggleBtn') ? true : false;
-        //localStorage.setItem('toggleBtn', 'true');
-        //console.log(toggleBtn.parentElement);
+        const elemIndex = library.indexOf(library.find(obj => obj.id === elem.id));
+
+        console.log(`elem id ${elem.id}`);
+
+        let haveReadChecked = elem.children[3].textContent.includes('true');
         
+        if (haveReadChecked) {
+            toggleBtn.checked = true;
+        }
 
         /*
           toggleBtn.addEventListener('click', (e) => {
@@ -61,10 +61,23 @@ function showBookCard() {
           });
         */
        toggleBtn.addEventListener('click', (e) => {
-           //const haveReadProp = e.target.parentElement.children[5];
-           //console.log(haveReadProp);
-           if (localStorage.getItem('toggleBtn')) {
-               e.checked = true;
+        console.log(elemIndex);
+        const currObj = library.find(obj => library.indexOf(obj) === elemIndex);
+        currObj.haveRead = !currObj.haveRead;
+        console.log(currObj.haveRead);
+
+        console.log(library.slice(elemIndex));
+        console.dir(library);
+        localStorage.setItem('storedLibrary', JSON.stringify(library));
+
+           if(!e.target.checked) {
+               toggleBtn.checked = false;
+               haveReadChecked = false;
+               console.log(`case 0 ${haveReadChecked}`);
+               //localStorage.removeItem('toggleBtn');
+           } else {
+            haveReadChecked = true;
+            console.log(`case 1 ${haveReadChecked}`)
            }
        });
     }
@@ -95,6 +108,7 @@ function showBookCard() {
                 p.textContent = `${key}: ${value}`;
             }
             elem.lastChild.hidden = true;
+            elem.children[3].hidden = true;
             elem.setAttribute('id', elem.lastChild.textContent.slice(4));
     } 
 
