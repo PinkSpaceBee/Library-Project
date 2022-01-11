@@ -11,6 +11,12 @@ function Book(title, author, pagesTotal, haveRead, id) {
     this.id = id;
 }
 
+function getBaseLog(i,j) {
+    return Math.log(j)/Math.log(i);
+}
+
+console.log(getBaseLog(2,1000));
+
 function addNewBook() {
     
     const entry = new Book(document.querySelector('#js-title').value, 
@@ -44,7 +50,7 @@ function showBookCard() {
        toggleBtn.addEventListener('click', (e) => {
         const currObj = library.find(obj => obj.id === elem.id);
         currObj.haveRead = !currObj.haveRead;
-        
+
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
         haveReadChecked = e.target.checked;
@@ -105,6 +111,17 @@ function showBookCard() {
     }
 }
 
+function getStats(arr) {
+    const booksTotal = arr.length;
+    console.log(booksTotal);
+    const readBooksTotal = arr.filter(obj => obj.haveRead === true).length;
+    console.log(readBooksTotal);
+    const notReadTotal = booksTotal - readBooksTotal;
+    console.log(notReadTotal);
+}
+
+
+
 const addBookBtn = document.querySelector('#js-add-btn');
 const submitBookBtn = document.querySelector('#js-submit-book-card');
 
@@ -125,7 +142,9 @@ submitBookBtn.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'none';
 
     showBookCard();
+    getStats(library);
 });
 
 showBookCard();
+getStats(library);
 
