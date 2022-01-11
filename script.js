@@ -34,11 +34,6 @@ function showBookCard() {
         toggleBtn.setAttribute('type', 'checkbox');
         toggleBtn.setAttribute('class', 'controlElems');
         elem.appendChild(toggleBtn);
-        //I'm so so so hungry :(
-
-        const elemIndex = library.indexOf(library.find(obj => obj.id === elem.id));
-
-        console.log(`elem id ${elem.id}`);
 
         let haveReadChecked = elem.children[3].textContent.includes('true');
         
@@ -46,39 +41,13 @@ function showBookCard() {
             toggleBtn.checked = true;
         }
 
-        /*
-          toggleBtn.addEventListener('click', (e) => {
-              console.log(e.target.checked);
- 
-            if (e.target.checked) {
-                localStorage.setItem('toggleBtn', 'true');
-            } else {
-                localStorage.removeItem('toggleBtn');
-            }
-
-            e.target.checked = localStorage.getItem('toggleBtn');
-
-          });
-        */
        toggleBtn.addEventListener('click', (e) => {
-        console.log(elemIndex);
-        const currObj = library.find(obj => library.indexOf(obj) === elemIndex);
+        const currObj = library.find(obj => obj.id === elem.id);
         currObj.haveRead = !currObj.haveRead;
-        console.log(currObj.haveRead);
-
-        console.log(library.slice(elemIndex));
-        console.dir(library);
+        
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
-           if(!e.target.checked) {
-               toggleBtn.checked = false;
-               haveReadChecked = false;
-               console.log(`case 0 ${haveReadChecked}`);
-               //localStorage.removeItem('toggleBtn');
-           } else {
-            haveReadChecked = true;
-            console.log(`case 1 ${haveReadChecked}`)
-           }
+        haveReadChecked = e.target.checked;
        });
     }
 
