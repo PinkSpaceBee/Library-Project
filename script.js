@@ -33,14 +33,19 @@ function showBookCard() {
     function createToggleBtn(elem) {
         const toggleBtn = document.createElement('input');
         toggleBtn.setAttribute('type', 'checkbox');
+        toggleBtn.setAttribute('class', 'controlElems');
         elem.appendChild(toggleBtn);
         //I'm so so so hungry :(
 
-        // sets all checkboxes as checked
+        console.log(elem.children[3]);
+        console.log(library[elem]);
+        //sets all checkboxes as checked
         //toggleBtn.checked = localStorage.getItem('toggleBtn') ? true : false;
         //localStorage.setItem('toggleBtn', 'true');
-        console.log(toggleBtn.parentElement);
+        //console.log(toggleBtn.parentElement);
         
+
+        /*
           toggleBtn.addEventListener('click', (e) => {
               console.log(e.target.checked);
  
@@ -49,20 +54,23 @@ function showBookCard() {
             } else {
                 localStorage.removeItem('toggleBtn');
             }
-            console.log(localStorage.getItem('toggleBtn'));
-            //e.target.checked = true;
-            e.target.checked = localStorage.getItem('toggleBtn') ? true : false;
-            x = e.target.checked;
-            console.log(x);
-          });
 
-        toggleBtn.addEventListener('click', (e) => {
-            console.log('y');
-        });
+            e.target.checked = localStorage.getItem('toggleBtn');
+
+          });
+        */
+       toggleBtn.addEventListener('click', (e) => {
+           //const haveReadProp = e.target.parentElement.children[5];
+           //console.log(haveReadProp);
+           if (localStorage.getItem('toggleBtn')) {
+               e.checked = true;
+           }
+       });
     }
 
     function createRemoveBtn(elem) {
         const removeBtn = document.createElement('button');
+        removeBtn.setAttribute('class', 'controlElems');
         removeBtn.textContent = 'x';
         elem.appendChild(removeBtn);
 
@@ -88,6 +96,7 @@ function showBookCard() {
                 p.textContent = `${key}: ${value}`;
             }
             elem.lastChild.hidden = true;
+            elem.setAttribute('id', elem.lastChild.textContent);
     } 
 
     // add new book card    
@@ -97,9 +106,9 @@ function showBookCard() {
         const article = document.createElement('article');
         bookshelf.appendChild(article);
 
-        createToggleBtn(article);
-        createRemoveBtn(article);
         addText(currArr, article);
+        createRemoveBtn(article);
+        createToggleBtn(article);
 
     // show all book cards    
     } else {
@@ -107,9 +116,9 @@ function showBookCard() {
             const article = document.createElement('article');
             bookshelf.appendChild(article);
 
-            createToggleBtn(article);
-            createRemoveBtn(article);
             addText(obj, article);
+            createRemoveBtn(article);
+            createToggleBtn(article);
         }
     }
 }
