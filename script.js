@@ -38,7 +38,8 @@ function showBookCard() {
         //I'm so so so hungry :(
 
         console.log(elem.children[3]);
-        console.log(library[elem]);
+        console.log(library.forEach(item => console.log(item.id)));
+        console.log(elem.id)
         //sets all checkboxes as checked
         //toggleBtn.checked = localStorage.getItem('toggleBtn') ? true : false;
         //localStorage.setItem('toggleBtn', 'true');
@@ -79,7 +80,7 @@ function showBookCard() {
         });
 
         function removeBookCard(e) {
-        const objId = e.target.parentElement.id.slice(4);
+        const objId = e.target.parentElement.id;
         const found = library.find(elem => elem.id === objId);
 
         library.splice(library.indexOf(found), 1);
@@ -94,7 +95,7 @@ function showBookCard() {
                 p.textContent = `${key}: ${value}`;
             }
             elem.lastChild.hidden = true;
-            elem.setAttribute('id', elem.lastChild.textContent);
+            elem.setAttribute('id', elem.lastChild.textContent.slice(4));
     } 
 
     // add new book card    
