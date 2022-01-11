@@ -95,6 +95,7 @@ function showBookCard() {
         addText(currArr, article);
         createRemoveBtn(article);
         createToggleBtn(article);
+        showStats(library);
 
     // show all book cards    
     } else {
@@ -112,8 +113,9 @@ function showBookCard() {
 function showStats(arr) {
     const booksTotal = arr.length;
     const readBooksTotal = arr.filter(obj => obj.haveRead === true).length;
+    console.log(readBooksTotal);
     const notReadTotal = booksTotal - readBooksTotal;
-    
+
     const pElems = Array.from(statsSection.querySelectorAll('p'));
 
     pElems.forEach(p => p.children.length === 0 ? p.appendChild(document.createElement('span')) : p);
@@ -142,7 +144,7 @@ submitBookBtn.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'none';
 
     showBookCard();
-    showStats(library);
+    //showStats(library);
 });
 
 showBookCard();
