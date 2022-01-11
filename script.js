@@ -79,13 +79,11 @@ function showBookCard() {
         });
 
         function removeBookCard(e) {
-
-        const objId = e.target.parentElement.lastChild.textContent.slice(4);
+        const objId = e.target.parentElement.id.slice(4);
         const found = library.find(elem => elem.id === objId);
 
         library.splice(library.indexOf(found), 1);
         localStorage.setItem('storedLibrary', JSON.stringify(library));
-
         e.target.parentElement.remove();
         }
     }
