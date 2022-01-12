@@ -8,9 +8,9 @@ const submitBookBtn = document.querySelector('#js-submit-book-card');
 let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedLibrary')) : [];
 
 function Book(title, author, pagesTotal, haveRead, id) {
-    this.title = title;
-    this.author = author;
-    this.pagesTotal = pagesTotal;
+    this.Title = title;
+    this.Author = author;
+    this["Number of pages"] = pagesTotal;
     this.haveRead = haveRead;
     this.id = id;
 }
