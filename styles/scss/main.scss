@@ -1,0 +1,13 @@
+$color-primary: pink;
+
+body {
+    background-color: $color-primary;
+}
+$idk: pink;
+$test: red;
+body {
+    background-color: $idk;
+}
+p {
+    color: $test;
+}
