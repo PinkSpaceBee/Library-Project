@@ -87,27 +87,27 @@ function showBookCard() {
             elem.setAttribute('id', elem.lastChild.textContent.slice(4));
     } 
 
-    // add new book card    
+    // add a new book card to the existing ones   
     if (bookshelf.querySelector('article')) {
         const currArr = library.slice(-1)[0];
 
-        const article = document.createElement('article');
-        bookshelf.appendChild(article);
+        const bookCard = document.createElement('article');
+        bookshelf.appendChild(bookCard);
 
-        addText(currArr, article);
-        createRemoveBtn(article);
-        createToggleBtn(article);
+        addText(currArr, bookCard);
+        createRemoveBtn(bookCard);
+        createToggleBtn(bookCard);
         showStats(library);
 
     // show all book cards    
     } else {
         for (const obj of Object.values(library)) {
-            const article = document.createElement('article');
-            bookshelf.appendChild(article);
+            const bookCard = document.createElement('article');
+            bookshelf.appendChild(bookCard);
 
-            addText(obj, article);
-            createRemoveBtn(article);
-            createToggleBtn(article);
+            addText(obj, bookCard);
+            createRemoveBtn(bookCard);
+            createToggleBtn(bookCard);
         }
     }
 }
@@ -115,7 +115,6 @@ function showBookCard() {
 function showStats(arr) {
     const booksTotal = arr.length;
     const readBooksTotal = arr.filter(obj => obj.haveRead === true).length;
-    console.log(readBooksTotal);
     const notReadTotal = booksTotal - readBooksTotal;
 
     const pElems = Array.from(statsSection.querySelectorAll('p'));
