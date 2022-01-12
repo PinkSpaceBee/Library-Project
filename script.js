@@ -52,6 +52,7 @@ function showBookCard() {
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
         haveReadChecked = e.target.checked;
+        showStats(library);
        });
     }
 
@@ -63,6 +64,7 @@ function showBookCard() {
 
         removeBtn.addEventListener('click', (e) => {
             removeBookCard(e);
+            showStats(library);
         });
 
         function removeBookCard(e) {
@@ -144,7 +146,7 @@ submitBookBtn.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'none';
 
     showBookCard();
-    //showStats(library);
+    showStats(library);
 });
 
 showBookCard();
