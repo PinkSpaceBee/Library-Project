@@ -1,0 +1,24 @@
+$cornflower-blue: hsl(218, 80%, 65%);
+$beauty-bush: hsl(342, 61%, 84%);
+$remy: hsl(339, 88%, 97%);
+$amaranth: hsl(339, 78%, 47%);
+
+@mixin for-phone {
+    @media screen and (max-device-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait {
+    @media (min-device-width: 600px) { @content; }
+}
+
+@mixin for-tablet-landscape {
+    @media (min-device-width: 900px) { @content; }
+}
+
+@mixin for-desktop {
+    @media (min-device-width: 1200px) { @content; }
+}
+
+@mixin for-big-desktop {
+    @media (min-device-width: 1800px) { @content; }
+}

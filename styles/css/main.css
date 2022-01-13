@@ -1,13 +1,10 @@
 body {
-  background-color: pink;
-}
-
-body {
-  background-color: pink;
-}
-
-p {
-  color: red;
-}
-
-/*# sourceMappingURL=main.css.map */
+  display: grid;
+  justify-items: center;
+  background-color: #efbdcc; }
+  body section {
+    width: 100%;
+    background-color: palevioletred; }
+  @media screen and (max-device-width: 599px) {
+    body {
+      background-color: papayawhip; } }

@@ -1,13 +1,3 @@
-$color-primary: pink;
-
-body {
-    background-color: $color-primary;
-}
-$idk: pink;
-$test: red;
-body {
-    background-color: $idk;
-}
-p {
-    color: $test;
-}
+@import 'core';
+@import 'layout';
+@import 'components';

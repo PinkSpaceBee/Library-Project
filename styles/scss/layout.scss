@@ -1,0 +1,17 @@
+body {
+    display: grid;
+    justify-items: center;
+    background-color: $beauty-bush;
+    
+
+    section {
+        width: 100%;
+        background-color: palevioletred;
+    }
+
+    @include for-phone {
+        background-color: papayawhip;
+    }
+    @include for-tablet-portrait {}
+    @include for-tablet-landscape {}
+}

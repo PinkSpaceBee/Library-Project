@@ -1,0 +1,23 @@
+{
+  "name": "library-project",
+  "version": "1.0.0",
+  "description": "*** STUFF TO DO:  1, RED: add a button to change book's read status",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch styles/scss/ -o styles/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PinkSpaceBee/Library-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PinkSpaceBee/Library-Project/issues"
+  },
+  "homepage": "https://github.com/PinkSpaceBee/Library-Project#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
