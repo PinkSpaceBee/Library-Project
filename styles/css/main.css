@@ -1,4 +1,5 @@
 /* COLORS */
+/* GRADIENTS */
 /* BREAKPOINTS FOR SCREEN SIZES */
 body {
   display: flex;
@@ -29,11 +30,20 @@ body {
     body #stats-section #js-new-book-card {
       display: none; }
   body main {
-    display: flex; }
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     @media screen and (max-device-width: 599px) {
       body main {
         flex-direction: column;
         font-size: 3em; } }
+    body main article {
+      display: grid;
+      background-color: #e5edf2; }
+      @media screen and (max-device-width: 599px) {
+        body main article {
+          margin: 10%;
+          width: 90vw; } }
     body main #js-new-book-card {
       display: none; }
   body #js-control-btns-phone {
@@ -43,6 +53,7 @@ body {
         display: flex;
         flex-flow: row-reverse wrap-reverse; } }
     body #js-control-btns-phone button {
+      background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
       position: fixed;
       bottom: 5vh;
       right: 1vh;

@@ -1,12 +1,32 @@
 /* COLORS */
 $pigeon-post: hsl(206, 42%, 77%);
 $rock-blue: hsl(206, 34%, 70%);
+$blue-bell: hsl(248, 35%, 70%);
 
+/* GRADIENTS */
 @mixin gradient-text($angle, $from, $to) {
     background: -webkit-linear-gradient($angle, $from, $to);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin gradient-background($angle, $from, $to) {
+    background-image: 
+    -webkit-linear-gradient($angle, $from, $to);
+}
+
+@mixin gradient-border($angle, $from, $to, $width) {
+    border-left: $width solid $from;
+    border-right: $width solid $to;
+    background-image:
+      // Needed for both the top and bottom borders
+      -webkit-linear-gradient($angle, $from, $to),
+      -webkit-linear-gradient($angle, $from, $to);
+    background-size: 100% $width;
+    background-position: 0 100%, 0 0;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+  }
 
 /* BREAKPOINTS FOR SCREEN SIZES */
 @mixin for-phone {

@@ -41,12 +41,31 @@ body {
 
     main {
         display: flex;
+        justify-content: center;
+        align-items: center;
 
         @include for-phone {
             flex-direction: column;
             font-size: 3em;
 
         }
+
+        article {
+            display: grid;
+            background-color: mix($rock-blue, #fff, 25%);
+
+            @include for-phone {
+                margin:10%;
+                width: 90vw;
+            }
+
+            * {
+                @include for-phone {
+
+                }
+            }
+        }
+
         #js-new-book-card {
             display: none;
         }
@@ -62,6 +81,8 @@ body {
         }
 
         button {
+            @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
+
             position: fixed;
             bottom: 5vh;
             right: 1vh;
