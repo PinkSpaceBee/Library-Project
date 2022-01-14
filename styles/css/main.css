@@ -44,6 +44,11 @@ body {
         body main article {
           margin: 10%;
           width: 90vw; } }
+      @media screen and (max-device-width: 599px) {
+        body main article * {
+          margin: 0;
+          padding: 10px;
+          grid-gap: 50px; } }
     body main #js-new-book-card {
       display: none; }
   body #js-control-btns-phone {

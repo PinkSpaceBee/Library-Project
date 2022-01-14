@@ -60,8 +60,12 @@ body {
             }
 
             * {
+                //display: grid;
+                // don't forget that you hid two last elements; don't override it 
                 @include for-phone {
-
+                    margin: 0;
+                    padding: 10px;
+                    grid-gap: 50px;
                 }
             }
         }
