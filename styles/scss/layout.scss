@@ -65,8 +65,17 @@ body {
             position: fixed;
             bottom: 5vh;
             right: 1vh;
-            width: 100px;
-            font-size: 5em;
+
+            border: none;
+            border-radius: 50%;
+
+            width: 7vh;
+            height: 7vh;
+
+            background-color: $rock-blue;
+            color: #fff;
+
+            font-size: 6em;
         }
     }
 
