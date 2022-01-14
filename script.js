@@ -1,9 +1,11 @@
 'use strict';
 
 const bookshelf = document.querySelector('#js-bookshelf');
-const statsSection = document.querySelector('#js-stats');
+const statsSection = document.querySelector('section');
+const statsDiv = document.querySelector('#js-stats');
 const addBookBtn = document.querySelector('#js-add-btn');
 const submitBookBtn = document.querySelector('#js-submit-book-card');
+const addBookBtnPhone = document.querySelector('#js-add-btn-phone');
 
 let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedLibrary')) : [];
 
@@ -131,6 +133,12 @@ function showStats(arr) {
 
 addBookBtn.addEventListener('click', () => {
     // show a form to add a new book 
+    document.querySelector('#js-new-book-card').style.display = 'block';
+});
+
+//console.log(addBookBtnPhone === null);
+
+addBookBtnPhone.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'block';
 });
 

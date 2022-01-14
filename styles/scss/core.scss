@@ -1,8 +1,14 @@
-$cornflower-blue: hsl(218, 80%, 65%);
-$beauty-bush: hsl(342, 61%, 84%);
-$remy: hsl(339, 88%, 97%);
-$amaranth: hsl(339, 78%, 47%);
+/* COLORS */
+$pigeon-post: hsl(206, 42%, 77%);
+$rock-blue: hsl(206, 34%, 70%);
 
+@mixin gradient-text($angle, $from, $to) {
+    background: -webkit-linear-gradient($angle, $from, $to);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* BREAKPOINTS FOR SCREEN SIZES */
 @mixin for-phone {
     @media screen and (max-device-width: 599px) { @content; }
 }
