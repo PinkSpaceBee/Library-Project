@@ -33,15 +33,15 @@ article {
     div:first-of-type {
         grid-area: button;
         justify-self: end;
-        width: 4.5vh;
+        width: 5vh;
         background-color: mix($rock-blue, #fff, 25%);
 
         //color: #fff;
 
         button {
             position: absolute;
-            border: none;
-            background-color: $rock-blue;
+            border: 5px solid $rock-blue;
+            background-color: mix($rock-blue, #fff, 25%);
             border-radius: 50%;
             height: 100px;
             width: 100px;
@@ -54,8 +54,8 @@ article {
             top:20%;
             content: '';
             height: 60%;
-            width: 2px;
-            background-color: #fff;
+            width: 5px;
+            background-color: $rock-blue;
           }
 
           button:before {

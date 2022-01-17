@@ -59,12 +59,12 @@ body {
 article div:first-of-type {
   grid-area: button;
   justify-self: end;
-  width: 4.5vh;
+  width: 5vh;
   background-color: #e5edf2; }
   article div:first-of-type button {
     position: absolute;
-    border: none;
-    background-color: #98b6cd;
+    border: 5px solid #98b6cd;
+    background-color: #e5edf2;
     border-radius: 50%;
     height: 100px;
     width: 100px;
@@ -75,8 +75,8 @@ article div:first-of-type {
     top: 20%;
     content: '';
     height: 60%;
-    width: 2px;
-    background-color: #fff; }
+    width: 5px;
+    background-color: #98b6cd; }
   article div:first-of-type button:before {
     transform: rotate(45deg); }
   article div:first-of-type button:after {

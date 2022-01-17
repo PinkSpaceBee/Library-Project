@@ -66,6 +66,7 @@ function showBookCard() {
     }
 
     function createRemoveBtn(elem) {
+/* always removes the last item; doesn't remove the item from DOM (allegedly)*/
         const removeBtnWrap = document.createElement('div');
         removeBtnWrap.setAttribute('class', 'controlElems');
         elem.appendChild(removeBtnWrap);
@@ -80,13 +81,27 @@ function showBookCard() {
             showStats(library);
         });
 
+/* works correctly 
+        const removeBtn = document.createElement('button');
+        removeBtn.setAttribute('class', 'controlElems');
+        removeBtn.textContent = '\u2715';
+        elem.appendChild(removeBtn);
+
+        removeBtn.addEventListener('click', (e) => {
+            removeBookCard(e);
+            showStats(library);
+        });
+*/
         function removeBookCard(e) {
-        const objId = e.target.parentElement.id;
+        const objId = e.target.parentElement.parentElement.id;
+        console.log(e.target);
+        console.log(e.target.parentElement);
+        console.log(objId);
         const found = library.find(elem => elem.id === objId);
 
         library.splice(library.indexOf(found), 1);
         localStorage.setItem('storedLibrary', JSON.stringify(library));
-        e.target.parentElement.remove();
+        e.target.parentElement.parentElement.remove();
         }
     }
 
