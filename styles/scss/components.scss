@@ -1,3 +1,4 @@
+/* BUTTONS */
 #js-control-btns-phone {
     display: none;
 
@@ -25,4 +26,44 @@
 
         font-size: 6em;
     }
+}
+
+/* BOOK CARD */
+article {
+    display: grid;
+    background-color: mix($rock-blue, #fff, 25%);
+    border-radius: 15px;
+
+    @include for-phone {
+
+        p:first-of-type {
+            padding-top: 60px;
+        }
+
+        margin: 5%;
+        width: 90vw;
+    }
+
+
+    *:nth-child(-n+3) {
+        display: grid;
+
+        @include for-phone {
+            margin: 0;
+            grid-gap: 50px;
+
+            padding: 20px 40px;
+        }
+    }
+
+
+}
+
+article:first-of-type {
+    margin-top: 12%;
+}
+
+/* FORM FOR ADDING A BOOK */
+#js-new-book-card {
+    display: none;
 }

@@ -44,30 +44,6 @@ body {
         @include for-phone {
             flex-direction: column;
             font-size: 3em;
-
-        }
-
-        article {
-            display: grid;
-            background-color: mix($rock-blue, #fff, 25%);
-
-            @include for-phone {
-                margin:10%;
-                width: 90vw;
-            }
-
-            *:nth-child(-n+3) {
-                display: grid;
-                @include for-phone {
-                    margin: 0;
-                    padding: 10px;
-                    grid-gap: 50px;
-                }
-            }
-        }
-
-        #js-new-book-card {
-            display: none;
         }
     }
 
