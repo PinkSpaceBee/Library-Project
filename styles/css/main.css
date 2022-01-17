@@ -56,13 +56,36 @@ body {
     color: #fff;
     font-size: 6em; }
 
-article button {
+article div:first-of-type {
   grid-area: button;
-  background-color: plum; }
+  justify-self: end;
+  width: 4.5vh;
+  background-color: #e5edf2; }
+  article div:first-of-type button {
+    position: absolute;
+    border: none;
+    background-color: #98b6cd;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 30px 0; }
+  article div:first-of-type button:before, article div:first-of-type button:after {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    content: '';
+    height: 60%;
+    width: 2px;
+    background-color: #fff; }
+  article div:first-of-type button:before {
+    transform: rotate(45deg); }
+  article div:first-of-type button:after {
+    transform: rotate(-45deg); }
 
 /* BOOK CARD */
 article {
   display: grid;
+  grid-template-columns: 4fr 1fr;
   grid-template-areas: "p button" "p button" "p button" "check check";
   background-color: #e5edf2;
   border-radius: 15px; }
@@ -76,11 +99,12 @@ article {
     article * {
       margin: 0;
       padding: 15px 50px; } }
-  article input {
+  article div {
     grid-area: check;
     padding: 15px 50px;
+    border-radius: 15px;
     background-color: pink;
-    height: 50px; }
+    height: 100px; }
 
 article:first-of-type {
   margin-top: 12%; }

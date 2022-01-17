@@ -29,15 +29,48 @@
 }
 
 article {
-    button {
+    // remove button
+    div:first-of-type {
         grid-area: button;
-        background-color: plum;
+        justify-self: end;
+        width: 4.5vh;
+        background-color: mix($rock-blue, #fff, 25%);
+
+        //color: #fff;
+
+        button {
+            position: absolute;
+            border: none;
+            background-color: $rock-blue;
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            margin: 30px 0;
+        }
+
+        button:before, button:after {
+            position: absolute;
+            left: 50%;
+            top:20%;
+            content: '';
+            height: 60%;
+            width: 2px;
+            background-color: #fff;
+          }
+
+          button:before {
+            transform: rotate(45deg);
+          }
+          button:after {
+            transform: rotate(-45deg);
+          }
     }
 }
 
 /* BOOK CARD */
 article {
     display: grid;
+    grid-template-columns: 4fr 1fr;
     grid-template-areas: 
         "p button"
         "p button"
@@ -67,11 +100,12 @@ article {
     //first 3 children
     //*:nth-child(-n+3) {}
 
-    input {
+    div {
         grid-area: check;
         padding: 15px 50px;
+        border-radius: 15px;
         background-color: pink;
-        height: 50px;
+        height: 100px;
     }
 
 }

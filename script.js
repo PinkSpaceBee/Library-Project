@@ -36,17 +36,17 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard() {
 
     function createToggleBtn(elem) {
-        const toggleBtnDiv = document.createElement('div');
-        toggleBtnDiv.setAttribute('class', 'controlElems');
-        elem.appendChild(toggleBtnDiv);
+        const toggleBtnWrap = document.createElement('div');
+        toggleBtnWrap.setAttribute('class', 'controlElems');
+        elem.appendChild(toggleBtnWrap);
 
         const toggleBtn = document.createElement('input');
         toggleBtn.setAttribute('type', 'checkbox');
-        toggleBtnDiv.appendChild(toggleBtn);
+        toggleBtnWrap.appendChild(toggleBtn);
 
         const toggleBtnText = document.createElement('span');
         toggleBtnText.textContent = 'Mark as read';
-        toggleBtnDiv.appendChild(toggleBtnText);
+        toggleBtnWrap.appendChild(toggleBtnText);
 
         let haveReadChecked = elem.children[3].textContent.includes('true');
         
@@ -66,12 +66,16 @@ function showBookCard() {
     }
 
     function createRemoveBtn(elem) {
+        const removeBtnWrap = document.createElement('div');
+        removeBtnWrap.setAttribute('class', 'controlElems');
+        elem.appendChild(removeBtnWrap);
+    
         const removeBtn = document.createElement('button');
         removeBtn.setAttribute('class', 'controlElems');
-        removeBtn.textContent = 'x';
-        elem.appendChild(removeBtn);
+        //removeBtn.textContent = '\u2715';
+        removeBtnWrap.appendChild(removeBtn)
 
-        removeBtn.addEventListener('click', (e) => {
+        removeBtnWrap.addEventListener('click', (e) => {
             removeBookCard(e);
             showStats(library);
         });
