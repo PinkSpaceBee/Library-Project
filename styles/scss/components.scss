@@ -64,7 +64,8 @@ article {
             transform: rotate(-45deg);
           }
 
-          button:hover {
+          button:hover button:active {
+              display: block;
               background-color: pink;
           }
     }
