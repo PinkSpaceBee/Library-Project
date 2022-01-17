@@ -81,17 +81,6 @@ function showBookCard() {
             showStats(library);
         });
 
-/* works correctly 
-        const removeBtn = document.createElement('button');
-        removeBtn.setAttribute('class', 'controlElems');
-        removeBtn.textContent = '\u2715';
-        elem.appendChild(removeBtn);
-
-        removeBtn.addEventListener('click', (e) => {
-            removeBookCard(e);
-            showStats(library);
-        });
-*/
         function removeBookCard(e) {
         const objId = e.target.parentElement.parentElement.id;
         console.log(e.target);
