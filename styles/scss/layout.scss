@@ -34,9 +34,6 @@ body {
             }
 
         }
-        #js-new-book-card {
-            display: none;
-        }
     }
 
     main {
@@ -59,9 +56,8 @@ body {
                 width: 90vw;
             }
 
-            * {
-                //display: grid;
-                // don't forget that you hid two last elements; don't override it 
+            *:nth-child(-n+3) {
+                display: grid;
                 @include for-phone {
                     margin: 0;
                     padding: 10px;
@@ -74,36 +70,6 @@ body {
             display: none;
         }
     }
-
-    #js-control-btns-phone {
-        display: none;
-
-        @include for-phone {
-            display: flex;
-
-            flex-flow: row-reverse wrap-reverse;
-        }
-
-        button {
-            @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
-
-            position: fixed;
-            bottom: 5vh;
-            right: 1vh;
-
-            border: none;
-            border-radius: 50%;
-
-            width: 7vh;
-            height: 7vh;
-
-            background-color: $rock-blue;
-            color: #fff;
-
-            font-size: 6em;
-        }
-    }
-
 
     @include for-tablet-portrait {}
     @include for-tablet-landscape {}

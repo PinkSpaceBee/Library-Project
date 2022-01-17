@@ -1,0 +1,28 @@
+#js-control-btns-phone {
+    display: none;
+
+    @include for-phone {
+        display: flex;
+
+        flex-flow: row-reverse wrap-reverse;
+    }
+
+    button {
+        @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
+
+        position: fixed;
+        bottom: 5vh;
+        right: 1vh;
+
+        border: none;
+        border-radius: 50%;
+
+        width: 7vh;
+        height: 7vh;
+
+        background-color: $rock-blue;
+        color: #fff;
+
+        font-size: 6em;
+    }
+}
