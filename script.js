@@ -9,9 +9,9 @@ const addBookBtnPhone = document.querySelector('#js-add-btn-phone');
 
 let library = localStorage.getItem('storedLibrary') ? JSON.parse(localStorage.getItem('storedLibrary')) : [];
 
-function Book(title, author, pagesTotal, haveRead, id) {
+function Book(title, by, pagesTotal, haveRead, id) {
     this.Title = title;
-    this.Author = author;
+    this.By = by;
     this["Number of pages"] = pagesTotal;
     this.haveRead = haveRead;
     this.id = id;
@@ -36,10 +36,17 @@ did you know that when you use the appendChild method to move a child from one p
 function showBookCard() {
 
     function createToggleBtn(elem) {
+        const toggleBtnDiv = document.createElement('div');
+        toggleBtnDiv.setAttribute('class', 'controlElems');
+        elem.appendChild(toggleBtnDiv);
+
         const toggleBtn = document.createElement('input');
         toggleBtn.setAttribute('type', 'checkbox');
-        toggleBtn.setAttribute('class', 'controlElems');
-        elem.appendChild(toggleBtn);
+        toggleBtnDiv.appendChild(toggleBtn);
+
+        const toggleBtnText = document.createElement('span');
+        toggleBtnText.textContent = 'Mark as read';
+        toggleBtnDiv.appendChild(toggleBtnText);
 
         let haveReadChecked = elem.children[3].textContent.includes('true');
         
@@ -84,6 +91,7 @@ function showBookCard() {
                 const p = elem.appendChild(document.createElement('p'));
                 p.textContent = `${key}: ${value}`;
             }
+            elem.firstChild.textContent = elem.firstChild.textContent.slice(7);
             elem.lastChild.hidden = true;
             elem.children[3].hidden = true;
             elem.setAttribute('id', elem.lastChild.textContent.slice(4));
