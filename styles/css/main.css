@@ -63,7 +63,8 @@ article div:first-of-type {
   background-color: #e5edf2; }
   article div:first-of-type button {
     position: absolute;
-    border: 5px solid #98b6cd;
+    border: none;
+    outline: 5px solid #98b6cd;
     background-color: #e5edf2;
     border-radius: 50%;
     height: 100px;
@@ -71,16 +72,18 @@ article div:first-of-type {
     margin: 30px 0; }
   article div:first-of-type button:before, article div:first-of-type button:after {
     position: absolute;
-    left: 50%;
+    left: 47.8%;
     top: 20%;
     content: '';
     height: 60%;
-    width: 5px;
+    width: 5%;
     background-color: #98b6cd; }
   article div:first-of-type button:before {
     transform: rotate(45deg); }
   article div:first-of-type button:after {
     transform: rotate(-45deg); }
+  article div:first-of-type button:hover {
+    background-color: pink; }
 
 /* BOOK CARD */
 article {
