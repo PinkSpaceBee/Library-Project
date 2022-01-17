@@ -56,9 +56,14 @@ body {
     color: #fff;
     font-size: 6em; }
 
+article button {
+  grid-area: button;
+  background-color: plum; }
+
 /* BOOK CARD */
 article {
   display: grid;
+  grid-template-areas: "p button" "p button" "p button" "check check";
   background-color: #e5edf2;
   border-radius: 15px; }
   @media screen and (max-device-width: 599px) {
@@ -67,13 +72,15 @@ article {
       width: 90vw; }
       article p:first-of-type {
         padding-top: 60px; } }
-  article *:nth-child(-n+3) {
-    display: grid; }
-    @media screen and (max-device-width: 599px) {
-      article *:nth-child(-n+3) {
-        margin: 0;
-        grid-gap: 50px;
-        padding: 20px 40px; } }
+  @media screen and (max-device-width: 599px) {
+    article * {
+      margin: 0;
+      padding: 15px 50px; } }
+  article input {
+    grid-area: check;
+    padding: 15px 50px;
+    background-color: pink;
+    height: 50px; }
 
 article:first-of-type {
   margin-top: 12%; }
