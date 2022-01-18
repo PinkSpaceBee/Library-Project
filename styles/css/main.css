@@ -121,9 +121,8 @@ article {
     border-radius: 15px;
     background-color: pink;
     height: 100px; }
-
-article:first-of-type {
-  margin-top: 12%; }
+  article:first-of-type {
+    margin-top: 12%; }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

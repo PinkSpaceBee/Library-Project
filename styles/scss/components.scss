@@ -43,14 +43,16 @@ article {
         background-color: mix($rock-blue, #fff, 25%);
 
         button {
+            $size: 100px;
+            
             position: absolute;
             border: none;
-            outline: 5px solid $rock-blue;
+            outline: $size * 0.05 solid $rock-blue;
             background-color: mix($rock-blue, #fff, 25%);
             border-radius: 50%;
-            height: 100px;
-            width: 100px;
-            margin: 30px 0;
+            height: $size;
+            width: $size;
+            margin: $size * 0.3 0;
 
             &:before,
             &:after {
@@ -74,8 +76,8 @@ article {
             &:hover {
              display: block;
              @include gradient-background($angle: 45deg, $from: mix($rock-blue, #fff, 75%), $to: mix($blue-bell, #fff, 75%));
-             height: 105px;
-             width: 105px;
+             height: $size + $size * 0.05;
+             width: $size + $size * 0.05;
              outline: none;
             }
 
@@ -92,8 +94,8 @@ article {
             &:focus {
                 @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
                 outline: none;
-                height: 105px;
-                width: 105px;
+                height: $size + $size * 0.05;
+                width: $size + $size * 0.05;
             }
         }
     }
@@ -111,6 +113,7 @@ article {
     ; 
     background-color: mix($rock-blue, #fff, 25%);
     border-radius: 15px;
+
 
     @include for-phone {
 
@@ -140,11 +143,11 @@ article {
         height: 100px;
     }
 
+    &:first-of-type {
+        margin-top: 12%;
+    }
 }
 
-article:first-of-type {
-    margin-top: 12%;
-}
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {
