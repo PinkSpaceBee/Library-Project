@@ -111,14 +111,21 @@ article {
         "p button"
         "check check"
     ; 
+
     background-color: mix($rock-blue, #fff, 25%);
     border-radius: 15px;
 
+    font-family: $roboto;
+    font-weight: $regular;
+    color: mix($dove-gray, #000, 85%);
 
     @include for-phone {
 
         p:first-of-type {
             padding-top: 60px;
+            font-size: 1.5em;
+            font-weight: $regular;
+            color: mix($boston-blue, $dove-gray, 55%);
         }
 
         margin: 5%;

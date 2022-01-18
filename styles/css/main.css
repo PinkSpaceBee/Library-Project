@@ -1,5 +1,7 @@
 /* COLORS */
 /* GRADIENTS */
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Merriweather:wght@700;900&family=Playfair+Display:wght@700&family=Roboto:wght@100;300;400&display=swap");
 /* BREAKPOINTS FOR SCREEN SIZES */
 body {
   display: flex;
@@ -104,13 +106,19 @@ article {
   grid-template-columns: 4fr 1fr;
   grid-template-areas: "p button" "p button" "p button" "check check";
   background-color: #e5edf2;
-  border-radius: 15px; }
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #5d5d5d; }
   @media screen and (max-device-width: 599px) {
     article {
       margin: 5%;
       width: 90vw; }
       article p:first-of-type {
-        padding-top: 60px; } }
+        padding-top: 60px;
+        font-size: 1.5em;
+        font-weight: 400;
+        color: #527997; } }
   @media screen and (max-device-width: 599px) {
     article * {
       margin: 0;

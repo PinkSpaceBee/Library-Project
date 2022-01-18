@@ -4,6 +4,7 @@ $rock-blue: hsl(206, 34%, 70%);
 $boston-blue: hsl(206, 51%, 48%);
 $blue-bell: hsl(248, 34%, 70%);
 $true-v: hsl(258, 60%, 57%);
+$dove-gray: hsl(0, 0%, 43%);
 
 /* GRADIENTS */
 @mixin gradient-text($angle, $from, $to) {
@@ -29,6 +30,17 @@ $true-v: hsl(258, 60%, 57%);
     background-repeat: no-repeat;
     background-clip: border-box;
   }
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Merriweather:wght@700;900&family=Playfair+Display:wght@700&family=Roboto:wght@100;300;400&display=swap');
+
+$roboto: 'Roboto', sans-serif;
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$bold: 700;
+$black: 900;
 
 /* BREAKPOINTS FOR SCREEN SIZES */
 @mixin for-phone {
