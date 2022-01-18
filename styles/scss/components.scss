@@ -4,7 +4,6 @@
 
     @include for-phone {
         display: flex;
-
         flex-flow: row-reverse wrap-reverse;
     }
 
@@ -35,6 +34,13 @@
 }
 
 article {
+    background-color: mix($rock-blue, #fff, 25%);
+    border-radius: 15px;
+
+    font-family: $be-vietnam-pro;
+    font-weight: $regular;
+    color: mix($dove-gray, #000, 85%);
+
     // remove button
     div:first-of-type {
         grid-area: button;
@@ -47,7 +53,7 @@ article {
             
             position: absolute;
             border: none;
-            outline: $size * 0.05 solid $rock-blue;
+            outline: $size * 0.06 solid $rock-blue;
             background-color: mix($rock-blue, #fff, 25%);
             border-radius: 50%;
             height: $size;
@@ -61,7 +67,7 @@ article {
                 top:20%;
                 content: '';
                 height: 60%;
-                width: 5%;
+                width: 6%;
                 background-color: $rock-blue;
             }
 
@@ -76,8 +82,8 @@ article {
             &:hover {
              display: block;
              @include gradient-background($angle: 45deg, $from: mix($rock-blue, #fff, 75%), $to: mix($blue-bell, #fff, 75%));
-             height: $size + $size * 0.05;
-             width: $size + $size * 0.05;
+             height: $size + $size * 0.06;
+             width: $size + $size * 0.06;
              outline: none;
             }
 
@@ -94,15 +100,13 @@ article {
             &:focus {
                 @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
                 outline: none;
-                height: $size + $size * 0.05;
-                width: $size + $size * 0.05;
+                height: $size + $size * 0.06;
+                width: $size + $size * 0.06;
             }
         }
     }
-}
 
-/* BOOK CARD */
-article {
+    /* BOOK CARD */
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-areas: 
@@ -112,49 +116,57 @@ article {
         "check check"
     ; 
 
-    background-color: mix($rock-blue, #fff, 25%);
-    border-radius: 15px;
+    // book title
+    p:first-of-type {
+        font-weight: $regular;
+        color: mix($boston-blue, $dove-gray, 55%);
 
-    font-family: $roboto;
-    font-weight: $regular;
-    color: mix($dove-gray, #000, 85%);
-
-    @include for-phone {
-
-        p:first-of-type {
-            padding-top: 60px;
-            font-size: 1.5em;
-            font-weight: $regular;
-            color: mix($boston-blue, $dove-gray, 55%);
+        @include for-phone {
+            //padding-top: 60px;
+            padding-top: 4vh;
+            padding-bottom: 1.5vh;
+            font-size: 4.5rem;
         }
-
-        margin: 5%;
-        width: 90vw;
     }
 
+    // book card elements 
     * {
+        // wrapper for toggle button
+        & div {
+            grid-area: check;
+    
+            //border-radius: 0 0 15px 15px;
+            //background-color: pink;
+            background-color: gray;
+            @include for-phone {
+                justify-self: start;
+                background-color: gray;
+                //height: 100px;
+            }
+        }
         @include for-phone {
             margin: 0;
-            padding: 15px 50px;
+            padding: 0.7vh 3vh;
         }
     }
 
     //first 3 children
     //*:nth-child(-n+3) {}
 
-    div {
-        grid-area: check;
-        padding: 15px 50px;
-        border-radius: 15px;
-        background-color: pink;
-        height: 100px;
-    }
+    // wrapper for toggle button
 
+
+    //first book card
     &:first-of-type {
         margin-top: 12%;
     }
-}
 
+    @include for-phone {
+        margin: 5%;
+        width: 90vw;
+        font-size: 1em;
+    }
+}
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

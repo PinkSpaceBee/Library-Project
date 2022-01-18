@@ -40,13 +40,13 @@ function showBookCard() {
         toggleBtnWrap.setAttribute('class', 'controlElems');
         elem.appendChild(toggleBtnWrap);
 
-        const toggleBtn = document.createElement('input');
-        toggleBtn.setAttribute('type', 'checkbox');
-        toggleBtnWrap.appendChild(toggleBtn);
-
         const toggleBtnText = document.createElement('span');
         toggleBtnText.textContent = 'Mark as read';
         toggleBtnWrap.appendChild(toggleBtnText);
+
+        const toggleBtn = document.createElement('input');
+        toggleBtn.setAttribute('type', 'checkbox');
+        toggleBtnWrap.appendChild(toggleBtn);
 
         let haveReadChecked = elem.children[3].textContent.includes('true');
         
