@@ -9,6 +9,7 @@
     }
 
     button {
+        // add a new book mobile button
         @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
 
         position: fixed;
@@ -25,6 +26,11 @@
         color: #fff;
 
         font-size: 6em;
+
+        &:focus,
+        &:active {
+            @include gradient-background($angle: 45deg, $from: mix($rock-blue, $boston-blue, 55%), $to: mix($blue-bell, $true-v, 35%));
+        }
     }
 }
 
@@ -67,7 +73,7 @@ article {
 
             &:hover {
              display: block;
-             @include gradient-background($angle: 45deg, $from: mix($rock-blue, #fff, 55%), $to: mix($blue-bell, #fff, 55%));
+             @include gradient-background($angle: 45deg, $from: mix($rock-blue, #fff, 75%), $to: mix($blue-bell, #fff, 75%));
              height: 105px;
              width: 105px;
              outline: none;

@@ -55,6 +55,8 @@ body {
     background-color: #98b6cd;
     color: #fff;
     font-size: 6em; }
+    #js-control-btns-phone button:focus, #js-control-btns-phone button:active {
+      background-image: -webkit-linear-gradient(45deg, #6f9fc4, #8569d1); }
 
 article div:first-of-type {
   grid-area: button;
@@ -84,7 +86,7 @@ article div:first-of-type {
       transform: rotate(-45deg); }
     article div:first-of-type button:hover {
       display: block;
-      background-image: -webkit-linear-gradient(45deg, #c7d7e3, #cac6e4);
+      background-image: -webkit-linear-gradient(45deg, #b2c8d9, #b7b2d9);
       height: 105px;
       width: 105px;
       outline: none; }
