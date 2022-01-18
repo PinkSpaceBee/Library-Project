@@ -46,6 +46,7 @@ function showBookCard() {
 
         const toggleBtn = document.createElement('input');
         toggleBtn.setAttribute('type', 'checkbox');
+        toggleBtn.setAttribute('class', 'toggle');
         toggleBtnWrap.appendChild(toggleBtn);
 
         let haveReadChecked = elem.children[3].textContent.includes('true');

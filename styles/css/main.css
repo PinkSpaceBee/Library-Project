@@ -2,6 +2,7 @@
 /* GRADIENTS */
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Be+Vietnam+Pro:wght@200;300;400&family=Merriweather:wght@700;900&family=Montserrat:wght@200;300;400&family=Outfit:wght@200;300;400&family=Playfair+Display:wght@700&display=swap");
+/* PREFIXES */
 /* BREAKPOINTS FOR SCREEN SIZES */
 body {
   display: flex;
@@ -13,7 +14,7 @@ body {
     align-content: center;
     align-items: stretch;
     background-color: #98b6cd; }
-    @media screen and (max-device-width: 599px) {
+    @media (max-device-width: 599px) {
       body #stats-section {
         height: 10vh;
         width: 100%;
@@ -25,7 +26,7 @@ body {
     body #stats-section h1 {
       display: flex;
       color: white; }
-      @media screen and (max-device-width: 599px) {
+      @media (max-device-width: 599px) {
         body #stats-section h1 {
           margin: 2vh 0 2vh 0;
           font-size: 2.7em; } }
@@ -33,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
-    @media screen and (max-device-width: 599px) {
+    @media (max-device-width: 599px) {
       body main {
         flex-direction: column;
         font-size: 3em; } }
@@ -41,7 +42,7 @@ body {
 /* BUTTONS */
 #js-control-btns-phone {
   display: none; }
-  @media screen and (max-device-width: 599px) {
+  @media (max-device-width: 599px) {
     #js-control-btns-phone {
       display: flex;
       flex-flow: row-reverse wrap-reverse; } }
@@ -112,29 +113,69 @@ article {
   article p:first-of-type {
     font-weight: 400;
     color: #527997; }
-    @media screen and (max-device-width: 599px) {
+    @media (max-device-width: 599px) {
       article p:first-of-type {
         padding-top: 4vh;
         padding-bottom: 1.5vh;
         font-size: 4.5rem; } }
-  article * div {
-    grid-area: check;
-    background-color: gray; }
-    @media screen and (max-device-width: 599px) {
-      article * div {
-        justify-self: start;
-        background-color: gray; } }
-  @media screen and (max-device-width: 599px) {
+  @media (max-device-width: 599px) {
     article * {
       margin: 0;
       padding: 0.7vh 3vh; } }
+  article div:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    grid-area: check;
+    width: 100%;
+    margin-top: 2vh;
+    padding: 0.7vh 0 0.7vh 0;
+    background-color: #899dab;
+    font-size: 1.5em;
+    color: #fff;
+    border-radius: 0 0 15px 15px; }
+    article div:last-of-type .toggle {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      align-self: center;
+      position: relative;
+      border-radius: 50px;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: #3c83b9;
+      transition: background-color ease 0.3s; }
+      article div:last-of-type .toggle:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: 35%;
+        height: 92%;
+        background: #fff;
+        right: 2%;
+        top: 4%;
+        border-radius: 50%;
+        transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
+      article div:last-of-type .toggle:checked {
+        background-color: #7750d3; }
+      article div:last-of-type .toggle:checked:before {
+        left: 2%; }
+      @media (max-device-width: 599px) {
+        article div:last-of-type .toggle {
+          width: 15%;
+          height: 2.2vh; } }
+    @media (max-device-width: 599px) {
+      article div:last-of-type {
+        justify-self: start; } }
   article:first-of-type {
     margin-top: 12%; }
-  @media screen and (max-device-width: 599px) {
+  @media (max-device-width: 599px) {
     article {
       margin: 5%;
       width: 90vw;
-      font-size: 1em; } }
+      font-size: 0.6em; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

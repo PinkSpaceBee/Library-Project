@@ -49,9 +49,20 @@ $regular: 400;
 $bold: 700;
 $black: 900;
 
+/* PREFIXES */
+
+@mixin prefix($key, $value) {
+    $prefixes: '-webkit-', '-moz-', '-ms-', '-o-', '';
+
+    @each $prefix in $prefixes {
+        #{$prefix}#{$key}: #{$value};
+    }
+}
+
 /* BREAKPOINTS FOR SCREEN SIZES */
 @mixin for-phone {
-    @media screen and (max-device-width: 599px) { @content; }
+    //@media screen and (max-device-width: 599px) { @content; }
+    @media (max-device-width: 599px) { @content; }
 }
 
 @mixin for-tablet-portrait {

@@ -131,29 +131,76 @@ article {
 
     // book card elements 
     * {
-        // wrapper for toggle button
-        & div {
-            grid-area: check;
-    
-            //border-radius: 0 0 15px 15px;
-            //background-color: pink;
-            background-color: gray;
-            @include for-phone {
-                justify-self: start;
-                background-color: gray;
-                //height: 100px;
-            }
-        }
         @include for-phone {
             margin: 0;
             padding: 0.7vh 3vh;
         }
     }
 
+    // wrapper for toggle button
+    div:last-of-type {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        grid-area: check;
+        width: 100%;
+        margin-top: 2vh;
+        padding: 0.7vh 0 0.7vh 0;
+        background-color: mix($rock-blue, $dove-gray, 65%);
+        
+        //@include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
+
+        font-size: 1.5em;
+        color: #fff;
+        border-radius: 0 0 15px 15px;
+
+        .toggle {
+            @include prefix('appearance', 'none');
+            align-self: center;
+            //display: inline-block;
+            position: relative;
+            border-radius: 50px;
+            overflow: hidden;
+            //outline: none;
+            //border: none;
+            cursor: pointer;
+            background-color: $boston-blue;
+            transition: background-color ease 0.3s;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 2;
+                width: 35%;
+                height: 92%;
+                background: #fff;
+                right: 2%;
+                top: 4%;
+                border-radius: 50%;
+                transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+            }
+
+            &:checked {
+                //background-color: $pigeon-post;
+                background-color: $true-v;
+            }
+
+            &:checked:before {
+                left: 2%;
+              }
+            @include for-phone {
+                width: 15%;
+                height: 2.2vh;
+            }
+        }
+
+        @include for-phone {
+            justify-self: start;
+            //height: 100px;
+        }
+    }
     //first 3 children
     //*:nth-child(-n+3) {}
-
-    // wrapper for toggle button
 
 
     //first book card
@@ -164,7 +211,7 @@ article {
     @include for-phone {
         margin: 5%;
         width: 90vw;
-        font-size: 1em;
+        font-size: 0.6em;
     }
 }
 
