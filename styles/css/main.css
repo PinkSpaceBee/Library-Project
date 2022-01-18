@@ -70,20 +70,31 @@ article div:first-of-type {
     height: 100px;
     width: 100px;
     margin: 30px 0; }
-  article div:first-of-type button:before, article div:first-of-type button:after {
-    position: absolute;
-    left: 47.8%;
-    top: 20%;
-    content: '';
-    height: 60%;
-    width: 5%;
-    background-color: #98b6cd; }
-  article div:first-of-type button:before {
-    transform: rotate(45deg); }
-  article div:first-of-type button:after {
-    transform: rotate(-45deg); }
-  article div:first-of-type button:hover {
-    background-color: pink; }
+    article div:first-of-type button:before, article div:first-of-type button:after {
+      position: absolute;
+      left: 47.8%;
+      top: 20%;
+      content: '';
+      height: 60%;
+      width: 5%;
+      background-color: #98b6cd; }
+    article div:first-of-type button:before {
+      transform: rotate(45deg); }
+    article div:first-of-type button:after {
+      transform: rotate(-45deg); }
+    article div:first-of-type button:hover {
+      display: block;
+      background-image: -webkit-linear-gradient(45deg, #c7d7e3, #cac6e4);
+      height: 105px;
+      width: 105px;
+      outline: none; }
+    article div:first-of-type button:hover:after, article div:first-of-type button:hover:before, article div:first-of-type button:active:before, article div:first-of-type button:active:after, article div:first-of-type button:focus:before, article div:first-of-type button:focus:after {
+      background-color: white; }
+    article div:first-of-type button:active, article div:first-of-type button:focus {
+      background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
+      outline: none;
+      height: 105px;
+      width: 105px; }
 
 /* BOOK CARD */
 article {

@@ -45,29 +45,51 @@ article {
             height: 100px;
             width: 100px;
             margin: 30px 0;
+
+            &:before,
+            &:after {
+                position: absolute;
+                left: 47.8%;
+                top:20%;
+                content: '';
+                height: 60%;
+                width: 5%;
+                background-color: $rock-blue;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+              }
+
+            &:after {
+                transform: rotate(-45deg);
+              }
+
+            &:hover {
+             display: block;
+             @include gradient-background($angle: 45deg, $from: mix($rock-blue, #fff, 55%), $to: mix($blue-bell, #fff, 55%));
+             height: 105px;
+             width: 105px;
+             outline: none;
+            }
+
+            &:hover:after,
+            &:hover:before,
+            &:active:before,
+            &:active:after,
+            &:focus:before,
+            &:focus:after {
+                background-color: white;
+            }
+
+            &:active,
+            &:focus {
+                @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
+                outline: none;
+                height: 105px;
+                width: 105px;
+            }
         }
-
-        button:before, button:after {
-            position: absolute;
-            left: 47.8%;
-            top:20%;
-            content: '';
-            height: 60%;
-            width: 5%;
-            background-color: $rock-blue;
-          }
-
-          button:before {
-            transform: rotate(45deg);
-          }
-          button:after {
-            transform: rotate(-45deg);
-          }
-
-          button:hover button:active {
-              display: block;
-              background-color: pink;
-          }
     }
 }
 
