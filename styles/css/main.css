@@ -45,7 +45,8 @@ body {
   @media (max-device-width: 599px) {
     #js-control-btns-phone {
       display: flex;
-      flex-flow: row-reverse wrap-reverse; } }
+      flex-flow: row-reverse wrap-reverse;
+      background-color: pink; } }
   #js-control-btns-phone button {
     background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
     position: fixed;
@@ -60,6 +61,9 @@ body {
     font-size: 6em; }
     #js-control-btns-phone button:focus, #js-control-btns-phone button:active {
       background-image: -webkit-linear-gradient(45deg, #6f9fc4, #8569d1); }
+    @media (max-device-width: 599px) {
+      #js-control-btns-phone button {
+        background-color: #000; } }
 
 article {
   background-color: #e5edf2;
@@ -79,12 +83,12 @@ article {
     article div:first-of-type button {
       position: absolute;
       border: none;
-      outline: 6px solid #98b6cd;
+      outline: 30px solid #98b6cd;
       background-color: #e5edf2;
       border-radius: 50%;
-      height: 100px;
-      width: 100px;
-      margin: 30px 0; }
+      height: 500px;
+      width: 500px;
+      margin: 150px 0; }
       article div:first-of-type button:before, article div:first-of-type button:after {
         position: absolute;
         left: 47.8%;
@@ -100,16 +104,16 @@ article {
       article div:first-of-type button:hover {
         display: block;
         background-image: -webkit-linear-gradient(45deg, #b2c8d9, #b7b2d9);
-        height: 106px;
-        width: 106px;
+        height: 530px;
+        width: 530px;
         outline: none; }
       article div:first-of-type button:hover:after, article div:first-of-type button:hover:before, article div:first-of-type button:active:before, article div:first-of-type button:active:after, article div:first-of-type button:focus:before, article div:first-of-type button:focus:after {
         background-color: white; }
       article div:first-of-type button:active, article div:first-of-type button:focus {
         background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
         outline: none;
-        height: 106px;
-        width: 106px; }
+        height: 530px;
+        width: 530px; }
   article p:first-of-type {
     font-weight: 400;
     color: #527997; }
@@ -117,12 +121,13 @@ article {
       article p:first-of-type {
         padding-top: 4vh;
         padding-bottom: 1.5vh;
-        font-size: 4.5rem; } }
+        font-size: 4.5rem;
+        color: #000; } }
   @media (max-device-width: 599px) {
     article * {
       margin: 0;
       padding: 0.7vh 3vh;
-      font-size: 0.7em; } }
+      font-size: 2.5rem; } }
   article div:last-of-type {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
@@ -144,7 +149,7 @@ article {
       position: relative;
       border-radius: 50px;
       cursor: pointer;
-      background-color: #3c83b9;
+      background-color: #527997;
       transition: background-color ease 0.3s; }
       article div:last-of-type .toggle:before {
         content: '';
@@ -159,7 +164,7 @@ article {
         border-radius: 50%;
         transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
       article div:last-of-type .toggle:checked {
-        background-color: #7750d3; }
+        background-color: #8970d0; }
       article div:last-of-type .toggle:checked:before {
         left: 63%; }
       @media (max-device-width: 599px) {

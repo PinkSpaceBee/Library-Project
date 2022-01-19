@@ -5,6 +5,7 @@
     @include for-phone {
         display: flex;
         flex-flow: row-reverse wrap-reverse;
+        background-color: pink;
     }
 
     button {
@@ -30,6 +31,10 @@
         &:active {
             @include gradient-background($angle: 45deg, $from: mix($rock-blue, $boston-blue, 55%), $to: mix($blue-bell, $true-v, 35%));
         }
+
+        @include for-phone {
+            background-color: #000;
+        }
     }
 }
 
@@ -40,6 +45,7 @@ article {
     font-family: $be-vietnam-pro;
     font-weight: $regular;
     color: mix($dove-gray, #000, 85%);
+    
     // remove button
     div:first-of-type {
         grid-area: button;
@@ -48,7 +54,7 @@ article {
         background-color: mix($rock-blue, #fff, 25%);
 
         button {
-            $size: 100px;
+            $size: 500px;
             
             position: absolute;
             border: none;
@@ -102,6 +108,10 @@ article {
                 height: $size + $size * 0.06;
                 width: $size + $size * 0.06;
             }
+
+            @include for-phone {
+                $size: 100px;
+            }
         }
     }
 
@@ -121,10 +131,10 @@ article {
         color: mix($boston-blue, $dove-gray, 55%);
 
         @include for-phone {
-            //padding-top: 60px;
             padding-top: 4vh;
             padding-bottom: 1.5vh;
             font-size: 4.5rem;
+            color:#000
         }
     }
 
@@ -133,7 +143,7 @@ article {
         @include for-phone {
             margin: 0;
             padding: 0.7vh 3vh;
-            font-size: 0.7em;
+            font-size: 2.5rem;
         }
     }
 
@@ -152,6 +162,7 @@ article {
         color: #fff;
         border-radius: 0 0 15px 15px;
 
+        //toggle button 
         .toggle {
             @include prefix('appearance', 'none');
             align-self: center;
@@ -161,9 +172,10 @@ article {
             //idk what does thing do; i mean i do, but not in this case
             //overflow: hidden;
             cursor: pointer;
-            background-color: $boston-blue;
+            background-color: mix($boston-blue, $dove-gray, 55%);
             transition: background-color ease 0.3s;
 
+            //this round thingy
             &:before {
                 content: '';
                 display: block;
@@ -180,9 +192,9 @@ article {
 
             &:checked {
                 //background-color: $pigeon-post;
-                background-color: $true-v;
+                background-color: mix($true-v, $blue-bell, 55%);
             }
-
+            //a round thingy when checked
             &:checked:before {
                 left: 63%;
             }
