@@ -2,11 +2,7 @@
 #js-control-btns-phone {
     display: none;
 
-    @include for-phone {
-        display: flex;
-        flex-flow: row-reverse wrap-reverse;
-        background-color: pink;
-    }
+
 
     button {
         // add a new book mobile button
@@ -35,6 +31,11 @@
         @include for-phone {
             background-color: #000;
         }
+    }
+    @include for-phone {
+        display: flex;
+        flex-flow: row-reverse wrap-reverse;
+        background-color: pink;
     }
 }
 

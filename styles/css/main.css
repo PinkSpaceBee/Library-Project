@@ -42,11 +42,6 @@ body {
 /* BUTTONS */
 #js-control-btns-phone {
   display: none; }
-  @media (max-device-width: 599px) {
-    #js-control-btns-phone {
-      display: flex;
-      flex-flow: row-reverse wrap-reverse;
-      background-color: pink; } }
   #js-control-btns-phone button {
     background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
     position: fixed;
@@ -64,6 +59,11 @@ body {
     @media (max-device-width: 599px) {
       #js-control-btns-phone button {
         background-color: #000; } }
+  @media (max-device-width: 599px) {
+    #js-control-btns-phone {
+      display: flex;
+      flex-flow: row-reverse wrap-reverse;
+      background-color: pink; } }
 
 article {
   background-color: #e5edf2;
