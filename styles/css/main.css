@@ -121,16 +121,16 @@ article {
   @media (max-device-width: 599px) {
     article * {
       margin: 0;
-      padding: 0.7vh 3vh; } }
+      padding: 0.7vh 3vh;
+      font-size: 0.7em; } }
   article div:last-of-type {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1fr 1.4fr;
     grid-area: check;
     width: 100%;
     margin-top: 2vh;
     padding: 0.7vh 0 0.7vh 0;
     background-color: #899dab;
-    font-size: 1.5em;
     color: #fff;
     border-radius: 0 0 15px 15px; }
     article div:last-of-type .toggle {
@@ -140,9 +140,9 @@ article {
       -o-appearance: none;
       appearance: none;
       align-self: center;
+      display: inline-block;
       position: relative;
       border-radius: 50px;
-      overflow: hidden;
       cursor: pointer;
       background-color: #3c83b9;
       transition: background-color ease 0.3s; }
@@ -154,28 +154,31 @@ article {
         width: 35%;
         height: 92%;
         background: #fff;
-        right: 2%;
+        left: 2%;
         top: 4%;
         border-radius: 50%;
         transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
       article div:last-of-type .toggle:checked {
         background-color: #7750d3; }
       article div:last-of-type .toggle:checked:before {
-        left: 2%; }
+        left: 63%; }
       @media (max-device-width: 599px) {
         article div:last-of-type .toggle {
           width: 15%;
           height: 2.2vh; } }
     @media (max-device-width: 599px) {
       article div:last-of-type {
-        justify-self: start; } }
+        justify-self: start;
+        font-size: 1.2em; } }
+  article div.checked {
+    background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd); }
   article:first-of-type {
     margin-top: 12%; }
   @media (max-device-width: 599px) {
     article {
       margin: 5%;
       width: 90vw;
-      font-size: 0.6em; } }
+      font-size: 1em; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

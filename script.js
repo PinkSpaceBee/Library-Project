@@ -37,7 +37,6 @@ function showBookCard() {
 
     function createToggleBtn(elem) {
         const toggleBtnWrap = document.createElement('div');
-        toggleBtnWrap.setAttribute('class', 'controlElems');
         elem.appendChild(toggleBtnWrap);
 
         const toggleBtnText = document.createElement('span');
@@ -53,6 +52,7 @@ function showBookCard() {
         
         if (haveReadChecked) {
             toggleBtn.checked = true;
+            toggleBtnWrap.setAttribute('class', 'controlElems checked');
         }
 
        toggleBtn.addEventListener('click', (e) => {
@@ -61,7 +61,16 @@ function showBookCard() {
 
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
+        let test = localStorage.getItem('storedLibrary');
+        console.log(test);
+
         haveReadChecked = e.target.checked;
+        if (haveReadChecked) {
+            toggleBtnWrap.setAttribute('class', 'controlElems checked');
+        } else {
+            toggleBtnWrap.setAttribute('class', 'controlElems');
+        }
+        //toggleBtnWrap.setAttribute('class', 'controlElems checked');
         showStats(library);
        });
     }
@@ -84,9 +93,9 @@ function showBookCard() {
 
         function removeBookCard(e) {
         const objId = e.target.parentElement.parentElement.id;
-        console.log(e.target);
-        console.log(e.target.parentElement);
-        console.log(objId);
+        //console.log(e.target);
+        //console.log(e.target.parentElement);
+        //console.log(objId);
         const found = library.find(elem => elem.id === objId);
 
         library.splice(library.indexOf(found), 1);

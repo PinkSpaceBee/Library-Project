@@ -40,7 +40,6 @@ article {
     font-family: $be-vietnam-pro;
     font-weight: $regular;
     color: mix($dove-gray, #000, 85%);
-
     // remove button
     div:first-of-type {
         grid-area: button;
@@ -134,13 +133,14 @@ article {
         @include for-phone {
             margin: 0;
             padding: 0.7vh 3vh;
+            font-size: 0.7em;
         }
     }
 
     // wrapper for toggle button
     div:last-of-type {
         display: grid;
-        grid-template-columns: 1fr 1.3fr;
+        grid-template-columns: 1fr 1.4fr;
         grid-area: check;
         width: 100%;
         margin-top: 2vh;
@@ -149,19 +149,17 @@ article {
         
         //@include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
 
-        font-size: 1.5em;
         color: #fff;
         border-radius: 0 0 15px 15px;
 
         .toggle {
             @include prefix('appearance', 'none');
             align-self: center;
-            //display: inline-block;
+            display: inline-block;
             position: relative;
             border-radius: 50px;
-            overflow: hidden;
-            //outline: none;
-            //border: none;
+            //idk what does thing do; i mean i do, but not in this case
+            //overflow: hidden;
             cursor: pointer;
             background-color: $boston-blue;
             transition: background-color ease 0.3s;
@@ -174,7 +172,7 @@ article {
                 width: 35%;
                 height: 92%;
                 background: #fff;
-                right: 2%;
+                left: 2%;
                 top: 4%;
                 border-radius: 50%;
                 transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
@@ -186,8 +184,9 @@ article {
             }
 
             &:checked:before {
-                left: 2%;
-              }
+                left: 63%;
+            }
+            
             @include for-phone {
                 width: 15%;
                 height: 2.2vh;
@@ -196,9 +195,16 @@ article {
 
         @include for-phone {
             justify-self: start;
+            font-size: 1.2em;
             //height: 100px;
         }
     }
+
+    div.checked {
+        @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
+    }
+
+
     //first 3 children
     //*:nth-child(-n+3) {}
 
@@ -211,7 +217,7 @@ article {
     @include for-phone {
         margin: 5%;
         width: 90vw;
-        font-size: 0.6em;
+        font-size: 1em;
     }
 }
 
