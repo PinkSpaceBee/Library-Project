@@ -60,13 +60,16 @@ $black: 900;
 }
 
 /* BREAKPOINTS FOR SCREEN SIZES */
+@mixin smol-bean {
+    @media (max-device-width: 319px) { @content; }
+}
+
 @mixin for-phone {
-    //@media screen and (max-device-width: 599px) { @content; }
     @media (max-device-width: 599px) { @content; }
 }
 
 @mixin for-tablet-portrait {
-    @media (min-device-width: 600px) { @content; }
+    @media (max-device-width: 899px) { @content; }
 }
 
 @mixin for-tablet-landscape {

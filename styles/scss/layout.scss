@@ -6,33 +6,44 @@ body {
     #stats-section {
         display: flex;
         justify-content: center;
-        align-content: center;
-        align-items: stretch;
-        background-color: $rock-blue;
-
-        @include for-phone {
-            height: 10vh;
-            width: 100%;
-            font-size: 2em;
-            
-            div {
-                display: none;
-            }
-            
-            button {
-                display: none;
-            }
-        }
+        background-color: mix($rock-blue, #000, 83%);
 
         h1 {
             display: flex;
-            color: white;
+            color: #fff;
+        }
 
-            @include for-phone {
-                margin: 2vh 0 2vh 0;
-                font-size: 2.7em;
+        div {
+            display: none;
+        }
+        
+        button {
+            display: none;
+        }
+
+        @include for-big-desktop;
+        @include for-desktop;
+        @include for-tablet-landscape {
+            h1 {
+                color: hotpink;
+                background-color: lemonchiffon;
             }
+        }
 
+        @include for-tablet-portrait {
+            h1 {
+                height: 2vh;
+                align-items: center;
+                font-size: 3em;
+            }
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            h1 {
+                height: 4vh;
+                font-size: 5em;
+            }
         }
     }
 
@@ -40,13 +51,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        @include for-phone {
-            flex-direction: column;
-            font-size: 3em;
-        }
     }
-
+    @include smol-bean {}
     @include for-tablet-portrait {}
     @include for-tablet-landscape {}
     @include for-desktop {}

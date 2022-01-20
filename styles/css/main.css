@@ -11,179 +11,40 @@ body {
   body #stats-section {
     display: flex;
     justify-content: center;
-    align-content: center;
-    align-items: stretch;
-    background-color: #98b6cd; }
-    @media (max-device-width: 599px) {
-      body #stats-section {
-        height: 10vh;
-        width: 100%;
-        font-size: 2em; }
-        body #stats-section div {
-          display: none; }
-        body #stats-section button {
-          display: none; } }
+    background-color: #7f97aa; }
     body #stats-section h1 {
       display: flex;
-      color: white; }
-      @media (max-device-width: 599px) {
-        body #stats-section h1 {
-          margin: 2vh 0 2vh 0;
-          font-size: 2.7em; } }
+      color: #fff; }
+    body #stats-section div {
+      display: none; }
+    body #stats-section button {
+      display: none; }
+    @media (min-device-width: 900px) {
+      body #stats-section h1 {
+        color: hotpink;
+        background-color: lemonchiffon; } }
+    @media (max-device-width: 899px) {
+      body #stats-section h1 {
+        height: 2vh;
+        align-items: center;
+        font-size: 3em; } }
+    @media (max-device-width: 599px) {
+      body #stats-section h1 {
+        height: 4vh;
+        font-size: 5em; } }
   body main {
     display: flex;
     justify-content: center;
     align-items: center; }
-    @media (max-device-width: 599px) {
-      body main {
-        flex-direction: column;
-        font-size: 3em; } }
 
 /* BUTTONS */
-#js-control-btns-phone {
-  display: none; }
-  #js-control-btns-phone button {
-    background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
-    position: fixed;
-    bottom: 5vh;
-    right: 1vh;
-    border: none;
-    border-radius: 50%;
-    width: 7vh;
-    height: 7vh;
-    background-color: #98b6cd;
-    color: #fff;
-    font-size: 6em; }
-    #js-control-btns-phone button:focus, #js-control-btns-phone button:active {
-      background-image: -webkit-linear-gradient(45deg, #6f9fc4, #8569d1); }
-    @media (max-device-width: 599px) {
-      #js-control-btns-phone button {
-        background-color: #000; } }
-  @media (max-device-width: 599px) {
-    #js-control-btns-phone {
-      display: flex;
-      flex-flow: row-reverse wrap-reverse;
-      background-color: pink; } }
-
+/* BOOK CARD */
 article {
-  background-color: #e5edf2;
-  border-radius: 15px;
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-weight: 400;
-  color: #5d5d5d;
-  /* BOOK CARD */
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-template-areas: "p button" "p button" "p button" "check check"; }
-  article div:first-of-type {
-    grid-area: button;
-    justify-self: end;
-    width: 5vh;
-    background-color: #e5edf2; }
-    article div:first-of-type button {
-      position: absolute;
-      border: none;
-      outline: 30px solid #98b6cd;
-      background-color: #e5edf2;
-      border-radius: 50%;
-      height: 500px;
-      width: 500px;
-      margin: 150px 0; }
-      article div:first-of-type button:before, article div:first-of-type button:after {
-        position: absolute;
-        left: 47.8%;
-        top: 20%;
-        content: '';
-        height: 60%;
-        width: 6%;
-        background-color: #98b6cd; }
-      article div:first-of-type button:before {
-        transform: rotate(45deg); }
-      article div:first-of-type button:after {
-        transform: rotate(-45deg); }
-      article div:first-of-type button:hover {
-        display: block;
-        background-image: -webkit-linear-gradient(45deg, #b2c8d9, #b7b2d9);
-        height: 530px;
-        width: 530px;
-        outline: none; }
-      article div:first-of-type button:hover:after, article div:first-of-type button:hover:before, article div:first-of-type button:active:before, article div:first-of-type button:active:after, article div:first-of-type button:focus:before, article div:first-of-type button:focus:after {
-        background-color: white; }
-      article div:first-of-type button:active, article div:first-of-type button:focus {
-        background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
-        outline: none;
-        height: 530px;
-        width: 530px; }
-  article p:first-of-type {
-    font-weight: 400;
-    color: #527997; }
-    @media (max-device-width: 599px) {
-      article p:first-of-type {
-        padding-top: 4vh;
-        padding-bottom: 1.5vh;
-        font-size: 4.5rem;
-        color: #000; } }
-  @media (max-device-width: 599px) {
-    article * {
-      margin: 0;
-      padding: 0.7vh 3vh;
-      font-size: 2.5rem; } }
-  article div:last-of-type {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    grid-area: check;
-    width: 100%;
-    margin-top: 2vh;
-    padding: 0.7vh 0 0.7vh 0;
-    background-color: #899dab;
-    color: #fff;
-    border-radius: 0 0 15px 15px; }
-    article div:last-of-type .toggle {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      align-self: center;
-      display: inline-block;
-      position: relative;
-      border-radius: 50px;
-      cursor: pointer;
-      background-color: #527997;
-      transition: background-color ease 0.3s; }
-      article div:last-of-type .toggle:before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 2;
-        width: 35%;
-        height: 92%;
-        background: #fff;
-        left: 2%;
-        top: 4%;
-        border-radius: 50%;
-        transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
-      article div:last-of-type .toggle:checked {
-        background-color: #8970d0; }
-      article div:last-of-type .toggle:checked:before {
-        left: 63%; }
-      @media (max-device-width: 599px) {
-        article div:last-of-type .toggle {
-          width: 15%;
-          height: 2.2vh; } }
-    @media (max-device-width: 599px) {
-      article div:last-of-type {
-        justify-self: start;
-        font-size: 1.2em; } }
-  article div.checked {
-    background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd); }
-  article:first-of-type {
-    margin-top: 12%; }
+  background-color: #e5edf2; }
   @media (max-device-width: 599px) {
     article {
-      margin: 5%;
-      width: 90vw;
-      font-size: 1em; } }
+      width: 90%;
+      font-size: 3rem; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {
