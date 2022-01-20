@@ -3,11 +3,29 @@
 /* BOOK CARD */
 
 article {
+    display: grid;
+    margin-top: 9vw;
     background-color: mix($rock-blue, #fff, 25%);
+    border-radius: 2%;
+    font: $light 5.2vw $outfit;
 
+    * {
+        padding: 0;
+        margin: 1vw 2vw 1vw 2vw;
+    }
+ 
+    //first book card
+    &:first-of-type {
+        margin-top: 12%;
+    }
+
+    @include smol-bean;
     @include for-phone {
         width: 90%;
-        font-size: 3rem;
+
+    @include smol-bean {
+        font-size: 6vw;
+    }
     }
 }
 

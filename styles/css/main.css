@@ -6,11 +6,13 @@
 /* BREAKPOINTS FOR SCREEN SIZES */
 body {
   display: flex;
+  margin: 0;
   flex-direction: column;
   justify-content: center; }
   body #stats-section {
     display: flex;
     justify-content: center;
+    width: 100vw;
     background-color: #7f97aa; }
     body #stats-section h1 {
       display: flex;
@@ -27,24 +29,37 @@ body {
       body #stats-section h1 {
         height: 2vh;
         align-items: center;
-        font-size: 3em; } }
+        font-size: 5vw; } }
     @media (max-device-width: 599px) {
       body #stats-section h1 {
         height: 4vh;
-        font-size: 5em; } }
+        font-size: 8vw; } }
   body main {
     display: flex;
-    justify-content: center;
     align-items: center; }
+    @media (max-device-width: 599px) {
+      body main {
+        flex-direction: column; } }
 
 /* BUTTONS */
 /* BOOK CARD */
 article {
-  background-color: #e5edf2; }
+  display: grid;
+  margin-top: 9vw;
+  background-color: #e5edf2;
+  border-radius: 2%;
+  font: 300 5.2vw "Outfit", sans-serif; }
+  article * {
+    padding: 0;
+    margin: 1vw 2vw 1vw 2vw; }
+  article:first-of-type {
+    margin-top: 12%; }
   @media (max-device-width: 599px) {
     article {
-      width: 90%;
-      font-size: 3rem; } }
+      width: 90%; } }
+  @media (max-device-width: 599px) and (max-device-width: 319px) {
+    article {
+      font-size: 6vw; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {
