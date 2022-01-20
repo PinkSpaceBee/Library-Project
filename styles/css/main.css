@@ -41,17 +41,21 @@ body {
       body main {
         flex-direction: column; } }
 
-/* BUTTONS */
+/* ADD, SCROLL, STATS BUTTONS */
 /* BOOK CARD */
 article {
   display: grid;
   margin-top: 9vw;
+  border-radius: 5px;
   background-color: #e5edf2;
-  border-radius: 2%;
-  font: 300 5.2vw "Outfit", sans-serif; }
+  font: 300 2.5vh "Outfit", sans-serif;
+  color: #5d5d5d; }
   article * {
     padding: 0;
     margin: 1vw 2vw 1vw 2vw; }
+  article p:first-of-type {
+    font: 400 3vh "Outfit", sans-serif;
+    color: #527997; }
   article:first-of-type {
     margin-top: 12%; }
   @media (max-device-width: 599px) {

@@ -1,17 +1,24 @@
-/* BUTTONS */
+/* ADD, SCROLL, STATS BUTTONS */
 
 /* BOOK CARD */
 
 article {
     display: grid;
     margin-top: 9vw;
+    border-radius: 5px;
     background-color: mix($rock-blue, #fff, 25%);
-    border-radius: 2%;
-    font: $light 5.2vw $outfit;
+    font: $light 2.5vh $outfit;
+    color: mix($dove-gray, #000, 85%);
 
     * {
         padding: 0;
         margin: 1vw 2vw 1vw 2vw;
+    }
+
+    // book title
+    p:first-of-type {
+        font: $regular 3vh $outfit;
+        color: mix($boston-blue, $dove-gray, 55%);
     }
  
     //first book card
