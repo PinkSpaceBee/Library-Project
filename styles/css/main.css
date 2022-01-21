@@ -49,7 +49,7 @@ article {
   margin-top: 9vw;
   border-radius: 5px;
   background-color: #e5edf2;
-  font: 400 2.2vh "Be Vietnam Pro", sans-serif;
+  font: 400 2.4vh "Be Vietnam Pro", sans-serif;
   color: #5d5d5d; }
   article * {
     grid-column: 1/2;
@@ -59,29 +59,41 @@ article {
     grid-column: 1;
     font-size: 3vh;
     color: #527997;
-    padding-bottom: 1vh;
-    padding-top: 3.4vh; }
+    padding-top: 3.4vh;
+    padding-bottom: 1vh; }
   article:first-of-type {
     margin-top: 12%; }
   article div:first-of-type {
     grid-column: 2;
-    grid-row: 1; }
+    grid-row: 1;
+    padding: 0.3vh 0; }
     article div:first-of-type button {
+      position: absolute;
       width: 10vw;
       height: 10vw;
-      border: none;
-      border-radius: 50%;
       padding: 0;
-      outline: 0.6vw solid #98b6cd;
+      border: none;
       background-color: #e5edf2; }
+      article div:first-of-type button:before, article div:first-of-type button:after {
+        position: absolute;
+        right: 40%;
+        top: 20%;
+        content: '';
+        height: 70%;
+        width: 2px;
+        background-color: #98b6cd; }
+        @media (max-device-width: 319px) {
+          article div:first-of-type button:before, article div:first-of-type button:after {
+            right: 60%; } }
+      article div:first-of-type button:before {
+        transform: rotate(45deg); }
+      article div:first-of-type button:after {
+        transform: rotate(-45deg); }
       @media (max-device-width: 319px) {
         article div:first-of-type button {
-          width: 20px;
-          height: 20px;
+          width: 13vw;
+          height: 13vw;
           padding: 0; } }
-    @media (max-device-width: 319px) {
-      article div:first-of-type {
-        width: 50px; } }
   article div:last-of-type {
     grid-column: 1/2; }
   @media (max-device-width: 599px) {
@@ -89,8 +101,7 @@ article {
       width: 90%; } }
   @media (max-device-width: 599px) and (max-device-width: 319px) {
     article {
-      font-size: 6vw;
-      padding: 2.4vh 0; } }
+      font-size: 6vw; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

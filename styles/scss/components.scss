@@ -5,11 +5,10 @@
 article {
     display: grid;
     grid-template-columns: 4fr 1fr;
-
     margin-top: 9vw;
     border-radius: 5px;
     background-color: mix($rock-blue, #fff, 25%);
-    font: $regular 2.2vh $be-vietnam-pro;
+    font: $regular 2.4vh $be-vietnam-pro;
     color: mix($dove-gray, #000, 85%);
 
     * {
@@ -23,8 +22,8 @@ article {
         grid-column: 1;
         font-size: 3vh;
         color: mix($boston-blue, $dove-gray, 55%);
-        padding-bottom: 1vh;
         padding-top: 3.4vh;
+        padding-bottom: 1vh;
     }
  
     //first book card
@@ -32,33 +31,61 @@ article {
         margin-top: 12%;
     }
 
-    // remove button
+    // remove button wrapper
     div:first-of-type {
         grid-column: 2;
         grid-row: 1;
+        padding: 0.3vh 0;
         //padding: 1vh 0;
 
+        //remove button
         button {
-            //align-self: start;
+            position: absolute;
             $size: 10vw;
             width: $size;
             height: $size;
-            border: none;
-            border-radius: 50%;
+
             padding: 0;
-            outline: $size * 0.06 solid $rock-blue;
+
+            border: none;;
+            //border: $size * 0.06 solid $rock-blue;
+
             background-color: mix($rock-blue, #fff, 25%);
 
+            &:before,
+            &:after {
+                position: absolute;
+                right: 40%;
+                top:20%;
+                content: '';
+                height: 70%;
+                width: 2px;
+                background-color: $rock-blue;
+
+                @include smol-bean {
+                    right: 60%;
+                }
+            }
+
+            &:before {
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+
             @include smol-bean {
-                $size: 20px;
+                $size: 13vw;
                 width: $size;
                 height: $size;
+
                 padding: 0;
             }
         }
 
         @include smol-bean {
-            width: 50px;
+            //width: 50px;
             //padding: 0;
         }
     }
@@ -74,7 +101,7 @@ article {
         @include smol-bean {
             //grid-template-columns: 10fr 1fr;
             font-size: 6vw;
-            padding: 2.4vh 0;
+            //padding: 2.4vh 0;
         }
     }
 }
