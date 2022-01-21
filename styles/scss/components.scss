@@ -1,24 +1,33 @@
 /* ADD, SCROLL, STATS BUTTONS */
 
 // add new book mobile button
-#js-add-btn-phone {
-    position: fixed;
-    right: 2vw;
-    bottom: 8vw;
+#js-control-btns-phone {
 
-    border: none;
-    border-radius: 50%;
+    * {
+        position: fixed;
+        border: none;
+        border-radius: 50%;
+        
+        $size: 12vw;
+        width: $size;
+        height: $size;
 
-    width: 7vh;
-    height: 7vh;
+        background-color: mix($boston-blue, $dove-gray, 55%);
+        opacity: 0.5;
 
-    color: #fff;
+        font: $regular 6vw $arvo;
+        color: #fff;
+    }
 
-    font-size: 2em;
+    #js-add-btn-phone {
+        right: 2vw;
+        bottom: 8vw;
+    }
 
-    //@include gradient-background($angle: 45deg, $from: $rock-blue, $to: $neptune);
-
-    background-color: mix($boston-blue, $dove-gray, 55%);;
+    #show-stats-btn {
+        right: 2vw;
+        bottom: 24vw;
+    }
 }
 
 /* BOOK CARD */
@@ -68,7 +77,6 @@ article {
             padding: 0;
 
             border: none;;
-            //border: $size * 0.06 solid $rock-blue;
 
             background-color: mix($rock-blue, #fff, 25%);
 
@@ -117,10 +125,9 @@ article {
         width: 125%;
         padding: 1vh 0 1vh 0;
         margin: 1vh 0 0 0;
-        //background-color: $rock-blue;
+
         background-color: mix($rock-blue, $dove-gray, 65%);
         color: #fff;
-        //background-color: mix($boston-blue, $dove-gray, 55%);
         border-radius: 0 0 5px 5px;
 
         //checkbox

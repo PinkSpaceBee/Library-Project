@@ -42,17 +42,24 @@ body {
         flex-direction: column; } }
 
 /* ADD, SCROLL, STATS BUTTONS */
-#js-add-btn-phone {
+#js-control-btns-phone * {
   position: fixed;
-  right: 2vw;
-  bottom: 8vw;
   border: none;
   border-radius: 50%;
-  width: 7vh;
-  height: 7vh;
-  color: #fff;
-  font-size: 2em;
-  background-color: #527997; }
+  width: 12vw;
+  height: 12vw;
+  background-color: #527997;
+  opacity: 0.5;
+  font: 400 6vw "Arvo", serif;
+  color: #fff; }
+
+#js-control-btns-phone #js-add-btn-phone {
+  right: 2vw;
+  bottom: 8vw; }
+
+#js-control-btns-phone #show-stats-btn {
+  right: 2vw;
+  bottom: 24vw; }
 
 /* BOOK CARD */
 article {
