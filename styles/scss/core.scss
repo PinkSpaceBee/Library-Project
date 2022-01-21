@@ -3,8 +3,10 @@ $pigeon-post: hsl(206, 42%, 77%);
 $rock-blue: hsl(206, 34%, 70%);
 $boston-blue: hsl(206, 51%, 48%);
 $blue-bell: hsl(248, 34%, 70%);
-$true-v: hsl(258, 60%, 57%);
 $dove-gray: hsl(0, 0%, 43%);
+$hippie-blue: hsl(191, 32%, 54%);
+$neptune: hsl(191, 32%, 63%);
+
 
 /* GRADIENTS */
 @mixin gradient-text($angle, $from, $to) {
@@ -60,13 +62,16 @@ $black: 900;
 }
 
 /* BREAKPOINTS FOR SCREEN SIZES */
+@mixin smol-bean {
+    @media (max-device-width: 319px) { @content; }
+}
+
 @mixin for-phone {
-    //@media screen and (max-device-width: 599px) { @content; }
     @media (max-device-width: 599px) { @content; }
 }
 
 @mixin for-tablet-portrait {
-    @media (min-device-width: 600px) { @content; }
+    @media (max-device-width: 899px) { @content; }
 }
 
 @mixin for-tablet-landscape {

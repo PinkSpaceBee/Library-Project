@@ -6,148 +6,113 @@
 /* BREAKPOINTS FOR SCREEN SIZES */
 body {
   display: flex;
+  margin: 0;
   flex-direction: column;
   justify-content: center; }
   body #stats-section {
     display: flex;
     justify-content: center;
-    align-content: center;
-    align-items: stretch;
-    background-color: #98b6cd; }
-    @media (max-device-width: 599px) {
-      body #stats-section {
-        height: 10vh;
-        width: 100%;
-        font-size: 2em; }
-        body #stats-section div {
-          display: none; }
-        body #stats-section button {
-          display: none; } }
+    width: 100vw;
+    background-color: #527997; }
     body #stats-section h1 {
       display: flex;
-      color: white; }
-      @media (max-device-width: 599px) {
-        body #stats-section h1 {
-          margin: 2vh 0 2vh 0;
-          font-size: 2.7em; } }
+      color: #fff; }
+    body #stats-section div {
+      display: none; }
+    body #stats-section button {
+      display: none; }
+    @media (min-device-width: 900px) {
+      body #stats-section h1 {
+        color: hotpink;
+        background-color: lemonchiffon; } }
+    @media (max-device-width: 899px) {
+      body #stats-section h1 {
+        height: 2vh;
+        align-items: center;
+        font-size: 5vw; } }
+    @media (max-device-width: 599px) {
+      body #stats-section h1 {
+        height: 4vh;
+        font-size: 8vw; } }
   body main {
     display: flex;
-    justify-content: center;
     align-items: center; }
     @media (max-device-width: 599px) {
       body main {
-        flex-direction: column;
-        font-size: 3em; } }
+        flex-direction: column; } }
 
-/* BUTTONS */
-#js-control-btns-phone {
-  display: none; }
-  #js-control-btns-phone button {
-    background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
-    position: fixed;
-    bottom: 5vh;
-    right: 1vh;
-    border: none;
-    border-radius: 50%;
-    width: 7vh;
-    height: 7vh;
-    background-color: #98b6cd;
-    color: #fff;
-    font-size: 6em; }
-    #js-control-btns-phone button:focus, #js-control-btns-phone button:active {
-      background-image: -webkit-linear-gradient(45deg, #6f9fc4, #8569d1); }
-    @media (max-device-width: 599px) {
-      #js-control-btns-phone button {
-        background-color: #000; } }
-  @media (max-device-width: 599px) {
-    #js-control-btns-phone {
-      display: flex;
-      flex-flow: row-reverse wrap-reverse;
-      background-color: pink; } }
-
+/* ADD, SCROLL, STATS BUTTONS */
+/* BOOK CARD */
 article {
-  background-color: #e5edf2;
-  border-radius: 15px;
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-weight: 400;
-  color: #5d5d5d;
-  /* BOOK CARD */
   display: grid;
   grid-template-columns: 4fr 1fr;
-  grid-template-areas: "p button" "p button" "p button" "check check"; }
+  margin-top: 9vw;
+  border-radius: 5px;
+  background-color: #e5edf2;
+  font: 400 2.4vh "Be Vietnam Pro", sans-serif;
+  color: #5d5d5d; }
+  article * {
+    grid-column: 1/2;
+    padding: 0 1.5vh;
+    margin: 1vw 2vw 1vw 2vw; }
+  article p:first-of-type {
+    grid-column: 1;
+    font-size: 3vh;
+    color: #527997;
+    padding-top: 3.4vh;
+    padding-bottom: 1vh; }
+  article:first-of-type {
+    margin-top: 12%; }
   article div:first-of-type {
-    grid-area: button;
-    justify-self: end;
-    width: 5vh;
-    background-color: #e5edf2; }
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0.3vh 0; }
     article div:first-of-type button {
       position: absolute;
+      width: 10vw;
+      height: 10vw;
+      padding: 0;
       border: none;
-      outline: 30px solid #98b6cd;
-      background-color: #e5edf2;
-      border-radius: 50%;
-      height: 500px;
-      width: 500px;
-      margin: 150px 0; }
+      background-color: #e5edf2; }
       article div:first-of-type button:before, article div:first-of-type button:after {
         position: absolute;
-        left: 47.8%;
+        right: 40%;
         top: 20%;
         content: '';
-        height: 60%;
-        width: 6%;
-        background-color: #98b6cd; }
+        height: 70%;
+        width: 0.4vw;
+        background-color: #527997; }
+        @media (max-device-width: 319px) {
+          article div:first-of-type button:before, article div:first-of-type button:after {
+            right: 60%; } }
       article div:first-of-type button:before {
         transform: rotate(45deg); }
       article div:first-of-type button:after {
         transform: rotate(-45deg); }
-      article div:first-of-type button:hover {
-        display: block;
-        background-image: -webkit-linear-gradient(45deg, #b2c8d9, #b7b2d9);
-        height: 530px;
-        width: 530px;
-        outline: none; }
-      article div:first-of-type button:hover:after, article div:first-of-type button:hover:before, article div:first-of-type button:active:before, article div:first-of-type button:active:after, article div:first-of-type button:focus:before, article div:first-of-type button:focus:after {
-        background-color: white; }
-      article div:first-of-type button:active, article div:first-of-type button:focus {
-        background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd);
-        outline: none;
-        height: 530px;
-        width: 530px; }
-  article p:first-of-type {
-    font-weight: 400;
-    color: #527997; }
-    @media (max-device-width: 599px) {
-      article p:first-of-type {
-        padding-top: 4vh;
-        padding-bottom: 1.5vh;
-        font-size: 4.5rem;
-        color: #000; } }
-  @media (max-device-width: 599px) {
-    article * {
-      margin: 0;
-      padding: 0.7vh 3vh;
-      font-size: 2.5rem; } }
+      @media (max-device-width: 319px) {
+        article div:first-of-type button {
+          width: 13vw;
+          height: 13vw;
+          padding: 0; } }
   article div:last-of-type {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    grid-area: check;
-    width: 100%;
-    margin-top: 2vh;
-    padding: 0.7vh 0 0.7vh 0;
+    display: flex;
+    align-items: center;
+    width: 125%;
+    padding: 1vh 0 1vh 0;
+    margin: 1vh 0 0 0;
     background-color: #899dab;
     color: #fff;
-    border-radius: 0 0 15px 15px; }
+    border-radius: 0 0 5px 5px; }
     article div:last-of-type .toggle {
       -webkit-appearance: none;
       -moz-appearance: none;
       -ms-appearance: none;
       -o-appearance: none;
       appearance: none;
-      align-self: center;
-      display: inline-block;
       position: relative;
       border-radius: 50px;
+      width: 12.9vw;
+      height: 4.3vw;
       cursor: pointer;
       background-color: #527997;
       transition: background-color ease 0.3s; }
@@ -155,35 +120,25 @@ article {
         content: '';
         display: block;
         position: absolute;
-        z-index: 2;
-        width: 35%;
-        height: 92%;
+        width: 3.44vw;
+        height: 3.44vw;
         background: #fff;
-        left: 2%;
-        top: 4%;
+        left: 0.43vw;
+        top: 0.43vw;
         border-radius: 50%;
         transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
       article div:last-of-type .toggle:checked {
-        background-color: #8970d0; }
+        background-color: #487da6; }
       article div:last-of-type .toggle:checked:before {
-        left: 63%; }
-      @media (max-device-width: 599px) {
-        article div:last-of-type .toggle {
-          width: 15%;
-          height: 2.2vh; } }
-    @media (max-device-width: 599px) {
-      article div:last-of-type {
-        justify-self: start;
-        font-size: 1.2em; } }
-  article div.checked {
-    background-image: -webkit-linear-gradient(45deg, #98b6cd, #9f98cd); }
-  article:first-of-type {
-    margin-top: 12%; }
+        left: 9.03vw; }
+  article .checked {
+    background-image: -webkit-linear-gradient(45deg, #6a9cc3, #82b4bf); }
   @media (max-device-width: 599px) {
     article {
-      margin: 5%;
-      width: 90vw;
-      font-size: 1em; } }
+      width: 90%; } }
+  @media (max-device-width: 599px) and (max-device-width: 319px) {
+    article {
+      font-size: 6vw; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

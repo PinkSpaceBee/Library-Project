@@ -1,175 +1,117 @@
-/* BUTTONS */
-#js-control-btns-phone {
-    display: none;
+/* ADD, SCROLL, STATS BUTTONS */
 
-
-
-    button {
-        // add a new book mobile button
-        @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
-
-        position: fixed;
-        bottom: 5vh;
-        right: 1vh;
-
-        border: none;
-        border-radius: 50%;
-
-        width: 7vh;
-        height: 7vh;
-
-        background-color: $rock-blue;
-        color: #fff;
-
-        font-size: 6em;
-
-        &:focus,
-        &:active {
-            @include gradient-background($angle: 45deg, $from: mix($rock-blue, $boston-blue, 55%), $to: mix($blue-bell, $true-v, 35%));
-        }
-
-        @include for-phone {
-            background-color: #000;
-        }
-    }
-    @include for-phone {
-        display: flex;
-        flex-flow: row-reverse wrap-reverse;
-        background-color: pink;
-    }
-}
+/* BOOK CARD */
 
 article {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    margin-top: 9vw;
+    border-radius: 5px;
     background-color: mix($rock-blue, #fff, 25%);
-    border-radius: 15px;
-
-    font-family: $be-vietnam-pro;
-    font-weight: $regular;
+    font: $regular 2.4vh $be-vietnam-pro;
     color: mix($dove-gray, #000, 85%);
-    
-    // remove button
-    div:first-of-type {
-        grid-area: button;
-        justify-self: end;
-        width: 5vh;
-        background-color: mix($rock-blue, #fff, 25%);
 
+    * {
+        grid-column: 1/2;
+        padding: 0 1.5vh;
+        margin: 1vw 2vw 1vw 2vw;
+    }
+
+    // book title
+    p:first-of-type {
+        grid-column: 1;
+        font-size: 3vh;
+        color: mix($boston-blue, $dove-gray, 55%);
+        padding-top: 3.4vh;
+        padding-bottom: 1vh;
+    }
+ 
+    //first book card
+    &:first-of-type {
+        margin-top: 12%;
+    }
+
+    // remove button wrapper
+    div:first-of-type {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 0.3vh 0;
+        //padding: 1vh 0;
+
+        //remove button
         button {
-            $size: 500px;
-            
             position: absolute;
-            border: none;
-            outline: $size * 0.06 solid $rock-blue;
-            background-color: mix($rock-blue, #fff, 25%);
-            border-radius: 50%;
-            height: $size;
+            $size: 10vw;
             width: $size;
-            margin: $size * 0.3 0;
+            height: $size;
+
+            padding: 0;
+
+            border: none;;
+            //border: $size * 0.06 solid $rock-blue;
+
+            background-color: mix($rock-blue, #fff, 25%);
 
             &:before,
             &:after {
                 position: absolute;
-                left: 47.8%;
+                right: 40%;
                 top:20%;
                 content: '';
-                height: 60%;
-                width: 6%;
-                background-color: $rock-blue;
+                height: 70%;
+                width: 0.4vw;
+                background-color: mix($boston-blue, $dove-gray, 55%);
+
+                @include smol-bean {
+                    right: 60%;
+                }
             }
 
             &:before {
                 transform: rotate(45deg);
-              }
+            }
 
             &:after {
                 transform: rotate(-45deg);
-              }
-
-            &:hover {
-             display: block;
-             @include gradient-background($angle: 45deg, $from: mix($rock-blue, #fff, 75%), $to: mix($blue-bell, #fff, 75%));
-             height: $size + $size * 0.06;
-             width: $size + $size * 0.06;
-             outline: none;
             }
 
-            &:hover:after,
-            &:hover:before,
-            &:active:before,
-            &:active:after,
-            &:focus:before,
-            &:focus:after {
-                background-color: white;
-            }
+            @include smol-bean {
+                $size: 13vw;
+                width: $size;
+                height: $size;
 
-            &:active,
-            &:focus {
-                @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
-                outline: none;
-                height: $size + $size * 0.06;
-                width: $size + $size * 0.06;
+                padding: 0;
             }
+        }
 
-            @include for-phone {
-                $size: 100px;
-            }
+        @include smol-bean {
+            //width: 50px;
+            //padding: 0;
         }
     }
 
-    /* BOOK CARD */
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-areas: 
-        "p button"
-        "p button"
-        "p button"
-        "check check"
-    ; 
-
-    // book title
-    p:first-of-type {
-        font-weight: $regular;
-        color: mix($boston-blue, $dove-gray, 55%);
-
-        @include for-phone {
-            padding-top: 4vh;
-            padding-bottom: 1.5vh;
-            font-size: 4.5rem;
-            color:#000
-        }
-    }
-
-    // book card elements 
-    * {
-        @include for-phone {
-            margin: 0;
-            padding: 0.7vh 3vh;
-            font-size: 2.5rem;
-        }
-    }
-
-    // wrapper for toggle button
+    //toggle wrapper
     div:last-of-type {
-        display: grid;
-        grid-template-columns: 1fr 1.4fr;
-        grid-area: check;
-        width: 100%;
-        margin-top: 2vh;
-        padding: 0.7vh 0 0.7vh 0;
+        display: flex;
+        align-items: center;
+        width: 125%;
+        padding: 1vh 0 1vh 0;
+        margin: 1vh 0 0 0;
+        //background-color: $rock-blue;
         background-color: mix($rock-blue, $dove-gray, 65%);
-        
-        //@include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
-
         color: #fff;
-        border-radius: 0 0 15px 15px;
+        //background-color: mix($boston-blue, $dove-gray, 55%);
+        border-radius: 0 0 5px 5px;
 
-        //toggle button 
+        //checkbox
         .toggle {
             @include prefix('appearance', 'none');
-            align-self: center;
-            display: inline-block;
+            //display: inline-block;
             position: relative;
             border-radius: 50px;
+            $size: 4.3vw;
+            width: $size * 3;
+            height: $size;
             //idk what does thing do; i mean i do, but not in this case
             //overflow: hidden;
             cursor: pointer;
@@ -181,56 +123,40 @@ article {
                 content: '';
                 display: block;
                 position: absolute;
-                z-index: 2;
-                width: 35%;
-                height: 92%;
+                //z-index: 2;
+                width: $size * 0.8;
+                height: $size * 0.8;
+                //outline: 2px solid sandybrown;
                 background: #fff;
-                left: 2%;
-                top: 4%;
+                left: ($size - $size * 0.8) / 2;
+                top: ($size - $size * 0.8) / 2;
                 border-radius: 50%;
                 transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
             }
 
             &:checked {
-                //background-color: $pigeon-post;
-                background-color: mix($true-v, $blue-bell, 55%);
+                background-color: mix($boston-blue, $dove-gray, 75%);
             }
             //a round thingy when checked
             &:checked:before {
-                left: 63%;
-            }
-            
-            @include for-phone {
-                width: 15%;
-                height: 2.2vh;
+                left: $size * 3 - ($size * 0.8 + (($size - $size * 0.8) / 2));
             }
         }
-
-        @include for-phone {
-            justify-self: start;
-            font-size: 1.2em;
-            //height: 100px;
-        }
     }
 
-    div.checked {
-        @include gradient-background($angle: 45deg, $from: $rock-blue, $to: $blue-bell);
+    .checked {
+        @include gradient-background($angle: 45deg, $from: mix($boston-blue, $rock-blue, 50%), $to: $neptune);
     }
 
-
-    //first 3 children
-    //*:nth-child(-n+3) {}
-
-
-    //first book card
-    &:first-of-type {
-        margin-top: 12%;
-    }
-
+    @include smol-bean;
     @include for-phone {
-        margin: 5%;
-        width: 90vw;
-        font-size: 1em;
+        width: 90%;
+
+        @include smol-bean {
+            //grid-template-columns: 10fr 1fr;
+            font-size: 6vw;
+            //padding: 2.4vh 0;
+        }
     }
 }
 
