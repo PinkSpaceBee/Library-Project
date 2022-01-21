@@ -1,7 +1,27 @@
 /* ADD, SCROLL, STATS BUTTONS */
 
-/* BOOK CARD */
+// add new book mobile button
+#js-add-btn-phone {
+    position: fixed;
+    right: 2vw;
+    bottom: 8vw;
 
+    border: none;
+    border-radius: 50%;
+
+    width: 7vh;
+    height: 7vh;
+
+    color: #fff;
+
+    font-size: 2em;
+
+    //@include gradient-background($angle: 45deg, $from: $rock-blue, $to: $neptune);
+
+    background-color: mix($boston-blue, $dove-gray, 55%);;
+}
+
+/* BOOK CARD */
 article {
     display: grid;
     grid-template-columns: 4fr 1fr;
