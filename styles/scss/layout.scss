@@ -2,6 +2,8 @@ body {
    display: flex;
 
    margin:0;
+   // there was a problem with the body not filling up the page width; it was 
+   // resolved with setting margin as 0
    //padding:0;
    //width:100%;
    //height:100%;
@@ -16,7 +18,9 @@ body {
         justify-content: center;
         //align-content: stretch;
         width: 100vw;
-        background-color: mix($rock-blue, #000, 83%);
+        background-color: mix($boston-blue, $dove-gray, 55%);
+        // can't decide on the header's color
+        //background-color: mix($rock-blue, #000, 83%);
 
         h1 {
             display: flex;

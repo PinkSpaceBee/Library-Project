@@ -4,21 +4,31 @@
 
 article {
     display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-areas: 
+        "p button"
+        "p button"
+        "p button"
+        "check check"
+    ;
+
     margin-top: 9vw;
     border-radius: 5px;
     background-color: mix($rock-blue, #fff, 25%);
-    font: $light 2.5vh $outfit;
+    font: $regular 2.2vh $be-vietnam-pro;
     color: mix($dove-gray, #000, 85%);
 
     * {
-        padding: 0;
+        padding: 0 1.5vh;
         margin: 1vw 2vw 1vw 2vw;
     }
 
     // book title
     p:first-of-type {
-        font: $regular 3vh $outfit;
+        font-size: 3vh;
         color: mix($boston-blue, $dove-gray, 55%);
+        padding-bottom: 1vh;
+        padding-top: 3.4vh;
     }
  
     //first book card
@@ -26,13 +36,37 @@ article {
         margin-top: 12%;
     }
 
+    // remove button
+    div:first-of-type {
+        grid-area: button;
+        padding: 0;
+
+        button {
+            $size: 10vw;
+            width: $size;
+            height: $size;
+            border: none;
+            border-radius: 50%;
+            padding: 0;
+            outline: $size * 0.06 solid $rock-blue;
+            background-color: mix($rock-blue, #fff, 25%);
+
+            @include smol-bean {
+                $size: 20px;
+                width: $size;
+                height: $size;
+            }
+        }
+    }
+
     @include smol-bean;
     @include for-phone {
         width: 90%;
 
-    @include smol-bean {
-        font-size: 6vw;
-    }
+        @include smol-bean {
+            font-size: 6vw;
+            padding: 2.4vh 0;
+        }
     }
 }
 
