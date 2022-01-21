@@ -4,13 +4,7 @@
 
 article {
     display: grid;
-    grid-template-columns: 5fr 1fr;
-    grid-template-areas: 
-        "p button"
-        "p button"
-        "p button"
-        "check check"
-    ;
+    grid-template-columns: 4fr 1fr;
 
     margin-top: 9vw;
     border-radius: 5px;
@@ -19,12 +13,14 @@ article {
     color: mix($dove-gray, #000, 85%);
 
     * {
+        grid-column: 1/2;
         padding: 0 1.5vh;
         margin: 1vw 2vw 1vw 2vw;
     }
 
     // book title
     p:first-of-type {
+        grid-column: 1;
         font-size: 3vh;
         color: mix($boston-blue, $dove-gray, 55%);
         padding-bottom: 1vh;
@@ -38,10 +34,12 @@ article {
 
     // remove button
     div:first-of-type {
-        grid-area: button;
-        padding: 0;
+        grid-column: 2;
+        grid-row: 1;
+        //padding: 1vh 0;
 
         button {
+            //align-self: start;
             $size: 10vw;
             width: $size;
             height: $size;
@@ -55,8 +53,18 @@ article {
                 $size: 20px;
                 width: $size;
                 height: $size;
+                padding: 0;
             }
         }
+
+        @include smol-bean {
+            width: 50px;
+            //padding: 0;
+        }
+    }
+
+    div:last-of-type {
+        grid-column: 1/2;
     }
 
     @include smol-bean;
@@ -64,6 +72,7 @@ article {
         width: 90%;
 
         @include smol-bean {
+            //grid-template-columns: 10fr 1fr;
             font-size: 6vw;
             padding: 2.4vh 0;
         }

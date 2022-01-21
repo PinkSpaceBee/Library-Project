@@ -45,17 +45,18 @@ body {
 /* BOOK CARD */
 article {
   display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-template-areas: "p button" "p button" "p button" "check check";
+  grid-template-columns: 4fr 1fr;
   margin-top: 9vw;
   border-radius: 5px;
   background-color: #e5edf2;
   font: 400 2.2vh "Be Vietnam Pro", sans-serif;
   color: #5d5d5d; }
   article * {
+    grid-column: 1/2;
     padding: 0 1.5vh;
     margin: 1vw 2vw 1vw 2vw; }
   article p:first-of-type {
+    grid-column: 1;
     font-size: 3vh;
     color: #527997;
     padding-bottom: 1vh;
@@ -63,8 +64,8 @@ article {
   article:first-of-type {
     margin-top: 12%; }
   article div:first-of-type {
-    grid-area: button;
-    padding: 0; }
+    grid-column: 2;
+    grid-row: 1; }
     article div:first-of-type button {
       width: 10vw;
       height: 10vw;
@@ -76,7 +77,13 @@ article {
       @media (max-device-width: 319px) {
         article div:first-of-type button {
           width: 20px;
-          height: 20px; } }
+          height: 20px;
+          padding: 0; } }
+    @media (max-device-width: 319px) {
+      article div:first-of-type {
+        width: 50px; } }
+  article div:last-of-type {
+    grid-column: 1/2; }
   @media (max-device-width: 599px) {
     article {
       width: 90%; } }
