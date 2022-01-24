@@ -49,15 +49,27 @@ body {
   width: 12vw;
   height: 12vw;
   background-color: #527997;
-  opacity: 0.5;
-  font: 400 6vw "Arvo", serif;
-  color: #fff; }
+  opacity: 0.5; }
 
 #js-control-btns-phone #js-add-btn-phone {
   right: 2vw;
   bottom: 8vw; }
+  #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
+    position: absolute;
+    top: 30%;
+    content: '';
+    height: 40%;
+    width: 0.6vw;
+    background-color: #fff; }
+    @media (max-device-width: 319px) {
+      #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
+        right: 60%; } }
+  #js-control-btns-phone #js-add-btn-phone:before {
+    transform: rotate(90deg); }
+  #js-control-btns-phone #js-add-btn-phone:after {
+    transform: rotate(180deg); }
 
-#js-control-btns-phone #show-stats-btn {
+#js-control-btns-phone #up-btn {
   right: 2vw;
   bottom: 24vw; }
 
