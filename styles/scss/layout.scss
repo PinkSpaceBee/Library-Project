@@ -16,8 +16,9 @@ body {
     #stats-section {
         display: flex;
         justify-content: center;
-        //align-content: stretch;
+        align-items: center;
         width: 100vw;
+        height: 10vh;
         background-color: mix($boston-blue, $dove-gray, 55%);
         // can't decide on the header's color
         //background-color: mix($rock-blue, #000, 83%);
@@ -25,6 +26,27 @@ body {
         h1 {
             display: flex;
             color: #fff;
+        }
+
+        #mob-stats-btn {
+            //display: flex;
+            //flex-direction: column;
+            //align-items: space-around;
+            position: fixed;
+            left: 0;
+            width: 14vw;
+            height: 5vh;
+            background-color: mix($boston-blue, $dove-gray, 55%);
+            border: none;
+
+            * {
+                //display: block;
+                display: flex;
+                margin: 1vw;
+                height: 0.8vw;
+                background-color: #fff;
+            }
+
         }
 
         div {
@@ -55,7 +77,6 @@ body {
         @include smol-bean;
         @include for-phone {
             h1 {
-                height: 4vh;
                 font-size: 8vw;
             }
         }

@@ -149,7 +149,7 @@ function showStats(arr) {
 
     pElems.forEach(p => p.children.length === 0 ? p.appendChild(document.createElement('span')) : p);
 
-    const stats = Array.from(statsSection.querySelectorAll('span'));
+    const stats = Array.from(statsDiv.querySelectorAll('span'));
 
     stats[0].textContent = booksTotal;
     stats[1].textContent = readBooksTotal;
