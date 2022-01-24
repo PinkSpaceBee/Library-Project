@@ -44,30 +44,29 @@ body {
 /* ADD, SCROLL, STATS BUTTONS */
 #js-control-btns-phone * {
   position: fixed;
+  padding: 0;
   border: none;
   border-radius: 50%;
-  width: 12vw;
-  height: 12vw;
+  width: 13vw;
+  height: 13vw;
   background-color: #527997;
   opacity: 0.5; }
 
 #js-control-btns-phone #js-add-btn-phone {
   right: 2vw;
-  bottom: 8vw; }
+  bottom: 6vw; }
   #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
     position: absolute;
-    top: 30%;
-    content: '';
-    height: 40%;
     width: 0.6vw;
-    background-color: #fff; }
-    @media (max-device-width: 319px) {
-      #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
-        right: 60%; } }
+    height: 4vw;
+    left: 6.2vw;
+    top: 4.5vw;
+    background-color: #fff;
+    content: ''; }
   #js-control-btns-phone #js-add-btn-phone:before {
-    transform: rotate(90deg); }
-  #js-control-btns-phone #js-add-btn-phone:after {
     transform: rotate(180deg); }
+  #js-control-btns-phone #js-add-btn-phone:after {
+    transform: rotate(90deg); }
 
 #js-control-btns-phone #up-btn {
   right: 2vw;
