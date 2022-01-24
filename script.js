@@ -159,13 +159,13 @@ function showStats(arr) {
 
 addBookBtn.addEventListener('click', () => {
     // show a form to add a new book 
-    document.querySelector('#js-new-book-card').style.display = 'block';
+    document.querySelector('#js-new-book-card').style.display = 'grid';
 });
 
 //console.log(addBookBtnPhone === null);
 
 addBookBtnPhone.addEventListener('click', () => {
-    document.querySelector('#js-new-book-card').style.display = 'block';
+    document.querySelector('#js-new-book-card').style.display = 'grid';
 });
 
 submitBookBtn.addEventListener('click', () => {

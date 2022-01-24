@@ -26,13 +26,14 @@ body {
         h1 {
             display: flex;
             color: #fff;
+            //font: $bold 2.4vh $playfair-display;
         }
-
+        //hamburger menu
         #mob-stats-btn {
             //display: flex;
             //flex-direction: column;
             //align-items: space-around;
-            position: fixed;
+            position: absolute;
             left: 0;
             width: 14vw;
             height: 5vh;
@@ -42,7 +43,7 @@ body {
             * {
                 //display: block;
                 display: flex;
-                margin: 1vw;
+                margin: 1.2vw;
                 height: 0.8vw;
                 background-color: #fff;
             }

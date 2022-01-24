@@ -75,10 +75,6 @@
             right: 40.5%;
         }
     }
-
-    #show-stats-btn {
-        
-    }
 }
 
 /* BOOK CARD */
@@ -240,5 +236,11 @@ article {
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {
-    display: none;
+    //display: none;
+
+    background-color: papayawhip;
+    width: 100vw;
+    display: grid;
+    //grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 }
