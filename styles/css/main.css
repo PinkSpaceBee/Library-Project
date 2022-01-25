@@ -198,7 +198,22 @@ article {
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {
-  background-color: papayawhip;
-  width: 100vw;
+  display: none;
   display: grid;
-  grid-template-rows: 1fr; }
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  z-index: 1;
+  margin: 5vw;
+  width: 95vw;
+  height: 70vh;
+  background-color: #527997;
+  opacity: 0.95; }
+  * #js-new-book-card label {
+    background-color: aquamarine;
+    grid-column-start: 1;
+    grid-column-end: 3; }
+
+/*
+Honestly, creating design IS SO HARD. I would finish the project in no time if I didn't have to figure out how is the fricking book card supposed to look, which bottom margin is better - 5vw or 6vw and whatever. And this stuff is endless! Now I have another button I didn't think I would need. Whyyyyy the gods of the frontend, whyyyy. But seriously, I want to do more programming than styling :( 
+*/
