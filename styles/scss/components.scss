@@ -186,8 +186,6 @@ article {
             $size: 4.3vw;
             width: $size * 3;
             height: $size;
-            //idk what does thing do; i mean i do, but not in this case
-            //overflow: hidden;
             cursor: pointer;
             background-color: mix($boston-blue, $dove-gray, 55%);
             transition: background-color ease 0.3s;
@@ -197,10 +195,8 @@ article {
                 content: '';
                 display: block;
                 position: absolute;
-                //z-index: 2;
                 width: $size * 0.8;
                 height: $size * 0.8;
-                //outline: 2px solid sandybrown;
                 background: #fff;
                 left: ($size - $size * 0.8) / 2;
                 top: ($size - $size * 0.8) / 2;
