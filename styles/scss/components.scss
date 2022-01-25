@@ -84,7 +84,7 @@ article {
     margin-top: 9vw;
     border-radius: 5px;
     background-color: mix($rock-blue, #fff, 25%);
-    font: $regular 2.4vh $be-vietnam-pro;
+    //font: $regular 2.4vh $be-vietnam-pro;
     color: mix($dove-gray, #000, 85%);
 
     * {
@@ -246,34 +246,63 @@ article {
 
     margin: 5vw;
     padding: 7vw 0;
-    width: 93vw;
+    width: 91vw;
     height: 50vh;
     background-color: mix($boston-blue, $dove-gray, 55%);
-    opacity: 0.95;
+    border-radius: 5px;
 
+    //font-size: 4.5vw;
+    color: #fff;
     * {
         margin: 4vw;
+    }
+    p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        font-size: 6vw;
     }
 
     * & label {
         grid-column-start: 1;
         grid-column-end: 3;
+
+        &:last-of-type {
+            margin-top: 5vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            //background-color: azure;
+        }
     }
 
     & input {
         margin: 0;
+        padding: 2vw 15vw 2vw 2vw;
+        font: $regular 2.4vh $be-vietnam-pro;
+    }
+
+    button {
+        background-color: azure;
+    }
+
+    //checkbox; I made it slighty bigger
+    #js-have-read {
+        width: 4.2vw;
+        height: 4.2vw;
     }
 }
 
 /* DIV THAT DARKENS A PAGE WHEN THE FORM FOR ADDING A BOOK IS OPENED */
 #test {
+    display: none;
+
     display: block;
     position: fixed;
     top: 0;
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
+    background-color: mix($boston-blue, #000, 15%);
     opacity: 0.8;
 }
 /*

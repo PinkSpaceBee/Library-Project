@@ -12,6 +12,7 @@ body {
    flex-direction: column;
    justify-content: center;
    //@include prefix('font-size', '100%');
+   font: $regular 2.4vh $be-vietnam-pro;
 
     #stats-section {
         display: flex;
