@@ -170,6 +170,11 @@ addBookBtnPhone.addEventListener('click', () => {
     document.querySelector('#test').style.display = 'block';
 });
 
+document.querySelector('#js-close-book-card').addEventListener('click', () => {
+    document.querySelector('#js-new-book-card').style.display = 'none';
+    document.querySelector('#test').style.display = 'none';
+})
+
 submitBookBtn.addEventListener('click', () => {
     addNewBook();
 
@@ -179,6 +184,7 @@ submitBookBtn.addEventListener('click', () => {
     inputFields.forEach(i => i.value = '');
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
+    document.querySelector('#test').style.display = 'none';
 
     showBookCard();
     showStats(library);
