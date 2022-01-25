@@ -154,7 +154,15 @@ function showStats(arr) {
     stats[0].textContent = booksTotal;
     stats[1].textContent = readBooksTotal;
     stats[2].textContent = notReadTotal;
-
+/*
+    document.querySelector('body').addEventListener('click', () => {
+        statsDiv.style.display = 'none';
+    });
+*/  
+    statsDiv.style.display = 'none';
+    
+    document.querySelector('#js-mob-stats-btn').addEventListener('click', () =>{ statsDiv.style.display === 'none' ? statsDiv.style.display = 'grid' : statsDiv.style.display = 'none';
+    });
 }
 
 addBookBtn.addEventListener('click', () => {
