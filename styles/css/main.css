@@ -12,6 +12,9 @@ body {
   font: 400 2.4vh "Be Vietnam Pro", sans-serif; }
   body #stats-section {
     display: flex;
+    position: fixed;
+    z-index: 1;
+    top: 0;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -118,7 +121,7 @@ article {
     padding-top: 3.4vh;
     padding-bottom: 1vh; }
   article:first-of-type {
-    margin-top: 12%; }
+    margin-top: 16vh; }
   article div:first-of-type {
     grid-column: 2;
     grid-row: 1;
@@ -246,7 +249,7 @@ article {
     background-color: palegreen; }
 
 /* DIV THAT DARKENS A PAGE WHEN THE FORM FOR ADDING A BOOK IS OPENED */
-#test {
+#js-page-opaque {
   display: none;
   position: fixed;
   top: 0;

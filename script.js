@@ -160,19 +160,19 @@ function showStats(arr) {
 addBookBtn.addEventListener('click', () => {
     // show a form to add a new book 
     document.querySelector('#js-new-book-card').style.display = 'grid';
-    document.querySelector('#test').style.display = 'block';
+    document.querySelector('#js-page-opaque').style.display = 'block';
 });
 
 //console.log(addBookBtnPhone === null);
 
 addBookBtnPhone.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'grid';
-    document.querySelector('#test').style.display = 'block';
+    document.querySelector('#js-page-opaque').style.display = 'block';
 });
 
 document.querySelector('#js-close-book-card').addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'none';
-    document.querySelector('#test').style.display = 'none';
+    document.querySelector('#js-page-opaque').style.display = 'none';
 })
 
 submitBookBtn.addEventListener('click', () => {
@@ -184,7 +184,7 @@ submitBookBtn.addEventListener('click', () => {
     inputFields.forEach(i => i.value = '');
     document.querySelector('#js-have-read').checked = false;
     document.querySelector('#js-new-book-card').style.display = 'none';
-    document.querySelector('#test').style.display = 'none';
+    document.querySelector('#js-page-opaque').style.display = 'none';
 
     showBookCard();
     showStats(library);
