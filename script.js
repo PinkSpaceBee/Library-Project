@@ -162,7 +162,18 @@ function showStats(arr) {
     });
 }
 
-function scrollUp() {}
+function scrollUp() {
+    rootElement.scrollTo({
+        top: 0,
+        //is it me or does 'smooth' do the same thing as 'auto'?
+        behavior: 'smooth',
+    });
+}
+const scrollUpBtn = document.querySelector('#up-btn');
+const rootElement = document.documentElement;
+
+// huh, I didn't know about this syntax. Why do I pass a function as a  parameter though? Is it, like, a callback? I mean it IS a callback. So eventListeners are, in fact, functions? How did it never occured to me? I've got to learn about them more
+rootElement.addEventListener('click', scrollUp);
 
 addBookBtn.addEventListener('click', () => {
     // show a form to add a new book 
