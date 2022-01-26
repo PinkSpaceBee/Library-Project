@@ -207,12 +207,9 @@ submitBookBtn.addEventListener('click', () => {
 
     showBookCard();
     showStats(library);
+
+    rootElement.scrollTo(0, rootElement.scrollHeight);
 });
-
-const downBtn = document.querySelector('#down');
-
-
-
 
 showBookCard();
 showStats(library);
