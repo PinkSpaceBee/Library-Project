@@ -83,9 +83,10 @@ body {
 
         @include for-tablet-portrait {
             h1 {
-                height: 2vh;
+                //what does this line do?
+                //height: 2vh;
                 align-items: center;
-                font-size: 5vw;
+                font-size: 3.5vw;
             }
         }
 
@@ -101,8 +102,13 @@ body {
         display: flex;
         align-items: center;
 
+        @include for-tablet-portrait {
+            flex-wrap: wrap;
+        }
+
         @include smol-bean;
         @include for-phone {
+            flex-wrap: nowrap;
             flex-direction: column;
         }
     }

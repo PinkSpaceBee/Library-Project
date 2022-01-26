@@ -55,17 +55,20 @@ body {
         background-color: lemonchiffon; } }
     @media (max-device-width: 899px) {
       body #stats-section h1 {
-        height: 2vh;
         align-items: center;
-        font-size: 5vw; } }
+        font-size: 3.5vw; } }
     @media (max-device-width: 599px) {
       body #stats-section h1 {
         font-size: 8vw; } }
   body main {
     display: flex;
     align-items: center; }
+    @media (max-device-width: 899px) {
+      body main {
+        flex-wrap: wrap; } }
     @media (max-device-width: 599px) {
       body main {
+        flex-wrap: nowrap;
         flex-direction: column; } }
 
 /* ADD, SCROLL BUTTONS */
@@ -209,6 +212,9 @@ article {
         left: 9.03vw; }
   article .checked {
     background-image: -webkit-linear-gradient(45deg, #6a9cc3, #82b4bf); }
+  @media (max-device-width: 899px) {
+    article {
+      width: 40%; } }
   @media (max-device-width: 599px) {
     article {
       width: 90%; } }

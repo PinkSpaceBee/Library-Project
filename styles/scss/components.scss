@@ -234,6 +234,10 @@ article {
         @include gradient-background($angle: 45deg, $from: mix($boston-blue, $rock-blue, 50%), $to: $neptune);
     }
 
+    @include for-tablet-portrait {
+        width: 40%;
+    }
+
     @include smol-bean;
     @include for-phone {
         width: 90%;
