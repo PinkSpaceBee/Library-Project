@@ -47,6 +47,10 @@ body {
                 background-color: #fff;
             }
 
+            &:hover,
+            &:active {
+                transform: scale(1.2);
+            }
         }
         // div with stats 
         #js-stats {

@@ -62,7 +62,6 @@ function showBookCard() {
         localStorage.setItem('storedLibrary', JSON.stringify(library));
 
         let test = localStorage.getItem('storedLibrary');
-        console.log(test);
 
         haveReadChecked = e.target.checked;
         if (haveReadChecked) {
@@ -70,7 +69,6 @@ function showBookCard() {
         } else {
             toggleBtnWrap.setAttribute('class', 'controlElems');
         }
-        //toggleBtnWrap.setAttribute('class', 'controlElems checked');
         showStats(library);
        });
     }
@@ -83,7 +81,6 @@ function showBookCard() {
     
         const removeBtn = document.createElement('button');
         removeBtn.setAttribute('class', 'controlElems');
-        //removeBtn.textContent = '\u2715';
         removeBtnWrap.appendChild(removeBtn)
 
         removeBtnWrap.addEventListener('click', (e) => {
@@ -93,9 +90,6 @@ function showBookCard() {
 
         function removeBookCard(e) {
         const objId = e.target.parentElement.parentElement.id;
-        //console.log(e.target);
-        //console.log(e.target.parentElement);
-        //console.log(objId);
         const found = library.find(elem => elem.id === objId);
 
         library.splice(library.indexOf(found), 1);
@@ -182,7 +176,6 @@ addBookBtn.addEventListener('click', () => {
     document.querySelector('#js-page-opaque').style.display = 'block';
 });
 
-//console.log(addBookBtnPhone === null);
 
 addBookBtnPhone.addEventListener('click', () => {
     document.querySelector('#js-new-book-card').style.display = 'grid';

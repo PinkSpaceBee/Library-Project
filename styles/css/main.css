@@ -35,6 +35,8 @@ body {
         margin: 1.2vw;
         height: 0.8vw;
         background-color: #fff; }
+      body #stats-section #js-mob-stats-btn:hover, body #stats-section #js-mob-stats-btn:active {
+        transform: scale(1.2); }
     body #stats-section #js-stats {
       display: none;
       position: fixed;
@@ -66,7 +68,7 @@ body {
       body main {
         flex-direction: column; } }
 
-/* ADD, SCROLL, STATS BUTTONS */
+/* ADD, SCROLL BUTTONS */
 #js-control-btns-phone * {
   position: fixed;
   padding: 0;
@@ -76,6 +78,9 @@ body {
   height: 12vw;
   background-color: #527997;
   opacity: 0.5; }
+  #js-control-btns-phone *:hover, #js-control-btns-phone *:active {
+    transform: scale(1.2);
+    background-color: #3c83b9; }
 
 #js-control-btns-phone #js-add-btn-phone {
   right: 2vw;
@@ -161,6 +166,10 @@ article {
           width: 13vw;
           height: 13vw;
           padding: 0; } }
+      article div:first-of-type button:hover, article div:first-of-type button:active {
+        transform: scale(1.3); }
+        article div:first-of-type button:hover:before, article div:first-of-type button:hover:after, article div:first-of-type button:active:before, article div:first-of-type button:active:after {
+          background-color: #3c83b9; }
   article div:last-of-type {
     display: flex;
     align-items: center;
