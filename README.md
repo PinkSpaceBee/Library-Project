@@ -1,3 +1,6 @@
+You can see a live preview of the library app here: 
+https://pinkspacebee.github.io/Library-Project/
+
 ***
 STUFF TO DO: 
 1, RED: add a button to change book's read status +
