@@ -48,7 +48,7 @@ body {
             height: 0.5vw; } }
         @media (max-device-width: 599px) {
           body #stats-section #js-mob-stats-btn * {
-            height: 0.8vw; } }
+            height: 0.6vw; } }
       @media (max-device-width: 899px) {
         body #stats-section #js-mob-stats-btn {
           width: 8vw;
@@ -100,7 +100,12 @@ body {
     align-items: center; }
     @media (max-device-width: 899px) {
       body main {
-        flex-wrap: wrap; } }
+        flex-wrap: wrap;
+        justify-content: center; } }
+    @media (max-device-width: 768px) and (orientation: landscape) {
+      body main {
+        flex-wrap: nowrap;
+        flex-direction: column; } }
     @media (max-device-width: 599px) {
       body main {
         flex-wrap: nowrap;
@@ -157,20 +162,41 @@ body {
 article {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  margin-top: 9vw;
   border-radius: 5px;
   background-color: #e5edf2;
   color: #5d5d5d; }
+  @media (max-device-width: 899px) {
+    article {
+      width: 60%;
+      margin-top: 9vw;
+      font-size: 3vw; } }
+  @media (max-device-width: 768px) and (orientation: landscape) {
+    article {
+      width: 80%;
+      margin-top: 6vw; } }
+  @media (max-device-width: 599px) {
+    article {
+      width: 90%;
+      margin-top: 9vw;
+      font-size: 4vw; } }
   article * {
     grid-column: 1/2;
     padding: 0 1.5vh;
     margin: 1vw 2vw 1vw 2vw; }
   article p:first-of-type {
     grid-column: 1;
-    font-size: 5vw;
     color: #527997;
     padding-top: 3.4vh;
     padding-bottom: 1vh; }
+    @media (max-device-width: 899px) {
+      article p:first-of-type {
+        font-size: 3.7vw; } }
+    @media (max-device-width: 768px) and (orientation: landscape) {
+      article p:first-of-type {
+        font-size: 4vw; } }
+    @media (max-device-width: 599px) {
+      article p:first-of-type {
+        font-size: 5vw; } }
   article:first-of-type {
     margin-top: 16vh; }
   article div:first-of-type {
@@ -247,15 +273,6 @@ article {
         left: 9.03vw; }
   article .checked {
     background-image: -webkit-linear-gradient(45deg, #6a9cc3, #82b4bf); }
-  @media (max-device-width: 899px) {
-    article {
-      width: 40%; } }
-  @media (max-device-width: 599px) {
-    article {
-      width: 90%; } }
-  @media (max-device-width: 599px) and (max-device-width: 319px) {
-    article {
-      font-size: 6vw; } }
 
 /* FORM FOR ADDING A BOOK */
 #js-new-book-card {

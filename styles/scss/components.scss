@@ -87,11 +87,30 @@
 article {
     display: grid;
     grid-template-columns: 4fr 1fr;
-    margin-top: 9vw;
     border-radius: 5px;
     background-color: mix($rock-blue, #fff, 25%);
     //font: $regular 2.4vh $be-vietnam-pro;
     color: mix($dove-gray, #000, 85%);
+
+    @include for-tablet-portrait {
+        width: 60%;
+        margin-top: 9vw;
+
+        font-size: 3vw;
+    }
+
+    @include for-phone-landscape {
+        width: 80%;
+        margin-top: 6vw;
+    }
+
+    @include smol-bean;
+    @include for-phone {
+        width: 90%;
+        margin-top: 9vw;
+        
+        font-size: 4vw;
+    }
 
     * {
         grid-column: 1/2;
@@ -102,10 +121,22 @@ article {
     // book title
     p:first-of-type {
         grid-column: 1;
-        font-size: 5vw;
         color: mix($boston-blue, $dove-gray, 55%);
         padding-top: 3.4vh;
         padding-bottom: 1vh;
+
+        @include for-tablet-portrait {
+            font-size: 3.7vw;
+        }
+    
+        @include for-phone-landscape {
+            font-size: 4vw;
+        }
+    
+        @include smol-bean;
+        @include for-phone {
+            font-size: 5vw;
+        }
     }
  
     //first book card
@@ -232,23 +263,6 @@ article {
 
     .checked {
         @include gradient-background($angle: 45deg, $from: mix($boston-blue, $rock-blue, 50%), $to: $neptune);
-    }
-
-    @include for-tablet-portrait {
-        width: 40%;
-    }
-
-    @include smol-bean;
-    @include for-phone {
-    //@include for-phone-landscape {
-        width: 90%;
-        //background-color: plum;
-
-        @include smol-bean {
-            //grid-template-columns: 10fr 1fr;
-            font-size: 6vw;
-            //padding: 2.4vh 0;
-        }
     }
 }
 

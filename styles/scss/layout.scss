@@ -59,7 +59,7 @@ body {
 
                 @include smol-bean;
                 @include for-phone {
-                    height: 0.8vw;
+                    height: 0.6vw;
                 }
             }
 
@@ -147,6 +147,12 @@ body {
 
         @include for-tablet-portrait {
             flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @include for-phone-landscape {
+            flex-wrap: nowrap;
+            flex-direction: column;
         }
 
         @include smol-bean;
