@@ -66,7 +66,8 @@ $black: 900;
 }
 
 @mixin for-phone-landscape {
-    @media (orientation: landscape) and (max-device-width: 599px) { @content; }
+    @media(max-device-width: 768px)
+    and (orientation: landscape) { @content; }
 }
 
 @mixin for-tablet-portrait {
