@@ -117,10 +117,16 @@ body {
   padding: 0;
   border: none;
   border-radius: 50%;
-  width: 12vw;
-  height: 12vw;
   background-color: #527997;
   opacity: 0.5; }
+  @media (max-device-width: 899px) {
+    #js-control-btns-phone * {
+      width: 8vw;
+      height: 8vw; } }
+  @media (max-device-width: 599px) {
+    #js-control-btns-phone * {
+      width: 12vw;
+      height: 12vw; } }
   #js-control-btns-phone *:hover, #js-control-btns-phone *:active {
     transform: scale(1.2);
     background-color: #3c83b9; }
@@ -130,33 +136,63 @@ body {
   bottom: 6vw; }
   #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
     position: absolute;
-    width: 0.6vw;
-    height: 4vw;
-    left: 5.7vw;
-    top: 4vw;
     background-color: #fff;
     content: ''; }
+    @media (max-device-width: 899px) {
+      #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
+        width: 0.3vw;
+        height: 4vw;
+        left: 3.85vw;
+        top: 2vw; } }
+    @media (max-device-width: 599px) {
+      #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
+        width: 0.6vw;
+        height: 4vw;
+        left: 5.7vw;
+        top: 4vw; } }
   #js-control-btns-phone #js-add-btn-phone:before {
     transform: rotate(180deg); }
   #js-control-btns-phone #js-add-btn-phone:after {
     transform: rotate(90deg); }
 
 #js-control-btns-phone #up-btn {
-  right: 2vw;
-  bottom: 24vw; }
+  right: 2vw; }
+  @media (max-device-width: 899px) {
+    #js-control-btns-phone #up-btn {
+      bottom: 18vw; } }
+  @media (max-device-width: 599px) {
+    #js-control-btns-phone #up-btn {
+      bottom: 24vw; } }
   #js-control-btns-phone #up-btn:before, #js-control-btns-phone #up-btn:after {
     position: absolute;
-    width: 0.6vw;
-    height: 3vw;
-    top: 35%;
     background-color: #fff;
     content: ''; }
+    @media (max-device-width: 899px) {
+      #js-control-btns-phone #up-btn:before, #js-control-btns-phone #up-btn:after {
+        width: 0.3vw;
+        height: 3vw;
+        top: 30%; } }
+    @media (max-device-width: 599px) {
+      #js-control-btns-phone #up-btn:before, #js-control-btns-phone #up-btn:after {
+        width: 0.6vw;
+        height: 3vw;
+        top: 35%; } }
   #js-control-btns-phone #up-btn:before {
-    transform: rotate(45deg);
-    left: 40.5%; }
+    transform: rotate(45deg); }
+    @media (max-device-width: 899px) {
+      #js-control-btns-phone #up-btn:before {
+        left: 36%; } }
+    @media (max-device-width: 599px) {
+      #js-control-btns-phone #up-btn:before {
+        left: 40.5%; } }
   #js-control-btns-phone #up-btn:after {
-    transform: rotate(-45deg);
-    right: 40.5%; }
+    transform: rotate(-45deg); }
+    @media (max-device-width: 899px) {
+      #js-control-btns-phone #up-btn:after {
+        right: 36%; } }
+    @media (max-device-width: 599px) {
+      #js-control-btns-phone #up-btn:after {
+        right: 40.5%; } }
 
 /* BOOK CARD */
 article {

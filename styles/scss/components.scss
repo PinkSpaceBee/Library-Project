@@ -2,15 +2,27 @@
 
 // add new book mobile button
 #js-control-btns-phone {
-    $size-parent: 12vw;
     * {
         position: fixed;
         padding: 0;
         border: none;
         border-radius: 50%;
         
-        width: $size-parent;
-        height: $size-parent;
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            $size-parent: 8vw;
+
+            width: $size-parent;
+            height: $size-parent;
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            $size-parent: 12vw;
+
+            width: $size-parent;
+            height: $size-parent;
+        }
 
         background-color: mix($boston-blue, $dove-gray, 55%);
         opacity: 0.5;
@@ -28,15 +40,34 @@
 
         &:before,
         &:after {
-            $width: 0.6vw;
-            $height: 4vw;
+
             position: absolute;
 
-            width: $width;
-            height: $height;
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                $size-parent: 8vw;
+                $width: 0.3vw;
+                $height: 4vw;
 
-            left: ($size-parent - $width) / 2;
-            top: ($size-parent - $height) / 2;
+                width: $width;
+                height: $height;
+
+                left: ($size-parent - $width) / 2;
+                top: ($size-parent - $height) / 2;
+            }
+
+            @include smol-bean;
+            @include for-phone {
+                $size-parent: 12vw;
+                $width: 0.6vw;
+                $height: 4vw;
+
+                width: $width;
+                height: $height;
+
+                left: ($size-parent - $width) / 2;
+                top: ($size-parent - $height) / 2;
+            }
 
             background-color: #fff;
             content: '';
@@ -55,17 +86,42 @@
 
     #up-btn {
         right: 2vw;
-        bottom: 24vw;
+
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            bottom: 18vw;
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            bottom: 24vw;
+        }
 
         &:before,
         &:after {
-            $width: 0.6vw;
-            $height: 3vw;
             position: absolute;
 
-            width: $width;
-            height: $height;
-            top: 35%;
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                $width: 0.3vw;
+                $height: 3vw;
+
+                width: $width;
+                height: $height;
+
+                top: 30%;
+            }
+
+            @include smol-bean;
+            @include for-phone {
+                $width: 0.6vw;
+                $height: 3vw;
+
+                width: $width;
+                height: $height;
+
+                top: 35%;
+            }
 
             background-color: #fff;
             content: '';
@@ -73,12 +129,30 @@
         //slash
         &:before {
             transform: rotate(45deg);
-            left: 40.5%;
+
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                left: 36%;
+            }
+
+            @include smol-bean;
+            @include for-phone {
+                left: 40.5%;
+            }
         }
         //back slash
         &:after {
             transform: rotate(-45deg);
-            right: 40.5%;
+
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                right: 36%;
+            }
+
+            @include smol-bean;
+            @include for-phone {
+                right: 40.5%;
+            }
         }
     }
 }
