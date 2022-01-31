@@ -21,7 +21,7 @@ body {
     background-color: #527997; }
     @media (max-device-width: 899px) {
       body #stats-section {
-        height: 15vh; } }
+        height: 12vh; } }
     @media (max-device-width: 768px) and (orientation: landscape) {
       body #stats-section {
         height: 13vh; } }
@@ -71,7 +71,7 @@ body {
       color: #fff; }
       @media (max-device-width: 899px) {
         body #stats-section #js-stats {
-          margin-top: 15vh;
+          margin-top: 12vh;
           padding: 3vw;
           font-size: 3vw; } }
       @media (max-device-width: 768px) and (orientation: landscape) {
@@ -168,7 +168,7 @@ article {
   @media (max-device-width: 899px) {
     article {
       width: 60%;
-      margin-top: 9vw;
+      margin-top: 5vw;
       font-size: 3vw; } }
   @media (max-device-width: 768px) and (orientation: landscape) {
     article {
@@ -197,8 +197,15 @@ article {
     @media (max-device-width: 599px) {
       article p:first-of-type {
         font-size: 5vw; } }
-  article:first-of-type {
-    margin-top: 16vh; }
+  @media (max-device-width: 899px) {
+    article:first-of-type {
+      margin-top: 20vh; } }
+  @media (max-device-width: 768px) and (orientation: landscape) {
+    article:first-of-type {
+      margin-top: 25vh; } }
+  @media (max-device-width: 599px) {
+    article:first-of-type {
+      margin-top: 16vh; } }
   article div:first-of-type {
     grid-column: 2;
     grid-row: 1;

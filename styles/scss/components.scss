@@ -88,13 +88,13 @@ article {
     display: grid;
     grid-template-columns: 4fr 1fr;
     border-radius: 5px;
+
     background-color: mix($rock-blue, #fff, 25%);
-    //font: $regular 2.4vh $be-vietnam-pro;
     color: mix($dove-gray, #000, 85%);
 
     @include for-tablet-portrait {
         width: 60%;
-        margin-top: 9vw;
+        margin-top: 5vw;
 
         font-size: 3vw;
     }
@@ -141,7 +141,18 @@ article {
  
     //first book card
     &:first-of-type {
-        margin-top: 16vh;
+        @include for-tablet-portrait {
+            margin-top: 20vh;
+        }
+
+        @include for-phone-landscape {
+            margin-top: 25vh;
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            margin-top: 16vh;
+        }
     }
 
     // remove button wrapper

@@ -21,7 +21,7 @@ body {
         background-color: mix($boston-blue, $dove-gray, 55%);
 
         @include for-tablet-portrait {
-            height: 15vh;
+            height: 12vh;
         }
 
         @include for-phone-landscape {
@@ -93,7 +93,7 @@ body {
             color: #fff;
 
             @include for-tablet-portrait {
-                margin-top: 15vh;
+                margin-top: 12vh;
                 padding: 3vw;
                 font-size: 3vw;
             }
