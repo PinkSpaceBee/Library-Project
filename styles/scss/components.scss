@@ -111,6 +111,10 @@ article {
     //first book card
     &:first-of-type {
         margin-top: 16vh;
+
+        @include for-phone-landscape {
+            margin-top: 25vh;
+        }
     }
 
     // remove button wrapper
@@ -271,11 +275,20 @@ article {
     color: #fff;
     * {
         margin: 4vw;
+
+        @include for-phone-landscape {
+            //margin: 3vw;
+            margin: 3vw;
+        }
     }
     p {
         grid-column-start: 1;
         grid-column-end: 3;
         font-size: 6vw;
+
+        @include for-phone-landscape {
+            font-size: 4vw;
+        }
     }
 
     * & label {
@@ -283,18 +296,27 @@ article {
         grid-column-end: 3;
 
         &:last-of-type {
-            margin-top: 5vw;
+            margin-bottom: 5vw;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 2fr;
             align-items: center;
             //background-color: azure;
+        }
+
+        @include for-phone-landscape {
+            font-size: 3vw;
         }
     }
 
     & input {
-        margin: 0;
+        margin: 0.5vw;
         padding: 2vw 15vw 2vw 2vw;
-        font: $regular 2.4vh $be-vietnam-pro;
+        font: $regular 4vw $be-vietnam-pro;
+
+        @include for-phone-landscape {
+            padding: 0.5vw 20vw 0.5vw 0.5vw;
+            font-size: 2.4vw;
+        }
     }
 
     //cancel button
@@ -303,7 +325,7 @@ article {
         background-color: mix($boston-blue, $dove-gray, 55%);
         border: 2px solid $catskill-white;
         border-radius: 5px;
-        font: $regular 2.6vh $be-vietnam-pro;
+        font: $regular 4.6vw $be-vietnam-pro;
         color: $catskill-white;
         height: 8vh;
 
@@ -314,13 +336,29 @@ article {
             border: 2px solid $boston-blue;
             border: 2px solid $catskill-white;
         }
+
+        @include for-phone-landscape {
+            font-size: 3vw;
+            height: 10vh;
+        }
     }
 
     //checkbox; I made it slighty bigger
     #js-have-read {
-        width: 4.2vw;
-        height: 4.2vw;
-        background-color: palegreen;
+        $size: 4.2vw;
+
+        @include for-phone-landscape {
+            $size: 3vw;
+        }
+
+        width: $size;
+        height: $size;
+    }
+
+    @include for-phone-landscape {
+        grid-template-rows: repeat(5, 10vh);
+        height: 70vh;
+        padding: 2vw 0;
     }
 }
 
