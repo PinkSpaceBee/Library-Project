@@ -223,12 +223,12 @@ article {
           height: 5vw; } }
       @media (max-device-width: 768px) and (orientation: landscape) {
         article div:first-of-type button {
-          width: 10vw;
-          height: 10vw; } }
-      @media (max-device-width: 599px) {
-        article div:first-of-type button {
           width: 7vw;
           height: 7vw; } }
+      @media (max-device-width: 599px) {
+        article div:first-of-type button {
+          width: 10vw;
+          height: 10vw; } }
       @media (max-device-width: 319px) {
         article div:first-of-type button {
           width: 13vw;
@@ -270,26 +270,44 @@ article {
       appearance: none;
       position: relative;
       border-radius: 50px;
-      width: 12.9vw;
-      height: 4.3vw;
       cursor: pointer;
       background-color: #527997;
       transition: background-color ease 0.3s; }
+      @media (max-device-width: 899px) {
+        article div:last-of-type .toggle {
+          width: 9vw;
+          height: 3vw; } }
+      @media (max-device-width: 599px) {
+        article div:last-of-type .toggle {
+          width: 12.9vw;
+          height: 4.3vw; } }
       article div:last-of-type .toggle:before {
         content: '';
         display: block;
         position: absolute;
-        width: 3.44vw;
-        height: 3.44vw;
         background: #fff;
-        left: 0.43vw;
-        top: 0.43vw;
         border-radius: 50%;
         transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
+        @media (max-device-width: 899px) {
+          article div:last-of-type .toggle:before {
+            width: 2.4vw;
+            height: 2.4vw;
+            left: 0.3vw;
+            top: 0.3vw; } }
+        @media (max-device-width: 599px) {
+          article div:last-of-type .toggle:before {
+            width: 3.44vw;
+            height: 3.44vw;
+            left: 0.43vw;
+            top: 0.43vw; } }
       article div:last-of-type .toggle:checked {
         background-color: #487da6; }
-      article div:last-of-type .toggle:checked:before {
-        left: 9.03vw; }
+      @media (max-device-width: 899px) {
+        article div:last-of-type .toggle:checked:before {
+          left: 6.3vw; } }
+      @media (max-device-width: 599px) {
+        article div:last-of-type .toggle:checked:before {
+          left: 9.03vw; } }
   article .checked {
     background-image: -webkit-linear-gradient(45deg, #6a9cc3, #82b4bf); }
 

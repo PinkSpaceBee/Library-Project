@@ -189,13 +189,13 @@ article {
             }
 
             @include for-phone-landscape {
-                $size: 10vw;
+                $size: 7vw;
                 width: $size;
                 height: $size;
             }
 
             @include for-phone {
-                $size: 7vw;
+                $size: 10vw;
                 width: $size;
                 height: $size;
             }
@@ -251,6 +251,7 @@ article {
         padding: 1vh 0 1vh 0;
         margin: 1vh 0 0 0;
 
+
         background-color: mix($rock-blue, $dove-gray, 65%);
         color: #fff;
         border-radius: 0 0 5px 5px;
@@ -260,26 +261,62 @@ article {
             @include prefix('appearance', 'none');
             //display: inline-block;
             position: relative;
+            //$size: 3vw;
             border-radius: 50px;
-            $size: 4.3vw;
-            width: $size * 3;
-            height: $size;
             cursor: pointer;
             background-color: mix($boston-blue, $dove-gray, 55%);
             transition: background-color ease 0.3s;
+
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                $size: 3vw;
+
+                width: $size * 3;
+                height: $size;
+            }
+
+
+    
+            @include smol-bean;
+            @include for-phone {
+                $size: 4.3vw;
+
+                width: $size * 3;
+                height: $size;
+            }
 
             //this round thingy
             &:before {
                 content: '';
                 display: block;
                 position: absolute;
-                width: $size * 0.8;
-                height: $size * 0.8;
+
                 background: #fff;
-                left: ($size - $size * 0.8) / 2;
-                top: ($size - $size * 0.8) / 2;
+
                 border-radius: 50%;
                 transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+
+                @include for-phone-landscape;
+                @include for-tablet-portrait {
+                    $size: 3vw;
+
+                    width: $size * 0.8;
+                    height: $size * 0.8;
+                    
+                    left: ($size - $size * 0.8) / 2;
+                    top: ($size - $size * 0.8) / 2;
+                }
+
+                @include smol-bean;
+                @include for-phone {
+                    $size: 4.3vw;
+
+                    width: $size * 0.8;
+                    height: $size * 0.8;
+
+                    left: ($size - $size * 0.8) / 2;
+                    top: ($size - $size * 0.8) / 2;
+                }
             }
 
             &:checked {
@@ -287,7 +324,17 @@ article {
             }
             //a round thingy when checked
             &:checked:before {
-                left: $size * 3 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+                @include for-phone-landscape;
+                @include for-tablet-portrait {
+                    $size: 3vw;
+                    left: $size * 3 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+                }
+
+                @include smol-bean;
+                @include for-phone {
+                    $size: 4.3vw;
+                    left: $size * 3 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+                }
             }
         }
     }
