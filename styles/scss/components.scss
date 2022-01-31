@@ -102,7 +102,7 @@ article {
     // book title
     p:first-of-type {
         grid-column: 1;
-        font-size: 3vh;
+        font-size: 5vw;
         color: mix($boston-blue, $dove-gray, 55%);
         padding-top: 3.4vh;
         padding-bottom: 1vh;
@@ -239,6 +239,7 @@ article {
     }
 
     @include smol-bean;
+    @include for-phone-landscape;
     @include for-phone {
         width: 90%;
 

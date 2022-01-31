@@ -9,7 +9,7 @@ body {
   margin: 0;
   flex-direction: column;
   justify-content: center;
-  font: 400 2.4vh "Be Vietnam Pro", sans-serif; }
+  font: 400 4.5vw "Be Vietnam Pro", sans-serif; }
   body #stats-section {
     display: flex;
     position: fixed;
@@ -24,19 +24,22 @@ body {
       display: flex;
       color: #fff; }
     body #stats-section #js-mob-stats-btn {
+      display: grid;
+      align-items: center;
       position: absolute;
       left: 0;
-      width: 14vw;
-      height: 5vh;
+      width: 12vw;
+      height: 4vh;
       background-color: #527997;
       border: none; }
       body #stats-section #js-mob-stats-btn * {
-        display: flex;
-        margin: 1.2vw;
         height: 0.8vw;
         background-color: #fff; }
       body #stats-section #js-mob-stats-btn:hover, body #stats-section #js-mob-stats-btn:active {
         transform: scale(1.2); }
+      @media (orientation: landscape) and (max-device-width: 599px) {
+        body #stats-section #js-mob-stats-btn {
+          height: 8vh; } }
     body #stats-section #js-stats {
       display: none;
       position: fixed;
@@ -59,7 +62,10 @@ body {
         font-size: 3.5vw; } }
     @media (max-device-width: 599px) {
       body #stats-section h1 {
-        font-size: 8vw; } }
+        font-size: 5.5vw; } }
+    @media (orientation: landscape) and (max-device-width: 599px) {
+      body #stats-section {
+        height: 15vh; } }
   body main {
     display: flex;
     align-items: center; }
@@ -132,7 +138,7 @@ article {
     margin: 1vw 2vw 1vw 2vw; }
   article p:first-of-type {
     grid-column: 1;
-    font-size: 3vh;
+    font-size: 5vw;
     color: #527997;
     padding-top: 3.4vh;
     padding-bottom: 1vh; }
