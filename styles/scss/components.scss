@@ -422,17 +422,29 @@ article {
 #js-new-book-card {
     display: none;
 
-    grid-template-rows: repeat(5, 7vh);
     grid-template-columns: 1fr 1fr;
     position: fixed;
     z-index: 2;
 
     margin: 5vw;
-    padding: 7vw 0;
     width: 91vw;
-    height: 50vh;
     background-color: mix($boston-blue, $dove-gray, 55%);
     border-radius: 5px;
+
+    @include for-phone-landscape;
+    @include for-tablet-portrait {
+        grid-template-rows: repeat(5, 10vh);
+        height: 80vh;
+        top: 0;
+        padding: 0;
+    }
+
+    @include smol-bean;
+    @include for-phone {
+        grid-template-rows: repeat(5, 7vh);
+        height: 50vh;
+        padding: 7vw 0;
+    }
 
     //font-size: 4.5vw;
     color: #fff;
@@ -443,6 +455,11 @@ article {
         grid-column-start: 1;
         grid-column-end: 3;
         font-size: 6vw;
+
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            font-size: 3vw;
+        }
     }
 
     * & label {
@@ -458,9 +475,20 @@ article {
     }
 
     & input {
-        margin: 1vw 0 3vw 0;
-        padding: 2vw 15vw 2vw 2vw;
-        font: $regular 4vw $be-vietnam-pro;
+
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            margin: 1.5vw 0 2vw 0;
+            padding: 0 25vw 0 0;;
+            font: $regular 2.7vw $be-vietnam-pro;
+        }
+    
+        @include smol-bean;
+        @include for-phone {
+            margin: 1vw 0 3vw 0;
+            padding: 2vw 15vw 2vw 2vw;
+            font: $regular 4vw $be-vietnam-pro;
+        }
     }
 
     //cancel button
