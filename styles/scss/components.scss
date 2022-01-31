@@ -159,21 +159,54 @@ article {
     div:first-of-type {
         grid-column: 2;
         grid-row: 1;
-        padding: 0.3vh 0;
-        //padding: 1vh 0;
+
+        @include for-tablet-portrait {
+        }
+
+        @include for-phone-landscape {
+
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            padding: 0.3vh 0;
+        }
 
         //remove button
         button {
             position: absolute;
-            $size: 10vw;
-            width: $size;
-            height: $size;
 
             padding: 0;
 
-            border: none;;
+            border: none;
 
             background-color: mix($rock-blue, #fff, 25%);
+
+            @include for-tablet-portrait {
+                $size: 5vw;
+                width: $size;
+                height: $size;
+            }
+
+            @include for-phone-landscape {
+                $size: 10vw;
+                width: $size;
+                height: $size;
+            }
+
+            @include for-phone {
+                $size: 7vw;
+                width: $size;
+                height: $size;
+            }
+
+            @include smol-bean {
+                $size: 13vw;
+                width: $size;
+                height: $size;
+
+                padding: 0;
+            }
 
             &:before,
             &:after {
@@ -198,14 +231,6 @@ article {
                 transform: rotate(-45deg);
             }
 
-            @include smol-bean {
-                $size: 13vw;
-                width: $size;
-                height: $size;
-
-                padding: 0;
-            }
-
             &:hover,
             &:active {
                 transform: scale(1.3);
@@ -215,11 +240,6 @@ article {
                     background-color: $boston-blue;
                 }
             }
-        }
-
-        @include smol-bean {
-            //width: 50px;
-            //padding: 0;
         }
     }
 

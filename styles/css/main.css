@@ -208,15 +208,32 @@ article {
       margin-top: 16vh; } }
   article div:first-of-type {
     grid-column: 2;
-    grid-row: 1;
-    padding: 0.3vh 0; }
+    grid-row: 1; }
+    @media (max-device-width: 599px) {
+      article div:first-of-type {
+        padding: 0.3vh 0; } }
     article div:first-of-type button {
       position: absolute;
-      width: 10vw;
-      height: 10vw;
       padding: 0;
       border: none;
       background-color: #e5edf2; }
+      @media (max-device-width: 899px) {
+        article div:first-of-type button {
+          width: 5vw;
+          height: 5vw; } }
+      @media (max-device-width: 768px) and (orientation: landscape) {
+        article div:first-of-type button {
+          width: 10vw;
+          height: 10vw; } }
+      @media (max-device-width: 599px) {
+        article div:first-of-type button {
+          width: 7vw;
+          height: 7vw; } }
+      @media (max-device-width: 319px) {
+        article div:first-of-type button {
+          width: 13vw;
+          height: 13vw;
+          padding: 0; } }
       article div:first-of-type button:before, article div:first-of-type button:after {
         position: absolute;
         right: 40%;
@@ -232,11 +249,6 @@ article {
         transform: rotate(45deg); }
       article div:first-of-type button:after {
         transform: rotate(-45deg); }
-      @media (max-device-width: 319px) {
-        article div:first-of-type button {
-          width: 13vw;
-          height: 13vw;
-          padding: 0; } }
       article div:first-of-type button:hover, article div:first-of-type button:active {
         transform: scale(1.3); }
         article div:first-of-type button:hover:before, article div:first-of-type button:hover:after, article div:first-of-type button:active:before, article div:first-of-type button:active:after {
