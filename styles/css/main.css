@@ -63,14 +63,25 @@ body {
           height: 4vh; } }
     body #stats-section #js-stats {
       display: none;
-      position: fixed;
+      position: absolute;
+      top: 0;
       left: 0;
-      margin-top: 35vh;
-      padding: 6vw;
       background-color: #527997;
       opacity: 0.9;
-      font-size: 4vw;
       color: #fff; }
+      @media (max-device-width: 899px) {
+        body #stats-section #js-stats {
+          margin-top: 15vh;
+          padding: 3vw;
+          font-size: 3vw; } }
+      @media (max-device-width: 768px) and (orientation: landscape) {
+        body #stats-section #js-stats {
+          margin-top: 13vh; } }
+      @media (max-device-width: 599px) {
+        body #stats-section #js-stats {
+          margin-top: 10vh;
+          padding: 6vw;
+          font-size: 4vw; } }
     body #stats-section #js-add-btn {
       display: none; }
     @media (min-device-width: 900px) {

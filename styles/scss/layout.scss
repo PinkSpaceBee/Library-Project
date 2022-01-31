@@ -9,7 +9,6 @@ body {
    justify-content: center;
 
    font: $regular 4vw $be-vietnam-pro;
-   //font: $regular 2.4vh $be-vietnam-pro;
 
     #stats-section {
         display: flex;
@@ -85,16 +84,31 @@ body {
         #js-stats {
             display: none;
 
-            position: fixed;
+            position: absolute;
+            top: 0;
             left: 0;
-            margin-top: 35vh;
-            padding: 6vw;
 
             background-color: mix($boston-blue, $dove-gray, 55%);
             opacity: 0.9;
-
-            font-size: 4vw;
             color: #fff;
+
+            @include for-tablet-portrait {
+                margin-top: 15vh;
+                padding: 3vw;
+                font-size: 3vw;
+            }
+            
+            @include for-phone-landscape {
+                margin-top: 13vh;
+            }
+
+            @include smol-bean;
+            @include for-phone {
+                margin-top: 10vh;
+                padding: 6vw;
+
+                font-size: 4vw;
+            }
         }
         
         #js-add-btn {
