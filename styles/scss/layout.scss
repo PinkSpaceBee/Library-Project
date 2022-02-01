@@ -21,8 +21,10 @@ body {
         background-color: mix($boston-blue, $dove-gray, 55%);
 
         @include for-tablet-landscape {
+            align-items: flex-start;
+            justify-content: flex-start;
             height: 100vh;
-            width: 22vw;
+            width: 30vw;
         }
 
         @include for-tablet-portrait {
@@ -43,6 +45,9 @@ body {
             color: #fff;
 
             @include for-tablet-landscape {
+                //flex-direction: column;
+                margin: 4vw 0 2vw 2vw;
+                font-size: 3.7vw;
             }
 
             @include for-phone-landscape;
@@ -59,7 +64,7 @@ body {
 
         //hamburger menu
         #js-mob-stats-btn {
-            display: grid;
+            display: none;
             align-items: center;
             position: absolute;
             left: 2vw;
@@ -67,17 +72,23 @@ body {
             border: none;
 
             @include for-tablet-portrait {
+                display: grid;
+
                 width: 8vw;
                 height: 5vh;
             }
 
             @include for-phone-landscape {
+                display: grid;
+
                 width: 6vw;
                 height: 8vh;
             }
 
             @include smol-bean;
             @include for-phone {
+                display: grid;
+
                 width: 12vw;
                 height: 4vh;
             }
@@ -103,7 +114,6 @@ body {
         // div with stats 
         #js-stats {
             display: none;
-
             position: absolute;
             top: 0;
             left: 0;
@@ -112,6 +122,20 @@ body {
             opacity: 0.9;
             color: #fff;
 
+            @include for-tablet-landscape {
+                display: grid;
+                position: absolute;
+                top: 10vw;
+                left: 2vw;
+                height: 0;
+
+                font-size: 2.2vw;
+
+                * {
+                    margin: 0.5vw;
+                }
+            }
+
             @include for-tablet-portrait {
                 margin-top: 12vh;
                 padding: 3vw;
@@ -119,6 +143,7 @@ body {
             }
             
             @include for-phone-landscape {
+
                 margin-top: 13vh;
             }
 

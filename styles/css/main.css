@@ -21,8 +21,10 @@ body {
     background-color: #527997; }
     @media (min-device-width: 900px) {
       body #stats-section {
+        align-items: flex-start;
+        justify-content: flex-start;
         height: 100vh;
-        width: 22vw; } }
+        width: 30vw; } }
     @media (max-device-width: 899px) {
       body #stats-section {
         height: 12vh; } }
@@ -35,6 +37,10 @@ body {
     body #stats-section h1 {
       display: flex;
       color: #fff; }
+      @media (min-device-width: 900px) {
+        body #stats-section h1 {
+          margin: 4vw 0 2vw 2vw;
+          font-size: 3.7vw; } }
       @media (max-device-width: 899px) {
         body #stats-section h1 {
           font-size: 3.5vw; } }
@@ -42,7 +48,7 @@ body {
         body #stats-section h1 {
           font-size: 5.5vw; } }
     body #stats-section #js-mob-stats-btn {
-      display: grid;
+      display: none;
       align-items: center;
       position: absolute;
       left: 2vw;
@@ -50,14 +56,17 @@ body {
       border: none; }
       @media (max-device-width: 899px) {
         body #stats-section #js-mob-stats-btn {
+          display: grid;
           width: 8vw;
           height: 5vh; } }
       @media (max-device-width: 768px) and (orientation: landscape) {
         body #stats-section #js-mob-stats-btn {
+          display: grid;
           width: 6vw;
           height: 8vh; } }
       @media (max-device-width: 599px) {
         body #stats-section #js-mob-stats-btn {
+          display: grid;
           width: 12vw;
           height: 4vh; } }
       body #stats-section #js-mob-stats-btn * {
@@ -79,6 +88,16 @@ body {
       background-color: #527997;
       opacity: 0.9;
       color: #fff; }
+      @media (min-device-width: 900px) {
+        body #stats-section #js-stats {
+          display: grid;
+          position: absolute;
+          top: 10vw;
+          left: 2vw;
+          height: 0;
+          font-size: 2.2vw; }
+          body #stats-section #js-stats * {
+            margin: 0.5vw; } }
       @media (max-device-width: 899px) {
         body #stats-section #js-stats {
           margin-top: 12vh;
