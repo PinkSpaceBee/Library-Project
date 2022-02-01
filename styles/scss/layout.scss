@@ -21,10 +21,11 @@ body {
         background-color: mix($boston-blue, $dove-gray, 55%);
 
         @include for-tablet-landscape {
+            flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
             height: 100vh;
-            width: 30vw;
+            width: 26vw;
         }
 
         @include for-tablet-portrait {
@@ -46,7 +47,7 @@ body {
 
             @include for-tablet-landscape {
                 //flex-direction: column;
-                margin: 4vw 0 2vw 2vw;
+                margin: 4vw 0 10vw 2vw;
                 font-size: 3.7vw;
             }
 
@@ -125,14 +126,14 @@ body {
             @include for-tablet-landscape {
                 display: grid;
                 position: absolute;
-                top: 10vw;
+                top: 15vw;
                 left: 2vw;
                 height: 0;
 
-                font-size: 2.2vw;
+                font-size: 2vw;
 
                 * {
-                    margin: 0.5vw;
+                    margin: 1vw;
                 }
             }
 
@@ -155,9 +156,26 @@ body {
                 font-size: 4vw;
             }
         }
-        
+
         #js-add-btn {
             display: none;
+
+            display: flex;
+            align-self: center;
+
+            position: absolute;
+
+            @include for-tablet-landscape {
+                bottom: 45%;
+                padding: 2vw 3vw;
+
+                border: 2px solid #fff;
+                border-radius: 5px;
+                background-color: mix($boston-blue, $dove-gray, 55%);
+
+                font-size: 2.2vw;
+                color: #fff;
+            }
         }
     }
 

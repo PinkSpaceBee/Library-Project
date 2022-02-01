@@ -38,6 +38,11 @@
         right: 2vw;
         bottom: 6vw;
 
+        @include for-tablet-landscape {
+            right: 50%;
+            bottom: 50%;
+        }
+
         &:before,
         &:after {
 
