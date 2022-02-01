@@ -149,8 +149,10 @@ function showStats(arr) {
     stats[1].textContent = readBooksTotal;
     stats[2].textContent = notReadTotal;
 
-    // toggle stats visibility
-    statsDiv.style.display = 'none';
+    // if a device is mobile or rtablet landscape then stats div should be hidden
+    if (window.innerWidth < 900) {
+        statsDiv.style.display = 'none';
+    }
 
     document.querySelector('#js-mob-stats-btn').addEventListener('click', () =>{ statsDiv.style.display === 'none' ? statsDiv.style.display = 'grid' : statsDiv.style.display = 'none';
     });
