@@ -141,8 +141,7 @@ body {
     @media (min-device-width: 900px) {
       body main {
         flex-direction: column;
-        align-items: center;
-        width: 74%; } }
+        align-items: center; } }
     @media (max-device-width: 899px) {
       body main {
         flex-wrap: wrap;
@@ -252,7 +251,7 @@ article {
   color: #5d5d5d; }
   @media (min-device-width: 900px) {
     article {
-      width: 90%;
+      width: 100%;
       margin-top: 5vw;
       font-size: 2vw; } }
   @media (max-device-width: 899px) {
@@ -287,6 +286,9 @@ article {
     @media (max-device-width: 599px) {
       article p:first-of-type {
         font-size: 5vw; } }
+  @media (min-device-width: 900px) {
+    article:first-of-type {
+      margin-top: 8vh; } }
   @media (max-device-width: 899px) {
     article:first-of-type {
       margin-top: 20vh; } }
@@ -299,6 +301,11 @@ article {
   article div:first-of-type {
     grid-column: 2;
     grid-row: 1; }
+    @media (min-device-width: 900px) {
+      article div:first-of-type {
+        padding: 0;
+        margin: 1vw 5.5vw 0 0;
+        justify-self: end; } }
     @media (max-device-width: 599px) {
       article div:first-of-type {
         padding: 0.3vh 0; } }
@@ -307,6 +314,11 @@ article {
       padding: 0;
       border: none;
       background-color: #e5edf2; }
+      @media (min-device-width: 900px) {
+        article div:first-of-type button {
+          width: 4vw;
+          height: 4vw;
+          margin: 0; } }
       @media (max-device-width: 899px) {
         article div:first-of-type button {
           width: 5vw;
@@ -332,6 +344,9 @@ article {
         height: 70%;
         width: 0.4vw;
         background-color: #527997; }
+        @media (min-device-width: 900px) {
+          article div:first-of-type button:before, article div:first-of-type button:after {
+            width: 0.2vw; } }
         @media (max-device-width: 319px) {
           article div:first-of-type button:before, article div:first-of-type button:after {
             right: 60%; } }

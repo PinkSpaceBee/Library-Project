@@ -172,8 +172,9 @@ article {
     color: mix($dove-gray, #000, 85%);
 
     @include for-tablet-landscape {
-        width: 90%;
+        width: 100%;
         margin-top: 5vw;
+
         font-size: 2vw;
     }
 
@@ -226,6 +227,10 @@ article {
  
     //first book card
     &:first-of-type {
+        @include for-tablet-landscape {
+            margin-top: 8vh;
+        }
+
         @include for-tablet-portrait {
             margin-top: 20vh;
         }
@@ -245,11 +250,10 @@ article {
         grid-column: 2;
         grid-row: 1;
 
-        @include for-tablet-portrait {
-        }
-
-        @include for-phone-landscape {
-
+        @include for-tablet-landscape {
+            padding: 0;
+            margin: 1vw 5.5vw 0 0;
+            justify-self: end;
         }
 
         @include smol-bean;
@@ -260,12 +264,17 @@ article {
         //remove button
         button {
             position: absolute;
-
             padding: 0;
-
             border: none;
-
             background-color: mix($rock-blue, #fff, 25%);
+
+            @include for-tablet-landscape {
+                $size: 4vw;
+                width: $size;
+                height: $size;
+
+                margin: 0;
+            }
 
             @include for-tablet-portrait {
                 $size: 5vw;
@@ -303,6 +312,10 @@ article {
                 width: 0.4vw;
                 background-color: mix($boston-blue, $dove-gray, 55%);
 
+                @include for-tablet-landscape {
+                    width: 0.2vw;
+                }
+
                 @include smol-bean {
                     right: 60%;
                 }
@@ -336,7 +349,6 @@ article {
         padding: 1vh 0 1vh 0;
         margin: 1vh 0 0 0;
 
-
         background-color: mix($rock-blue, $dove-gray, 65%);
         color: #fff;
         border-radius: 0 0 5px 5px;
@@ -344,6 +356,7 @@ article {
         //checkbox
         .toggle {
             @include prefix('appearance', 'none');
+            //z-index: 3;
             //display: inline-block;
             position: relative;
             //$size: 3vw;

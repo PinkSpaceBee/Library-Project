@@ -200,12 +200,6 @@ body {
             //flex-wrap: nowrap;
             flex-direction: column;
             align-items: center;
-
-            width: 74%;
-
-            //position: absolute;
-            //op: 0;
-            //left: 26vw;
         }
 
         @include for-tablet-portrait {
