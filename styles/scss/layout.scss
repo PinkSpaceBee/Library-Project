@@ -20,6 +20,11 @@ body {
         width: 100vw;
         background-color: mix($boston-blue, $dove-gray, 55%);
 
+        @include for-tablet-landscape {
+            height: 100vh;
+            width: 22vw;
+        }
+
         @include for-tablet-portrait {
             height: 12vh;
         }
@@ -36,7 +41,22 @@ body {
         h1 {
             display: flex;
             color: #fff;
+
+            @include for-tablet-landscape {
+            }
+
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                    //align-items: center;
+                    font-size: 3.5vw;
+            }
+    
+            @include smol-bean;
+            @include for-phone {
+                    font-size: 5.5vw;
+            }
         }
+
         //hamburger menu
         #js-mob-stats-btn {
             display: grid;
@@ -45,6 +65,22 @@ body {
             left: 2vw;
             background-color: mix($boston-blue, $dove-gray, 55%);
             border: none;
+
+            @include for-tablet-portrait {
+                width: 8vw;
+                height: 5vh;
+            }
+
+            @include for-phone-landscape {
+                width: 6vw;
+                height: 8vh;
+            }
+
+            @include smol-bean;
+            @include for-phone {
+                width: 12vw;
+                height: 4vh;
+            }
 
             * {
                 background-color: #fff;
@@ -61,22 +97,6 @@ body {
                 @include for-phone {
                     height: 0.6vw;
                 }
-            }
-
-            @include for-tablet-portrait {
-                width: 8vw;
-                height: 5vh;
-            }
-
-            @include for-phone-landscape {
-                width: 6vw;
-                height: 8vh;
-            }
-
-            @include smol-bean;
-            @include for-phone {
-                width: 12vw;
-                height: 4vh;
             }
         }
 
@@ -113,31 +133,6 @@ body {
         
         #js-add-btn {
             display: none;
-        }
-
-        @include for-big-desktop;
-        @include for-desktop;
-        @include for-tablet-landscape {
-            h1 {
-                color: hotpink;
-                background-color: lemonchiffon;
-            }
-        }
-
-        @include for-tablet-portrait {
-            h1 {
-                //what does this line do?
-                //height: 2vh;
-                align-items: center;
-                font-size: 3.5vw;
-            }
-        }
-
-        @include smol-bean;
-        @include for-phone {
-            h1 {
-                font-size: 5.5vw;
-            }
         }
     }
 
