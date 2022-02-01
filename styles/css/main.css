@@ -6,10 +6,16 @@
 /* BREAKPOINTS FOR SCREEN SIZES */
 body {
   display: flex;
+  width: 100vw;
   margin: 0;
   flex-direction: column;
   justify-content: center;
   font: 400 4vw "Be Vietnam Pro", sans-serif; }
+  @media (min-device-width: 900px) {
+    body {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap; } }
   body #stats-section {
     display: flex;
     position: fixed;
@@ -24,8 +30,10 @@ body {
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        position: static;
         height: 100vh;
-        width: 26vw; } }
+        width: 26vw;
+        width: 26%; } }
     @media (max-device-width: 899px) {
       body #stats-section {
         height: 12vh; } }
@@ -114,11 +122,11 @@ body {
           font-size: 4vw; } }
     body #stats-section #js-add-btn {
       display: none;
-      display: flex;
       align-self: center;
       position: absolute; }
       @media (min-device-width: 900px) {
         body #stats-section #js-add-btn {
+          display: flex;
           bottom: 45%;
           padding: 2vw 3vw;
           border: 2px solid #fff;
@@ -128,7 +136,13 @@ body {
           color: #fff; } }
   body main {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    justify-self: flex-end; }
+    @media (min-device-width: 900px) {
+      body main {
+        flex-direction: column;
+        align-items: center;
+        width: 74%; } }
     @media (max-device-width: 899px) {
       body main {
         flex-wrap: wrap;
@@ -236,6 +250,11 @@ article {
   border-radius: 5px;
   background-color: #e5edf2;
   color: #5d5d5d; }
+  @media (min-device-width: 900px) {
+    article {
+      width: 90%;
+      margin-top: 5vw;
+      font-size: 2vw; } }
   @media (max-device-width: 899px) {
     article {
       width: 60%;

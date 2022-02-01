@@ -1,12 +1,20 @@
 body {
    display: flex;
+   width: 100vw;
 
-   margin:0;
+   margin: 0;
    // there was a problem with the body not filling up the page width; it was 
    // resolved with setting margin as 0
 
    flex-direction: column;
    justify-content: center;
+
+   @include for-tablet-landscape {
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+   }
 
    font: $regular 4vw $be-vietnam-pro;
 
@@ -24,8 +32,11 @@ body {
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
+
+            position: static;
             height: 100vh;
             width: 26vw;
+            width: 26%;
         }
 
         @include for-tablet-portrait {
@@ -160,12 +171,12 @@ body {
         #js-add-btn {
             display: none;
 
-            display: flex;
             align-self: center;
-
             position: absolute;
 
             @include for-tablet-landscape {
+                display: flex;
+
                 bottom: 45%;
                 padding: 2vw 3vw;
 
@@ -182,6 +193,20 @@ body {
     main {
         display: flex;
         align-items: center;
+        justify-self: flex-end;
+        //width: 90%;
+
+        @include for-tablet-landscape {
+            //flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+
+            width: 74%;
+
+            //position: absolute;
+            //op: 0;
+            //left: 26vw;
+        }
 
         @include for-tablet-portrait {
             flex-wrap: wrap;
