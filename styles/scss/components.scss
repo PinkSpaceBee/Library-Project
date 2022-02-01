@@ -458,7 +458,7 @@ article {
 
         @include for-phone-landscape;
         @include for-tablet-portrait {
-            font-size: 3vw;
+            font-size: 3.5vw;
         }
     }
 
@@ -466,8 +466,13 @@ article {
         grid-column-start: 1;
         grid-column-end: 3;
 
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            font-size: 2.7vw;
+        }
+
         &:last-of-type {
-            //margin-bottom: 59vw;
+            //padding-bottom: 100px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
@@ -494,12 +499,14 @@ article {
     //cancel button
     button {
         // i don't wanna design fucking buttons again whyyyy 
+        display: grid;
+        align-content: center;
+
         background-color: mix($boston-blue, $dove-gray, 55%);
         border: 2px solid $catskill-white;
         border-radius: 5px;
-        font: $regular 4.6vw $be-vietnam-pro;
+
         color: $catskill-white;
-        height: 8vh;
 
         // submit button
         &:last-of-type {
@@ -508,12 +515,32 @@ article {
             border: 2px solid $boston-blue;
             border: 2px solid $catskill-white;
         }
+
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            align-self: center;
+            justify-self: center;
+            height: 10vh;
+            width: 30vw;
+            //margin-top: 50px;
+            font: $regular 3vw $be-vietnam-pro;
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            height: 8vh;
+            font: $regular 4.6vw $be-vietnam-pro;
+        }
     }
 
     //checkbox; I made it slighty bigger
     #js-have-read {
         $size: 4.2vw;
 
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            $size: 2.5vw;
+        }
         width: $size;
         height: $size;
     }
