@@ -431,9 +431,11 @@ article {
     background-color: mix($boston-blue, $dove-gray, 55%);
     border-radius: 5px;
 
+    color: #fff;
+
     @include for-phone-landscape;
     @include for-tablet-portrait {
-        grid-template-rows: repeat(5, 10vh);
+        grid-template-rows: repeat(5, 11vh);
         height: 80vh;
         top: 0;
         padding: 0;
@@ -446,19 +448,25 @@ article {
         padding: 7vw 0;
     }
 
-    //font-size: 4.5vw;
-    color: #fff;
     * {
         margin: 4vw;
     }
+
+    // a title 
     p {
         grid-column-start: 1;
         grid-column-end: 3;
-        font-size: 6vw;
 
         @include for-phone-landscape;
         @include for-tablet-portrait {
             font-size: 3.5vw;
+            margin: 5vw 0 0 4vw;
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            font-size: 6vw;
+            margin-top: 3vw;
         }
     }
 
@@ -469,30 +477,69 @@ article {
         @include for-phone-landscape;
         @include for-tablet-portrait {
             font-size: 2.7vw;
+            margin-top: 2vw;
         }
 
         &:last-of-type {
-            //padding-bottom: 100px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
             align-items: center;
+
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                grid-template-columns: 1fr 2fr;
+                font-size: 2.7vw;
+
+                margin: 4vw 0 0 4vw;
+            }
+        
+            @include smol-bean;
+            @include for-phone {
+                grid-template-columns: 1fr 1fr;
+                margin: 5vw 0 0 4vw;
+                font-size: 4vw;
+            }
+
         }
     }
 
     & input {
 
-        @include for-phone-landscape;
         @include for-tablet-portrait {
+            padding: 1vw 25vw 1vw 1vw;
             margin: 1.5vw 0 2vw 0;
-            padding: 0 25vw 0 0;;
-            font: $regular 2.7vw $be-vietnam-pro;
+            font-size: 2.7vw;
+        }
+
+        @include for-phone-landscape {
+            margin: 1.5vw 0 2vw 0;
+            padding: 0.2vw 25vw 0.2vw 0.2vw;
+            font-size: 2.7vw;;
         }
     
         @include smol-bean;
         @include for-phone {
             margin: 1vw 0 3vw 0;
             padding: 2vw 15vw 2vw 2vw;
-            font: $regular 4vw $be-vietnam-pro;
+            font-size: 4vw;;
+        }
+    }
+
+    //checkbox; I made it slighty bigger
+    #js-have-read {
+        margin: 0;
+
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            $size: 2.5vw;
+            width: $size;
+            height: $size;
+        }
+
+        @include smol-bean;
+        @include for-phone {
+            $size: 4.2vw;
+            width: $size;
+            height: $size;
         }
     }
 
@@ -531,18 +578,6 @@ article {
             height: 8vh;
             font: $regular 4.6vw $be-vietnam-pro;
         }
-    }
-
-    //checkbox; I made it slighty bigger
-    #js-have-read {
-        $size: 4.2vw;
-
-        @include for-phone-landscape;
-        @include for-tablet-portrait {
-            $size: 2.5vw;
-        }
-        width: $size;
-        height: $size;
     }
 }
 

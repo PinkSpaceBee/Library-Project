@@ -360,7 +360,7 @@ article {
   color: #fff; }
   @media (max-device-width: 899px) {
     #js-new-book-card {
-      grid-template-rows: repeat(5, 10vh);
+      grid-template-rows: repeat(5, 11vh);
       height: 80vh;
       top: 0;
       padding: 0; } }
@@ -373,31 +373,60 @@ article {
     margin: 4vw; }
   #js-new-book-card p {
     grid-column-start: 1;
-    grid-column-end: 3;
-    font-size: 6vw; }
+    grid-column-end: 3; }
     @media (max-device-width: 899px) {
       #js-new-book-card p {
-        font-size: 3.5vw; } }
+        font-size: 3.5vw;
+        margin: 5vw 0 0 4vw; } }
+    @media (max-device-width: 599px) {
+      #js-new-book-card p {
+        font-size: 6vw;
+        margin-top: 3vw; } }
   * #js-new-book-card label {
     grid-column-start: 1;
     grid-column-end: 3; }
     @media (max-device-width: 899px) {
       * #js-new-book-card label {
-        font-size: 2.7vw; } }
+        font-size: 2.7vw;
+        margin-top: 2vw; } }
     * #js-new-book-card label:last-of-type {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       align-items: center; }
+      @media (max-device-width: 899px) {
+        * #js-new-book-card label:last-of-type {
+          grid-template-columns: 1fr 2fr;
+          font-size: 2.7vw;
+          margin: 4vw 0 0 4vw; } }
+      @media (max-device-width: 599px) {
+        * #js-new-book-card label:last-of-type {
+          grid-template-columns: 1fr 1fr;
+          margin: 5vw 0 0 4vw;
+          font-size: 4vw; } }
   @media (max-device-width: 899px) {
     #js-new-book-card input {
+      padding: 1vw 25vw 1vw 1vw;
       margin: 1.5vw 0 2vw 0;
-      padding: 0 25vw 0 0;
-      font: 400 2.7vw "Be Vietnam Pro", sans-serif; } }
+      font-size: 2.7vw; } }
+  @media (max-device-width: 768px) and (orientation: landscape) {
+    #js-new-book-card input {
+      margin: 1.5vw 0 2vw 0;
+      padding: 0.2vw 25vw 0.2vw 0.2vw;
+      font-size: 2.7vw; } }
   @media (max-device-width: 599px) {
     #js-new-book-card input {
       margin: 1vw 0 3vw 0;
       padding: 2vw 15vw 2vw 2vw;
-      font: 400 4vw "Be Vietnam Pro", sans-serif; } }
+      font-size: 4vw; } }
+  #js-new-book-card #js-have-read {
+    margin: 0; }
+    @media (max-device-width: 899px) {
+      #js-new-book-card #js-have-read {
+        width: 2.5vw;
+        height: 2.5vw; } }
+    @media (max-device-width: 599px) {
+      #js-new-book-card #js-have-read {
+        width: 4.2vw;
+        height: 4.2vw; } }
   #js-new-book-card button {
     display: grid;
     align-content: center;
@@ -421,9 +450,6 @@ article {
       #js-new-book-card button {
         height: 8vh;
         font: 400 4.6vw "Be Vietnam Pro", sans-serif; } }
-  #js-new-book-card #js-have-read {
-    width: 2.5vw;
-    height: 2.5vw; }
 
 /* DIV THAT DARKENS A PAGE WHEN THE FORM FOR ADDING A BOOK IS OPENED */
 #js-page-opaque {
