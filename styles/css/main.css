@@ -441,6 +441,15 @@ article {
   background-color: #527997;
   border-radius: 5px;
   color: #fff; }
+  @media (min-device-width: 900px) {
+    #js-new-book-card {
+      grid-template-rows: 2fr repeat(4, 4.6vh) 1fr;
+      position: absolute;
+      height: 42vh;
+      width: 66vw;
+      margin: 0;
+      top: 25vh;
+      left: 17vw; } }
   @media (max-device-width: 899px) {
     #js-new-book-card {
       grid-template-rows: repeat(5, 11vh);
@@ -453,10 +462,15 @@ article {
       height: 50vh;
       padding: 7vw 0; } }
   #js-new-book-card * {
+    display: grid;
     margin: 4vw; }
   #js-new-book-card p {
     grid-column-start: 1;
     grid-column-end: 3; }
+    @media (min-device-width: 900px) {
+      #js-new-book-card p {
+        margin: 2.5vw 0 0 3vw;
+        font-size: 3vw; } }
     @media (max-device-width: 899px) {
       #js-new-book-card p {
         font-size: 3.5vw;
@@ -468,23 +482,38 @@ article {
   * #js-new-book-card label {
     grid-column-start: 1;
     grid-column-end: 3; }
+    @media (min-device-width: 900px) {
+      * #js-new-book-card label {
+        margin: 3vw 0 0 0;
+        margin: 0;
+        padding: 0.5vw 0;
+        width: 70%; } }
     @media (max-device-width: 899px) {
       * #js-new-book-card label {
-        font-size: 2.7vw;
         margin-top: 2vw; } }
     * #js-new-book-card label:last-of-type {
       display: grid;
       align-items: center; }
+      @media (min-device-width: 900px) {
+        * #js-new-book-card label:last-of-type {
+          grid-template-columns: 1fr 2fr;
+          font-size: 1.7vw;
+          margin-left: 3vw; } }
       @media (max-device-width: 899px) {
         * #js-new-book-card label:last-of-type {
           grid-template-columns: 1fr 2fr;
-          font-size: 2.7vw;
-          margin: 4vw 0 0 4vw; } }
+          margin: 4vw 0 0 4vw;
+          font-size: 2.7vw; } }
       @media (max-device-width: 599px) {
         * #js-new-book-card label:last-of-type {
           grid-template-columns: 1fr 1fr;
           margin: 5vw 0 0 4vw;
           font-size: 4vw; } }
+  @media (min-device-width: 900px) {
+    #js-new-book-card input {
+      padding: 0.2vw;
+      margin: 0 0 0 3vw;
+      font-size: 1.5vw; } }
   @media (max-device-width: 899px) {
     #js-new-book-card input {
       padding: 1vw 25vw 1vw 1vw;
@@ -502,6 +531,9 @@ article {
       font-size: 4vw; } }
   #js-new-book-card #js-have-read {
     margin: 0; }
+    @media (min-device-width: 900px) {
+      #js-new-book-card #js-have-read {
+        margin-left: 1.5vw; } }
     @media (max-device-width: 899px) {
       #js-new-book-card #js-have-read {
         width: 2.5vw;
@@ -522,6 +554,16 @@ article {
       background-color: #3c83b9;
       border: 2px solid #3c83b9;
       border: 2px solid #e4ecf1; }
+      @media (min-device-width: 900px) {
+        #js-new-book-card button:last-of-type {
+          justify-self: start; } }
+    @media (min-device-width: 900px) {
+      #js-new-book-card button {
+        justify-self: end;
+        height: 6vh;
+        width: 20vw;
+        font-size: 2vw;
+        margin: 2vw 2vw 4vw 2vw; } }
     @media (max-device-width: 899px) {
       #js-new-book-card button {
         align-self: center;

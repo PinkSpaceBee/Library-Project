@@ -477,7 +477,16 @@ article {
 
     color: #fff;
 
-    @include for-tablet-landscape{}
+    @include for-tablet-landscape {
+        grid-template-rows: 2fr repeat(4, 4.6vh) 1fr;
+        position: absolute;
+        height: 42vh;
+        width: 66vw;
+
+        margin: 0;
+        top: 25vh;
+        left: 17vw;
+    }
 
     @include for-phone-landscape;
     @include for-tablet-portrait {
@@ -495,6 +504,7 @@ article {
     }
 
     * {
+        display: grid;
         margin: 4vw;
     }
 
@@ -502,6 +512,13 @@ article {
     p {
         grid-column-start: 1;
         grid-column-end: 3;
+
+        @include for-tablet-landscape {
+            margin: 2.5vw 0 0 3vw;
+
+            //padding: 2vw;
+            font-size: 3vw;
+        }
 
         @include for-phone-landscape;
         @include for-tablet-portrait {
@@ -520,9 +537,18 @@ article {
         grid-column-start: 1;
         grid-column-end: 3;
 
+        @include for-tablet-landscape {
+            //font-size: 1.7vw;
+            margin: 3vw 0 0 0;
+            margin: 0;
+            padding: 0.5vw 0;
+            
+            width: 70%;
+        }
+
         @include for-phone-landscape;
         @include for-tablet-portrait {
-            font-size: 2.7vw;
+            //font-size: 2.7vw;
             margin-top: 2vw;
         }
 
@@ -530,18 +556,25 @@ article {
             display: grid;
             align-items: center;
 
+            @include for-tablet-landscape {
+                grid-template-columns: 1fr 2fr;
+                font-size: 1.7vw;
+                margin-left: 3vw;
+            }
+
             @include for-phone-landscape;
             @include for-tablet-portrait {
                 grid-template-columns: 1fr 2fr;
-                font-size: 2.7vw;
-
                 margin: 4vw 0 0 4vw;
+
+                font-size: 2.7vw;
             }
         
             @include smol-bean;
             @include for-phone {
                 grid-template-columns: 1fr 1fr;
                 margin: 5vw 0 0 4vw;
+
                 font-size: 4vw;
             }
 
@@ -549,6 +582,12 @@ article {
     }
 
     & input {
+
+        @include for-tablet-landscape {
+            padding: 0.2vw;
+            margin: 0 0 0 3vw;
+            font-size: 1.5vw;
+        }
 
         @include for-tablet-portrait {
             padding: 1vw 25vw 1vw 1vw;
@@ -573,6 +612,10 @@ article {
     //checkbox; I made it slighty bigger
     #js-have-read {
         margin: 0;
+
+        @include for-tablet-landscape {
+            margin-left: 1.5vw;
+        }
 
         @include for-phone-landscape;
         @include for-tablet-portrait {
@@ -607,6 +650,20 @@ article {
             background-color: $boston-blue;
             border: 2px solid $boston-blue;
             border: 2px solid $catskill-white;
+
+            @include for-tablet-landscape {
+                justify-self: start;
+            }
+        }
+
+        @include for-tablet-landscape {
+            justify-self: end;
+            height: 6vh;
+            width: 20vw;
+
+            font-size: 2vw;
+
+            margin: 2vw 2vw 4vw 2vw;
         }
 
         @include for-phone-landscape;
