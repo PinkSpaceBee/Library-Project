@@ -378,6 +378,11 @@ article {
       cursor: pointer;
       background-color: #527997;
       transition: background-color ease 0.3s; }
+      @media (min-device-width: 900px) {
+        article div:last-of-type .toggle {
+          width: 5.25vw;
+          height: 1.5vw;
+          margin-left: 0; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle {
           width: 9vw;
@@ -393,6 +398,12 @@ article {
         background: #fff;
         border-radius: 50%;
         transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
+        @media (min-device-width: 900px) {
+          article div:last-of-type .toggle:before {
+            width: 1.2vw;
+            height: 1.2vw;
+            left: 0.15vw;
+            top: 0.15vw; } }
         @media (max-device-width: 899px) {
           article div:last-of-type .toggle:before {
             width: 2.4vw;
@@ -407,6 +418,9 @@ article {
             top: 0.43vw; } }
       article div:last-of-type .toggle:checked {
         background-color: #487da6; }
+      @media (min-device-width: 900px) {
+        article div:last-of-type .toggle:checked:before {
+          left: 3.9vw; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle:checked:before {
           left: 6.3vw; } }

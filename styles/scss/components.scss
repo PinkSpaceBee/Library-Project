@@ -356,14 +356,21 @@ article {
         //checkbox
         .toggle {
             @include prefix('appearance', 'none');
-            //z-index: 3;
             //display: inline-block;
             position: relative;
-            //$size: 3vw;
             border-radius: 50px;
             cursor: pointer;
             background-color: mix($boston-blue, $dove-gray, 55%);
             transition: background-color ease 0.3s;
+
+            @include for-tablet-landscape {
+                $size: 1.5vw;
+
+                width: $size * 3.5;
+                height: $size;
+
+                margin-left: 0;
+            }
 
             @include for-phone-landscape;
             @include for-tablet-portrait {
@@ -373,8 +380,6 @@ article {
                 height: $size;
             }
 
-
-    
             @include smol-bean;
             @include for-phone {
                 $size: 4.3vw;
@@ -393,6 +398,16 @@ article {
 
                 border-radius: 50%;
                 transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+
+                @include for-tablet-landscape {
+                    $size: 1.5vw;
+
+                    width: $size * 0.8;
+                    height: $size * 0.8;
+                    
+                    left: ($size - $size * 0.8) / 2;
+                    top: ($size - $size * 0.8) / 2;
+                }
 
                 @include for-phone-landscape;
                 @include for-tablet-portrait {
@@ -422,6 +437,11 @@ article {
             }
             //a round thingy when checked
             &:checked:before {
+                @include for-tablet-landscape {
+                    $size: 1.5vw;
+                    left: $size * 3.5 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+                }
+
                 @include for-phone-landscape;
                 @include for-tablet-portrait {
                     $size: 3vw;
