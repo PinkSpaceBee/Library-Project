@@ -66,9 +66,8 @@ body {
             }
 
             @include for-desktop {
-                align-self: center;
                 margin: 3vw 1vw;
-                font-size: 2.2vw;
+                font-size: 2.1vw;
             }
 
             @include for-phone-landscape;
@@ -144,10 +143,11 @@ body {
             color: #fff;
 
             @include for-tablet-landscape {
-                display: grid;
+                display: flex;
+                flex-direction: column;
                 position: absolute;
                 top: 15vw;
-                left: 2vw;
+                left: 1vw;
                 height: 0;
 
                 font-size: 2vw;
@@ -155,6 +155,9 @@ body {
                 * {
                     margin: 1vw;
                 }
+            }
+            
+            @include for-desktop {
             }
 
             @include for-tablet-portrait {
@@ -195,6 +198,10 @@ body {
 
                 font-size: 2.2vw;
                 color: #fff;
+            }
+
+            @include for-desktop { 
+                bottom: 20%;
             }
         }
     }
