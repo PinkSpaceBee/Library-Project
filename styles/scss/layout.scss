@@ -9,14 +9,14 @@ body {
    flex-direction: column;
    justify-content: center;
 
+   font: $regular 4vw $be-vietnam-pro;
+
    @include for-tablet-landscape {
     flex-direction: row;
     justify-content: space-between;
 
     flex-wrap: wrap;
    }
-
-   font: $regular 4vw $be-vietnam-pro;
 
     #stats-section {
         display: flex;
@@ -221,12 +221,16 @@ body {
         display: flex;
         align-items: center;
         justify-self: flex-end;
-        //width: 90%;
 
         @include for-tablet-landscape {
-            //flex-wrap: nowrap;
             flex-direction: column;
             align-items: center;
+        }
+
+        @include for-desktop {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 84vw;
         }
 
         @include for-tablet-portrait {

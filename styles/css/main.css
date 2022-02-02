@@ -162,6 +162,11 @@ body {
       body main {
         flex-direction: column;
         align-items: center; } }
+    @media (min-device-width: 1200px) {
+      body main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 84vw; } }
     @media (max-device-width: 899px) {
       body main {
         flex-wrap: wrap;
@@ -274,6 +279,10 @@ article {
       width: 100%;
       margin-top: 5vw;
       font-size: 2vw; } }
+  @media (min-device-width: 1200px) {
+    article {
+      width: 30vw;
+      height: 300px; } }
   @media (max-device-width: 899px) {
     article {
       width: 60%;

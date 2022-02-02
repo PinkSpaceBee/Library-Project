@@ -178,6 +178,11 @@ article {
         font-size: 2vw;
     }
 
+    @include for-desktop {
+        width: 30vw;
+        height: 300px;
+    }
+
     @include for-tablet-portrait {
         width: 60%;
         margin-top: 5vw;
