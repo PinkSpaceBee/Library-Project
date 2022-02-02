@@ -477,6 +477,8 @@ article {
 
     color: #fff;
 
+    @include for-tablet-landscape{}
+
     @include for-phone-landscape;
     @include for-tablet-portrait {
         grid-template-rows: repeat(5, 11vh);
@@ -631,6 +633,7 @@ article {
 
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1;
     width: 100vw;
     height: 100vh;
