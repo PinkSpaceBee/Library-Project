@@ -32,8 +32,10 @@ body {
         justify-content: flex-start;
         position: static;
         height: 100vh;
-        width: 26vw;
-        width: 26%; } }
+        width: 26vw; } }
+    @media (min-device-width: 1200px) {
+      body #stats-section {
+        width: 16vw; } }
     @media (max-device-width: 899px) {
       body #stats-section {
         height: 12vh; } }
@@ -48,8 +50,14 @@ body {
       color: #fff; }
       @media (min-device-width: 900px) {
         body #stats-section h1 {
-          margin: 4vw 0 10vw 2vw;
+          align-self: center;
+          margin: 4vw 0 10vw 0;
           font-size: 3.7vw; } }
+      @media (min-device-width: 1200px) {
+        body #stats-section h1 {
+          align-self: center;
+          margin: 3vw 1vw;
+          font-size: 2.2vw; } }
       @media (max-device-width: 899px) {
         body #stats-section h1 {
           font-size: 3.5vw; } }
