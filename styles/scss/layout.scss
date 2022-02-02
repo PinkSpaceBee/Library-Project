@@ -158,6 +158,13 @@ body {
             }
             
             @include for-desktop {
+                top: 10vw;
+                left: 1.5vw;
+                font-size: 1.2vw;
+
+                * {
+                    margin: 0.5vw;
+                }
             }
 
             @include for-tablet-portrait {
@@ -186,6 +193,8 @@ body {
             align-self: center;
             position: absolute;
 
+            color: #fff;
+
             @include for-tablet-landscape {
                 display: flex;
 
@@ -197,11 +206,13 @@ body {
                 background-color: mix($boston-blue, $dove-gray, 55%);
 
                 font-size: 2.2vw;
-                color: #fff;
             }
 
             @include for-desktop { 
-                bottom: 20%;
+                bottom: 58%;
+                padding: 1vw;
+
+                font-size: 1.5vw;
             }
         }
     }

@@ -115,6 +115,13 @@ body {
           font-size: 2vw; }
           body #stats-section #js-stats * {
             margin: 1vw; } }
+      @media (min-device-width: 1200px) {
+        body #stats-section #js-stats {
+          top: 10vw;
+          left: 1.5vw;
+          font-size: 1.2vw; }
+          body #stats-section #js-stats * {
+            margin: 0.5vw; } }
       @media (max-device-width: 899px) {
         body #stats-section #js-stats {
           margin-top: 12vh;
@@ -131,7 +138,8 @@ body {
     body #stats-section #js-add-btn {
       display: none;
       align-self: center;
-      position: absolute; }
+      position: absolute;
+      color: #fff; }
       @media (min-device-width: 900px) {
         body #stats-section #js-add-btn {
           display: flex;
@@ -140,11 +148,12 @@ body {
           border: 2px solid #fff;
           border-radius: 5px;
           background-color: #527997;
-          font-size: 2.2vw;
-          color: #fff; } }
+          font-size: 2.2vw; } }
       @media (min-device-width: 1200px) {
         body #stats-section #js-add-btn {
-          bottom: 20%; } }
+          bottom: 58%;
+          padding: 1vw;
+          font-size: 1.5vw; } }
   body main {
     display: flex;
     align-items: center;
