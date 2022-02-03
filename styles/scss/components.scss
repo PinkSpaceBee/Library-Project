@@ -183,8 +183,9 @@ article {
         $elem-width: 36vw;
 
         width: $elem-width;
-
         margin: ($container-width - ($elem-width * 2)) / 4;
+
+        font-size: 1.2vw;
     }
 
     @include for-tablet-portrait {
@@ -211,6 +212,11 @@ article {
         grid-column: 1/2;
         padding: 0 1.5vh;
         margin: 1vw 2vw 1vw 2vw;
+
+        @include for-desktop {
+            padding: 0.2vw;
+            margin: 0 0 0 1vw;
+        }
     }
 
     // book title
@@ -219,6 +225,10 @@ article {
         color: mix($boston-blue, $dove-gray, 55%);
         padding-top: 3.4vh;
         padding-bottom: 1vh;
+
+        @include for-desktop {
+            font-size: 1.5vw;
+        }
 
         @include for-tablet-portrait {
             font-size: 3.7vw;
@@ -243,8 +253,6 @@ article {
         @include for-desktop { 
             $container-width: 78vw;
             $elem-width: 36vw;
-    
-            width: $elem-width;
     
             margin: ($container-width - ($elem-width * 2)) / 4;
         }
@@ -390,6 +398,15 @@ article {
                 margin-left: 0;
             }
 
+            @include for-desktop {
+                $size: 1vw;
+
+                width: $size * 3.5;
+                height: $size;
+
+                margin-left: 1vw;
+            }
+
             @include for-phone-landscape;
             @include for-tablet-portrait {
                 $size: 3vw;
@@ -427,6 +444,16 @@ article {
                     top: ($size - $size * 0.8) / 2;
                 }
 
+                @include for-desktop {
+                    $size: 1vw;
+
+                    width: $size * 0.8;
+                    height: $size * 0.8;
+
+                    //left: ($size - $size * 0.8) / 2;
+                    //top: ($size - $size * 0.8) / 2;
+                }
+
                 @include for-phone-landscape;
                 @include for-tablet-portrait {
                     $size: 3vw;
@@ -457,6 +484,11 @@ article {
             &:checked:before {
                 @include for-tablet-landscape {
                     $size: 1.5vw;
+                    left: $size * 3.5 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+                }
+
+                @include for-desktop { 
+                    $size: 1vw;
                     left: $size * 3.5 - ($size * 0.8 + (($size - $size * 0.8) / 2));
                 }
 

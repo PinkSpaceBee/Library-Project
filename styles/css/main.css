@@ -289,7 +289,8 @@ article {
   @media (min-device-width: 1200px) {
     article {
       width: 36vw;
-      margin: 1.5vw; } }
+      margin: 1.5vw;
+      font-size: 1.2vw; } }
   @media (max-device-width: 899px) {
     article {
       width: 60%;
@@ -308,11 +309,18 @@ article {
     grid-column: 1/2;
     padding: 0 1.5vh;
     margin: 1vw 2vw 1vw 2vw; }
+    @media (min-device-width: 1200px) {
+      article * {
+        padding: 0.2vw;
+        margin: 0 0 0 1vw; } }
   article p:first-of-type {
     grid-column: 1;
     color: #527997;
     padding-top: 3.4vh;
     padding-bottom: 1vh; }
+    @media (min-device-width: 1200px) {
+      article p:first-of-type {
+        font-size: 1.5vw; } }
     @media (max-device-width: 899px) {
       article p:first-of-type {
         font-size: 3.7vw; } }
@@ -327,7 +335,6 @@ article {
       margin-top: 8vh; } }
   @media (min-device-width: 1200px) {
     article:first-of-type {
-      width: 36vw;
       margin: 1.5vw; } }
   @media (max-device-width: 899px) {
     article:first-of-type {
@@ -423,6 +430,11 @@ article {
           width: 5.25vw;
           height: 1.5vw;
           margin-left: 0; } }
+      @media (min-device-width: 1200px) {
+        article div:last-of-type .toggle {
+          width: 3.5vw;
+          height: 1vw;
+          margin-left: 1vw; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle {
           width: 9vw;
@@ -444,6 +456,10 @@ article {
             height: 1.2vw;
             left: 0.15vw;
             top: 0.15vw; } }
+        @media (min-device-width: 1200px) {
+          article div:last-of-type .toggle:before {
+            width: 0.8vw;
+            height: 0.8vw; } }
         @media (max-device-width: 899px) {
           article div:last-of-type .toggle:before {
             width: 2.4vw;
@@ -461,6 +477,9 @@ article {
       @media (min-device-width: 900px) {
         article div:last-of-type .toggle:checked:before {
           left: 3.9vw; } }
+      @media (min-device-width: 1200px) {
+        article div:last-of-type .toggle:checked:before {
+          left: 2.6vw; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle:checked:before {
           left: 6.3vw; } }
