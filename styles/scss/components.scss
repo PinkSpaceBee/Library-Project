@@ -182,6 +182,8 @@ article {
         $container-width: 78vw;
         $elem-width: 36vw;
 
+        grid-template-rows: 1fr 25px 25px 1fr;
+
         width: $elem-width;
         margin: ($container-width - ($elem-width * 2)) / 4;
 
@@ -388,6 +390,12 @@ article {
         background-color: mix($rock-blue, $dove-gray, 65%);
         color: #fff;
         border-radius: 0 0 5px 5px;
+
+        @include for-desktop {
+            //I hardcoded the height so if one of p elems takes more than one line, the toggle wrapper doesn't stretches
+            height: 40px;
+            align-self: end;
+        }
 
         //checkbox
         .toggle {

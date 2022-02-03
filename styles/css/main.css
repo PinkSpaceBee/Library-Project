@@ -288,6 +288,7 @@ article {
       font-size: 2vw; } }
   @media (min-device-width: 1200px) {
     article {
+      grid-template-rows: 1fr 25px 25px 1fr;
       width: 36vw;
       margin: 1.5vw;
       font-size: 1.2vw; } }
@@ -421,6 +422,10 @@ article {
     background-color: #899dab;
     color: #fff;
     border-radius: 0 0 5px 5px; }
+    @media (min-device-width: 1200px) {
+      article div:last-of-type {
+        height: 40px;
+        align-self: end; } }
     article div:last-of-type .toggle {
       -webkit-appearance: none;
       -moz-appearance: none;
