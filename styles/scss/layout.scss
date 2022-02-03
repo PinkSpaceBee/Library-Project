@@ -43,6 +43,10 @@ body {
             width: 16vw;
         }
 
+        @include for-big-desktop {
+            width: 12vw;
+        }
+
         @include for-tablet-portrait {
             height: 12vh;
         }
@@ -69,6 +73,11 @@ body {
             @include for-desktop {
                 margin: 3vw 1vw;
                 font-size: 2.1vw;
+            }
+
+            @include for-big-desktop {
+                margin: 2vw 0 0 0;
+                font-size: 30px;
             }
 
             @include for-phone-landscape;
@@ -168,6 +177,15 @@ body {
                 }
             }
 
+            @include for-big-desktop {
+                top: 10vh;
+                font-size: 16px;
+
+                * {
+                    margin: 0.2vw 0;
+                }
+            }
+
             @include for-tablet-portrait {
                 margin-top: 12vh;
                 padding: 3vw;
@@ -211,10 +229,14 @@ body {
 
             @include for-desktop {
                 top: 40%; 
-                //bottom: 58%;
                 padding: 1vw;
-
                 font-size: 1.5vw;
+            }
+
+            @include for-big-desktop {
+                top: 23vh;
+                padding: 0.5vw 1vw;
+                font-size: 20px;
             }
         }
     }
