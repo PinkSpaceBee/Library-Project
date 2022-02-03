@@ -282,6 +282,10 @@ article {
             justify-self: end;
         }
 
+        @include for-desktop {
+            margin: 0.5vw 3.3vw 0 0;
+        }
+
         @include smol-bean;
         @include for-phone {
             padding: 0.3vh 0;
@@ -300,6 +304,12 @@ article {
                 height: $size;
 
                 margin: 0;
+            }
+
+            @include for-desktop {
+                $size: 2.5vw;
+                width: $size;
+                height: $size;
             }
 
             @include for-tablet-portrait {
@@ -450,8 +460,8 @@ article {
                     width: $size * 0.8;
                     height: $size * 0.8;
 
-                    //left: ($size - $size * 0.8) / 2;
-                    //top: ($size - $size * 0.8) / 2;
+                    left: ($size - $size * 0.8) / 2;
+                    top: ($size - $size * 0.8) / 2;
                 }
 
                 @include for-phone-landscape;

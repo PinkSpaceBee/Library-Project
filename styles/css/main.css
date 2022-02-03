@@ -353,6 +353,9 @@ article {
         padding: 0;
         margin: 1vw 5.5vw 0 0;
         justify-self: end; } }
+    @media (min-device-width: 1200px) {
+      article div:first-of-type {
+        margin: 0.5vw 3.3vw 0 0; } }
     @media (max-device-width: 599px) {
       article div:first-of-type {
         padding: 0.3vh 0; } }
@@ -366,6 +369,10 @@ article {
           width: 4vw;
           height: 4vw;
           margin: 0; } }
+      @media (min-device-width: 1200px) {
+        article div:first-of-type button {
+          width: 2.5vw;
+          height: 2.5vw; } }
       @media (max-device-width: 899px) {
         article div:first-of-type button {
           width: 5vw;
@@ -459,7 +466,9 @@ article {
         @media (min-device-width: 1200px) {
           article div:last-of-type .toggle:before {
             width: 0.8vw;
-            height: 0.8vw; } }
+            height: 0.8vw;
+            left: 0.1vw;
+            top: 0.1vw; } }
         @media (max-device-width: 899px) {
           article div:last-of-type .toggle:before {
             width: 2.4vw;
