@@ -194,6 +194,10 @@ body {
         margin-left: 16vw;
         width: 78vw;
         padding: 3vw; } }
+    @media (min-device-width: 1800px) {
+      body main {
+        margin-left: 12vw;
+        width: 82vw; } }
     @media (max-device-width: 899px) {
       body main {
         flex-wrap: wrap;
@@ -314,7 +318,9 @@ article {
       font-size: 16px; } }
   @media (min-device-width: 1800px) {
     article {
-      grid-template-rows: 1fr 25px 25px 1fr; } }
+      grid-template-rows: 1fr 25px 25px 1fr;
+      width: 36vw;
+      margin: 2.5vw; } }
   @media (max-device-width: 899px) {
     article {
       width: 60%;
@@ -364,6 +370,9 @@ article {
   @media (min-device-width: 1200px) {
     article:first-of-type {
       margin: 1.5vw; } }
+  @media (min-device-width: 1800px) {
+    article:first-of-type {
+      margin: 2.5vw; } }
   @media (max-device-width: 899px) {
     article:first-of-type {
       margin-top: 20vh; } }
@@ -384,6 +393,9 @@ article {
     @media (min-device-width: 1200px) {
       article div:first-of-type {
         margin: 0.5vw 3.3vw 0 0; } }
+    @media (min-device-width: 1800px) {
+      article div:first-of-type {
+        margin: 0.5vw 2.6vw 0 0; } }
     @media (max-device-width: 599px) {
       article div:first-of-type {
         padding: 0.3vh 0; } }
@@ -401,6 +413,10 @@ article {
         article div:first-of-type button {
           width: 2.5vw;
           height: 2.5vw; } }
+      @media (min-device-width: 1800px) {
+        article div:first-of-type button {
+          width: 1.7vw;
+          height: 1.7vw; } }
       @media (max-device-width: 899px) {
         article div:first-of-type button {
           width: 5vw;
@@ -429,6 +445,9 @@ article {
         @media (min-device-width: 900px) {
           article div:first-of-type button:before, article div:first-of-type button:after {
             width: 0.2vw; } }
+        @media (min-device-width: 1800px) {
+          article div:first-of-type button:before, article div:first-of-type button:after {
+            width: 0.1vw; } }
         @media (max-device-width: 319px) {
           article div:first-of-type button:before, article div:first-of-type button:after {
             right: 60%; } }
