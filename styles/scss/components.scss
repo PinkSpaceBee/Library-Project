@@ -175,19 +175,26 @@ article {
         width: 100%;
         margin-top: 5vw;
 
-        font-size: 2vw;
+        font-size: 16px;
     }
+
+    //shit I forgot to style button states. I am so boooored. I just wanna learn new cool stuff like I still don't know shit about promises or error handling, and instead I'm wasting time styling shit. Eh. 
+
 
     @include for-desktop {
         $container-width: 78vw;
         $elem-width: 36vw;
 
-        grid-template-rows: 1fr 25px 25px 1fr;
+        grid-template-rows: 1fr 25px 25px 0.5fr;
 
         width: $elem-width;
         margin: ($container-width - ($elem-width * 2)) / 4;
 
         font-size: 16px;
+    }
+
+    @include for-big-desktop {
+        grid-template-rows: 1fr 25px 25px 1fr;
     }
 
     @include for-tablet-portrait {
@@ -230,6 +237,14 @@ article {
 
         @include for-desktop {
             font-size: 1.5vw;
+        }
+
+        @include for-big-desktop {
+            //padding: 1vh 0 0 0;
+            //margin-top: 1vw;
+            //padding-bottom: 0;
+            padding: 2vh 0 0 0;
+            font-size: 25px;
         }
 
         @include for-tablet-portrait {
@@ -395,6 +410,10 @@ article {
             //I hardcoded the height so if one of p elems takes more than one line, the toggle wrapper doesn't stretches
             height: 40px;
             align-self: end;
+        }
+
+        @include for-big-desktop {
+            //margin-top: 20px;
         }
 
         //checkbox

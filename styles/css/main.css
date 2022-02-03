@@ -287,13 +287,16 @@ article {
     article {
       width: 100%;
       margin-top: 5vw;
-      font-size: 2vw; } }
+      font-size: 16px; } }
   @media (min-device-width: 1200px) {
     article {
-      grid-template-rows: 1fr 25px 25px 1fr;
+      grid-template-rows: 1fr 25px 25px 0.5fr;
       width: 36vw;
       margin: 1.5vw;
       font-size: 16px; } }
+  @media (min-device-width: 1800px) {
+    article {
+      grid-template-rows: 1fr 25px 25px 1fr; } }
   @media (max-device-width: 899px) {
     article {
       width: 60%;
@@ -324,6 +327,10 @@ article {
     @media (min-device-width: 1200px) {
       article p:first-of-type {
         font-size: 1.5vw; } }
+    @media (min-device-width: 1800px) {
+      article p:first-of-type {
+        padding: 2vh 0 0 0;
+        font-size: 25px; } }
     @media (max-device-width: 899px) {
       article p:first-of-type {
         font-size: 3.7vw; } }
