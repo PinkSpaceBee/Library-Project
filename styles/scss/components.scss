@@ -179,9 +179,12 @@ article {
     }
 
     @include for-desktop {
-        width: 36vw;
+        $container-width: 78vw;
+        $elem-width: 36vw;
 
-        margin: 0;
+        width: $elem-width;
+
+        margin: ($container-width - ($elem-width * 2)) / 4;
     }
 
     @include for-tablet-portrait {
@@ -238,7 +241,12 @@ article {
         }
 
         @include for-desktop { 
-            margin: 0;
+            $container-width: 78vw;
+            $elem-width: 36vw;
+    
+            width: $elem-width;
+    
+            margin: ($container-width - ($elem-width * 2)) / 4;
         }
 
         @include for-tablet-portrait {
