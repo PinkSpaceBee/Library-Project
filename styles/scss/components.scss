@@ -187,7 +187,7 @@ article {
         width: $elem-width;
         margin: ($container-width - ($elem-width * 2)) / 4;
 
-        font-size: 1.2vw;
+        font-size: 16px;
     }
 
     @include for-tablet-portrait {
@@ -556,6 +556,13 @@ article {
         left: 17vw;
     }
 
+    @include for-desktop {
+        grid-template-rows: 25% repeat(4, 5vh) 30%;
+        width: 62vw;
+        height: 46vh;
+        left: 19vw;
+    }
+
     @include for-phone-landscape;
     @include for-tablet-portrait {
         grid-template-rows: repeat(5, 11vh);
@@ -586,6 +593,10 @@ article {
 
             //padding: 2vw;
             font-size: 3vw;
+        }
+
+        @include for-desktop {
+            font-size: 2vw;
         }
 
         @include for-phone-landscape;
@@ -650,11 +661,14 @@ article {
     }
 
     & input {
-
         @include for-tablet-landscape {
             padding: 0.2vw;
             margin: 0 0 0 3vw;
             font-size: 1.5vw;
+        }
+
+        @include for-desktop {
+            font-size: 16px;
         }
 
         @include for-tablet-portrait {
