@@ -230,7 +230,10 @@ body {
         @include for-desktop {
             flex-direction: row;
             flex-wrap: wrap;
+            align-items: stretch;
+            place-content: space-around;
             width: 84vw;
+            //height: 300px;
         }
 
         @include for-tablet-portrait {

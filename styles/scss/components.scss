@@ -179,8 +179,9 @@ article {
     }
 
     @include for-desktop {
-        width: 30vw;
-        height: 300px;
+        width: 36vw;
+
+        margin: 0;
     }
 
     @include for-tablet-portrait {
@@ -234,6 +235,10 @@ article {
     &:first-of-type {
         @include for-tablet-landscape {
             margin-top: 8vh;
+        }
+
+        @include for-desktop { 
+            margin: 0;
         }
 
         @include for-tablet-portrait {
