@@ -20,6 +20,13 @@ body {
         width: 100vw;
         background-color: mix($boston-blue, $dove-gray, 55%);
 
+        @include smol-bean;
+        @include for-phone;
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            height: #{"clamp(30px, 15vh, 60px)"};
+        }
+
         h1 { 
             color: #fff;
         }
@@ -37,15 +44,14 @@ body {
             @include for-tablet-portrait {
                 display: grid;
 
-                width: 7vw;
-                max-width: 60px;
                 height: 30px;
+                width: #{"max(7vw, 60px)"};
             }
 
             @include smol-bean;
             @include for-phone {
+                height: #{"clamp(20px, 4vh, 30px)"};
                 width: 12vw;
-                height: 4vh;
             }
 
             * {
@@ -64,6 +70,13 @@ body {
         flex-direction: column;
 
         height: 100%;
+
+        @include smol-bean;
+        @include for-phone;
+        @include for-phone-landscape;
+        @include for-tablet-portrait {
+            margin-top: #{"clamp(30px, 15vh, 60px)"};
+        }
 
         #js-new-book-card {
             display: none;

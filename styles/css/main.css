@@ -18,6 +18,9 @@ body {
     position: fixed;
     width: 100vw;
     background-color: #527997; }
+    @media (max-width: 899px) {
+      body #stats-section {
+        height: clamp(30px, 15vh, 60px); } }
     body #stats-section h1 {
       color: #fff; }
     body #stats-section #js-mob-stats-btn {
@@ -30,13 +33,12 @@ body {
       @media (max-width: 899px) {
         body #stats-section #js-mob-stats-btn {
           display: grid;
-          width: 7vw;
-          max-width: 60px;
-          height: 30px; } }
+          height: 30px;
+          width: max(7vw, 60px); } }
       @media (max-width: 599px) {
         body #stats-section #js-mob-stats-btn {
-          width: 12vw;
-          height: 4vh; } }
+          height: clamp(20px, 4vh, 30px);
+          width: 12vw; } }
       body #stats-section #js-mob-stats-btn * {
         height: 3px;
         background-color: #fff; }
@@ -46,5 +48,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%; }
+    @media (max-width: 899px) {
+      body main {
+        margin-top: clamp(30px, 15vh, 60px); } }
     body main #js-new-book-card {
       display: none; }
