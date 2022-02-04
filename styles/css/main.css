@@ -52,7 +52,7 @@ body {
       body main {
         flex-wrap: nowrap;
         flex-direction: column;
-        margin-top: clamp(30px, 15vh, 60px); } }
+        margin-top: clamp(60px, 17vh, 80px); } }
     body main #js-new-book-card {
       display: none; }
 
@@ -66,3 +66,5 @@ article {
     article {
       width: clamp(220px, 90%, 620px);
       margin: 2vh; } }
+  article * {
+    padding-left: min(4vw, 20px); }
