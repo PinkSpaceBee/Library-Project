@@ -197,7 +197,8 @@ body {
     @media (min-device-width: 1800px) {
       body main {
         margin-left: 12vw;
-        width: 82vw; } }
+        width: 82vw;
+        padding-top: 0; } }
     @media (max-device-width: 899px) {
       body main {
         flex-wrap: wrap;
@@ -493,6 +494,10 @@ article {
           width: 3.5vw;
           height: 1vw;
           margin-left: 1vw; } }
+      @media (min-device-width: 1800px) {
+        article div:last-of-type .toggle {
+          width: 2.25vw;
+          height: 0.5vw; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle {
           width: 9vw;
@@ -520,6 +525,12 @@ article {
             height: 0.8vw;
             left: 0.1vw;
             top: 0.1vw; } }
+        @media (min-device-width: 1800px) {
+          article div:last-of-type .toggle:before {
+            width: 0.4vw;
+            height: 0.4vw;
+            left: 0.05vw;
+            top: 0.05vw; } }
         @media (max-device-width: 899px) {
           article div:last-of-type .toggle:before {
             width: 2.4vw;
@@ -540,6 +551,9 @@ article {
       @media (min-device-width: 1200px) {
         article div:last-of-type .toggle:checked:before {
           left: 2.6vw; } }
+      @media (min-device-width: 1800px) {
+        article div:last-of-type .toggle:checked:before {
+          left: 2.3vw; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle:checked:before {
           left: 6.3vw; } }

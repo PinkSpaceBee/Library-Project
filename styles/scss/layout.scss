@@ -272,6 +272,7 @@ body {
         @include for-big-desktop {
             margin-left: 12vw;
             width: 82vw;
+            padding-top: 0;
         }
 
         @include for-tablet-portrait {
