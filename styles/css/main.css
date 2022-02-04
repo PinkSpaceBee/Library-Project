@@ -589,6 +589,12 @@ article {
       width: 62vw;
       height: 46vh;
       left: 19vw; } }
+  @media (min-device-width: 1800px) {
+    #js-new-book-card {
+      grid-template-rows: 20% repeat(4, 1fr) 25%;
+      height: 42vh;
+      width: 50vw;
+      left: 25vw; } }
   @media (max-device-width: 899px) {
     #js-new-book-card {
       grid-template-rows: repeat(5, 11vh);
@@ -613,6 +619,9 @@ article {
     @media (min-device-width: 1200px) {
       #js-new-book-card p {
         font-size: 2vw; } }
+    @media (min-device-width: 1800px) {
+      #js-new-book-card p {
+        font-size: 24px; } }
     @media (max-device-width: 899px) {
       #js-new-book-card p {
         font-size: 3.5vw;
@@ -626,10 +635,13 @@ article {
     grid-column-end: 3; }
     @media (min-device-width: 900px) {
       * #js-new-book-card label {
-        margin: 3vw 0 0 0;
         margin: 0;
         padding: 0.5vw 0;
         width: 70%; } }
+    @media (min-device-width: 1800px) {
+      * #js-new-book-card label {
+        padding: 0.7vw 0;
+        width: 80%; } }
     @media (max-device-width: 899px) {
       * #js-new-book-card label {
         margin-top: 2vw; } }
@@ -641,6 +653,10 @@ article {
           grid-template-columns: 1fr 2fr;
           font-size: 1.7vw;
           margin-left: 3vw; } }
+      @media (min-device-width: 1800px) {
+        * #js-new-book-card label:last-of-type {
+          grid-template-columns: 1fr 4.6fr;
+          font-size: 16px; } }
       @media (max-device-width: 899px) {
         * #js-new-book-card label:last-of-type {
           grid-template-columns: 1fr 2fr;
@@ -709,6 +725,12 @@ article {
         width: 20vw;
         font-size: 2vw;
         margin: 2vw 2vw 4vw 2vw; } }
+    @media (min-device-width: 1800px) {
+      #js-new-book-card button {
+        margin-top: 0.5vw;
+        height: 5vh;
+        width: 16vw;
+        font-size: 22px; } }
     @media (max-device-width: 899px) {
       #js-new-book-card button {
         align-self: center;

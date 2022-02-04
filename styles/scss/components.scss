@@ -625,6 +625,13 @@ article {
         left: 19vw;
     }
 
+    @include for-big-desktop {
+        grid-template-rows: 20% repeat(4, 1fr) 25%;
+        height: 42vh;
+        width: 50vw;
+        left: 25vw;
+    }
+
     @include for-phone-landscape;
     @include for-tablet-portrait {
         grid-template-rows: repeat(5, 11vh);
@@ -661,6 +668,10 @@ article {
             font-size: 2vw;
         }
 
+        @include for-big-desktop {
+            font-size: 24px;
+        }
+
         @include for-phone-landscape;
         @include for-tablet-portrait {
             font-size: 3.5vw;
@@ -679,17 +690,20 @@ article {
         grid-column-end: 3;
 
         @include for-tablet-landscape {
-            //font-size: 1.7vw;
-            margin: 3vw 0 0 0;
+            //margin: 3vw 0 0 0;
             margin: 0;
             padding: 0.5vw 0;
             
             width: 70%;
         }
 
+        @include for-big-desktop {
+            padding: 0.7vw 0;
+            width: 80%;
+        }
+
         @include for-phone-landscape;
         @include for-tablet-portrait {
-            //font-size: 2.7vw;
             margin-top: 2vw;
         }
 
@@ -701,6 +715,11 @@ article {
                 grid-template-columns: 1fr 2fr;
                 font-size: 1.7vw;
                 margin-left: 3vw;
+            }
+
+            @include for-big-desktop {
+                grid-template-columns: 1fr 4.6fr;
+                font-size: 16px;
             }
 
             @include for-phone-landscape;
@@ -808,6 +827,15 @@ article {
             font-size: 2vw;
 
             margin: 2vw 2vw 4vw 2vw;
+        }
+
+        @include for-big-desktop {
+            margin-top: 0.5vw;
+
+            height: 5vh;
+            width: 16vw;
+
+            font-size: 22px;
         }
 
         @include for-phone-landscape;
