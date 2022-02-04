@@ -1,3 +1,4 @@
+
 /* COLORS */
 $pigeon-post: hsl(206, 42%, 77%);
 $rock-blue: hsl(206, 34%, 70%);
@@ -7,7 +8,6 @@ $dove-gray: hsl(0, 0%, 43%);
 $hippie-blue: hsl(191, 32%, 54%);
 $neptune: hsl(191, 32%, 63%);
 $catskill-white: hsl(203, 33%, 92%);
-
 
 /* GRADIENTS */
 @mixin gradient-text($angle, $from, $to) {
@@ -58,11 +58,11 @@ $black: 900;
 
 /* BREAKPOINTS FOR SCREEN SIZES */
 @mixin smol-bean {
-    @media (max-device-width: 319px) { @content; }
+    @media (max-width: 319px) { @content; }
 }
 
 @mixin for-phone {
-    @media (max-device-width: 599px) { @content; }
+    @media (max-width: 599px) { @content; }
 }
 
 @mixin for-phone-landscape {
@@ -71,17 +71,17 @@ $black: 900;
 }
 
 @mixin for-tablet-portrait {
-    @media (max-device-width: 899px) { @content; }
+    @media (max-width: 899px) { @content; }
 }
 
 @mixin for-tablet-landscape {
-    @media (min-device-width: 900px) { @content; }
+    @media (min-width: 900px) { @content; }
 }
 
 @mixin for-desktop {
-    @media (min-device-width: 1200px) { @content; }
+    @media (min-width: 1200px) { @content; }
 }
 
 @mixin for-big-desktop {
-    @media (min-device-width: 1800px) { @content; }
+    @media (min-width: 1800px) { @content; }
 }

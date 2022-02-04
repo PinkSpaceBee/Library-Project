@@ -1,95 +1,27 @@
 body {
-   display: flex;
-   width: 100vw;
-   height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-   margin: 0;
-   // there was a problem with the body not filling up the page width; it was 
-   // resolved with setting margin as 0
+    width: 100vw;
+    height: 100vh;
 
-   flex-direction: column;
-   justify-content: center;
-
-   font: $regular 4vw $be-vietnam-pro;
-
-   @include for-tablet-landscape {
-    flex-direction: row;
-    justify-content: space-between;
-
-    flex-wrap: wrap;
-   }
+    // there was a problem with the body not filling up the page width; it was 
+    // resolved with setting margin as 0
+    margin: 0;
+    font: $regular 16px $be-vietnam-pro;
 
     #stats-section {
         display: flex;
-        position: fixed;
-        z-index: 1;
-        top: 0;
         justify-content: center;
         align-items: center;
+
+        position: fixed;
+
         width: 100vw;
         background-color: mix($boston-blue, $dove-gray, 55%);
 
-        @include for-tablet-landscape {
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-
-            position: fixed;
-            height: 100%;
-            width: 26vw;
-        }
-
-        @include for-desktop {
-            width: 16vw;
-        }
-
-        @include for-big-desktop {
-            width: 12vw;
-        }
-
-        @include for-tablet-portrait {
-            height: 12vh;
-        }
-
-        @include for-phone-landscape {
-            height: 13vh;
-        }
-
-        @include smol-bean;
-        @include for-phone {
-            height: 10vh;
-        }
-
-        h1 {
-            display: flex;
+        h1 { 
             color: #fff;
-
-            @include for-tablet-landscape {
-                align-self: center;
-                margin: 4vw 0 10vw 0;
-                font-size: 3.7vw;
-            }
-
-            @include for-desktop {
-                margin: 3vw 1vw;
-                font-size: 2.1vw;
-            }
-
-            @include for-big-desktop {
-                margin: 2vw 0 0 0;
-                font-size: 30px;
-            }
-
-            @include for-phone-landscape;
-            @include for-tablet-portrait {
-                    //align-items: center;
-                    font-size: 3.5vw;
-            }
-    
-            @include smol-bean;
-            @include for-phone {
-                    font-size: 5.5vw;
-            }
         }
 
         //hamburger menu
@@ -101,204 +33,40 @@ body {
             background-color: mix($boston-blue, $dove-gray, 55%);
             border: none;
 
+            @include for-phone-landscape;
             @include for-tablet-portrait {
                 display: grid;
 
-                width: 8vw;
-                height: 5vh;
-            }
-
-            @include for-phone-landscape {
-                display: grid;
-
-                width: 6vw;
-                height: 8vh;
+                width: 7vw;
+                max-width: 60px;
+                height: 30px;
             }
 
             @include smol-bean;
             @include for-phone {
-                display: grid;
-
                 width: 12vw;
                 height: 4vh;
             }
 
             * {
+                height: 3px;
                 background-color: #fff;
-
-                @include for-tablet-portrait {
-                    height: 0.4vw;
-                }
-
-                @include for-phone-landscape {
-                    height: 0.5vw;
-                }
-
-                @include smol-bean;
-                @include for-phone {
-                    height: 0.6vw;
-                }
-            }
-        }
-
-        // div with stats 
-        #js-stats {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            background-color: mix($boston-blue, $dove-gray, 55%);
-            opacity: 0.9;
-            color: #fff;
-
-            @include for-tablet-landscape {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 15vw;
-                left: 1vw;
-                height: 0;
-
-                font-size: 2vw;
-
-                * {
-                    margin: 1vw;
-                }
-            }
-            
-            @include for-desktop {
-                top: 10vw;
-                left: 1.5vw;
-                font-size: 1.2vw;
-
-                * {
-                    margin: 0.5vw;
-                }
-            }
-
-            @include for-big-desktop {
-                top: 10vh;
-                font-size: 16px;
-
-                * {
-                    margin: 0.2vw 0;
-                }
-            }
-
-            @include for-tablet-portrait {
-                margin-top: 12vh;
-                padding: 3vw;
-                font-size: 3vw;
-            }
-            
-            @include for-phone-landscape {
-
-                margin-top: 13vh;
-            }
-
-            @include smol-bean;
-            @include for-phone {
-                margin-top: 10vh;
-                padding: 6vw;
-
-                font-size: 4vw;
             }
         }
 
         #js-add-btn {
             display: none;
-
-            align-self: center;
-            position: absolute;
-
-            color: #fff;
-
-            &:hover {
-                transform: scale(1.1);
-                background-color: $boston-blue;
-            }
-
-            &:active,
-            &:focus {
-                background-color: $boston-blue;
-            }
-
-            @include for-tablet-landscape {
-                display: flex;
-
-                top: 60%;
-                padding: 2vw 3vw;
-
-                border: 2px solid #fff;
-                border-radius: 5px;
-                background-color: mix($boston-blue, $dove-gray, 55%);
-
-                font-size: 2.2vw;
-            }
-
-            @include for-desktop {
-                top: 40%; 
-                padding: 1vw;
-                font-size: 1.5vw;
-            }
-
-            @include for-big-desktop {
-                top: 23vh;
-                padding: 0.5vw 1vw;
-                font-size: 20px;
-            }
         }
     }
-
+    
     main {
         display: flex;
-        align-items: center;
-        justify-self: flex-end;
+        flex-direction: column;
 
-        @include for-tablet-landscape {
-            flex-direction: column;
-            align-items: center;
-            place-content: center;
+        height: 100%;
 
-            margin-left: 26vw;
-            width: 100%;
-            padding: 0 7vw;
-        }
-
-        @include for-desktop {
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: stretch;
-            //place-content: space-around;
-            place-content: start;
-
-            margin-left: 16vw;
-            width: 78vw;
-            padding: 3vw;
-            //height: 300px;
-        }
-
-        @include for-big-desktop {
-            margin-left: 12vw;
-            width: 82vw;
-            padding-top: 0;
-        }
-
-        @include for-tablet-portrait {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        @include for-phone-landscape {
-            flex-wrap: nowrap;
-            flex-direction: column;
-        }
-
-        @include smol-bean;
-        @include for-phone {
-            flex-wrap: nowrap;
-            flex-direction: column;
+        #js-new-book-card {
+            display: none;
         }
     }
 }
