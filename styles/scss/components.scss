@@ -807,6 +807,12 @@ article {
 
         color: $catskill-white;
 
+        &:hover,
+        &:active {
+            transform: scale(1.1);
+            //background-color: $boston-blue;
+        }
+
         // submit button
         &:last-of-type {
             background-color: mix($catskill-white, $boston-blue, 90%);

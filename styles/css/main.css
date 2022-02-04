@@ -154,6 +154,11 @@ body {
       align-self: center;
       position: absolute;
       color: #fff; }
+      body #stats-section #js-add-btn:hover {
+        transform: scale(1.1);
+        background-color: #3c83b9; }
+      body #stats-section #js-add-btn:active, body #stats-section #js-add-btn:focus {
+        background-color: #3c83b9; }
       @media (min-device-width: 900px) {
         body #stats-section #js-add-btn {
           display: flex;
@@ -710,6 +715,8 @@ article {
     border: 2px solid #e4ecf1;
     border-radius: 5px;
     color: #e4ecf1; }
+    #js-new-book-card button:hover, #js-new-book-card button:active {
+      transform: scale(1.1); }
     #js-new-book-card button:last-of-type {
       background-color: #d3e2ec;
       background-color: #3c83b9;

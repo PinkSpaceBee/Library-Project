@@ -214,6 +214,16 @@ body {
 
             color: #fff;
 
+            &:hover {
+                transform: scale(1.1);
+                background-color: $boston-blue;
+            }
+
+            &:active,
+            &:focus {
+                background-color: $boston-blue;
+            }
+
             @include for-tablet-landscape {
                 display: flex;
 
