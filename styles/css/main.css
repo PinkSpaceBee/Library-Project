@@ -59,12 +59,36 @@ body {
 /* BOOK CARD */
 article {
   display: grid;
+  grid-template-columns: 4fr 1fr;
   border-radius: 5px;
   background-color: #e5edf2;
-  color: #5d5d5d; }
+  color: #5d5d5d;
+  padding: min(3vh, 20px) 0 0 0; }
   @media (max-width: 899px) {
     article {
       width: clamp(220px, 90%, 620px);
       margin: 2vh; } }
   article * {
-    padding-left: min(4vw, 20px); }
+    grid-column: 1/2;
+    padding-left: min(4vw, 20px);
+    margin: min(4px, 1.3vw) 0; }
+  article p:first-of-type {
+    font-size: 20px;
+    color: #527997;
+    grid-column: 1; }
+  article div:first-of-type {
+    grid-column: 2;
+    grid-row: 1; }
+  article div:last-of-type {
+    grid-column: 1/3;
+    padding: min(14px, 3vh) 0;
+    margin-bottom: 0;
+    border-radius: 0 0 5px 5px;
+    background-color: #899dab;
+    color: #fff; }
+    article div:last-of-type .toggle {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none; }
