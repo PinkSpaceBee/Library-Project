@@ -569,7 +569,7 @@ article {
 
                 @include for-big-desktop {
                     $size: 0.5vw;
-                    left: $size * 5.5 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+                    left: $size * 4.5 - ($size * 0.8 + (($size - $size * 0.8) / 2));
                 }
 
                 @include for-phone-landscape;

@@ -553,7 +553,7 @@ article {
           left: 2.6vw; } }
       @media (min-device-width: 1800px) {
         article div:last-of-type .toggle:checked:before {
-          left: 2.3vw; } }
+          left: 1.8vw; } }
       @media (max-device-width: 899px) {
         article div:last-of-type .toggle:checked:before {
           left: 6.3vw; } }
