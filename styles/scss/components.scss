@@ -1,0 +1,17 @@
+/* BOOK CARD */
+article {
+    display: grid;
+
+    border-radius: 5px;
+    background-color: mix($rock-blue, #fff, 25%);
+    color: mix($dove-gray, #000, 85%);
+
+    @include smol-bean;
+    @include for-phone;
+    @include for-phone-landscape;
+    @include for-tablet-portrait {
+
+        width: #{"clamp(220px, 90%, 620px)"};
+        margin: 2vh;
+    }
+}

@@ -67,14 +67,18 @@ body {
     
     main {
         display: flex;
-        flex-direction: column;
+        align-items: center;
 
         height: 100%;
+        //width: 100%;
 
         @include smol-bean;
         @include for-phone;
         @include for-phone-landscape;
         @include for-tablet-portrait {
+            flex-wrap: nowrap;
+            flex-direction: column;
+
             margin-top: #{"clamp(30px, 15vh, 60px)"};
         }
 
