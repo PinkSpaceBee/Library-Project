@@ -16,11 +16,19 @@ body {
     justify-content: center;
     align-items: center;
     position: fixed;
-    width: 100vw;
     background-color: #527997; }
+    @media (min-width: 900px) {
+      body #stats-section {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        height: 100%;
+        width: clamp(180px, 15vw, 220px); } }
     @media (max-width: 899px) {
       body #stats-section {
-        height: clamp(30px, 15vh, 60px); } }
+        height: clamp(30px, 15vh, 60px);
+        width: 100vw; } }
     body #stats-section h1 {
       color: #fff; }
     body #stats-section #js-mob-stats-btn {
@@ -61,6 +69,11 @@ body {
     display: flex;
     align-items: center;
     height: 100%; }
+    @media (min-width: 900px) {
+      body main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin-left: clamp(180px, 15vw, 220px); } }
     @media (max-width: 899px) {
       body main {
         flex-wrap: nowrap;

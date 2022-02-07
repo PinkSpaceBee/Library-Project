@@ -16,15 +16,26 @@ body {
         align-items: center;
 
         position: fixed;
-
-        width: 100vw;
         background-color: mix($boston-blue, $dove-gray, 55%);
+
+        @include for-big-desktop;
+        @include for-desktop;
+        @include for-tablet-landscape {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            position: fixed;
+            height: 100%;
+            width: #{"clamp(180px, 15vw, 220px)"};
+        }
 
         @include smol-bean;
         @include for-phone;
         @include for-phone-landscape;
         @include for-tablet-portrait {
             height: #{"clamp(30px, 15vh, 60px)"};
+            width: 100vw;
         }
 
         h1 { 
@@ -90,7 +101,14 @@ body {
         align-items: center;
 
         height: 100%;
-        //width: 100%;
+
+        @include for-big-desktop;
+        @include for-big-desktop;
+        @include for-tablet-landscape {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            margin-left: #{"clamp(180px, 15vw, 220px)"};
+        }
 
         @include smol-bean;
         @include for-phone;
