@@ -88,6 +88,10 @@ article {
 
     padding: #{"min(3vh, 20px)"} 0 0 0;
 
+    @include for-tablet-landscape {
+        width: 70%;
+    }
+
     @include smol-bean;
     @include for-phone;
     @include for-phone-landscape;

@@ -31,6 +31,10 @@ body {
         width: 100vw; } }
     body #stats-section h1 {
       color: #fff; }
+      @media (min-width: 900px) {
+        body #stats-section h1 {
+          height: max(220px, 20vh);
+          margin-left: min(25px, 2vw); } }
     body #stats-section #js-mob-stats-btn {
       display: none;
       align-items: center;
@@ -55,16 +59,33 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #527997;
-      opacity: 0.9;
-      color: #fff;
-      font-size: 14px;
-      margin-top: clamp(30px, 15vh, 60px);
-      padding: 2vw 0; }
-      body #stats-section #js-stats * {
-        margin: min(1.5vw, 9px) 3vw; }
+      color: #fff; }
+      @media (min-width: 900px) {
+        body #stats-section #js-stats {
+          display: grid;
+          margin: 9vh min(25px, 2vw); } }
+      @media (max-width: 899px) {
+        body #stats-section #js-stats {
+          margin-top: clamp(30px, 15vh, 60px);
+          padding: 2vw 0;
+          background-color: #527997;
+          opacity: 0.9;
+          font-size: 14px; }
+          body #stats-section #js-stats * {
+            margin: min(1.5vw, 9px) 3vw; } }
     body #stats-section #js-add-btn {
       display: none; }
+      @media (min-width: 900px) {
+        body #stats-section #js-add-btn {
+          display: grid;
+          align-self: center;
+          width: clamp(140px, 80%, 180px);
+          padding: min(1.5vw, 15px) 0;
+          background-color: #527997;
+          border: 2px solid #fff;
+          border-radius: 5px;
+          color: #fff;
+          font-size: 16px; } }
   body main {
     display: flex;
     align-items: center;
@@ -132,6 +153,9 @@ article {
   background-color: #e5edf2;
   color: #5d5d5d;
   padding: min(3vh, 20px) 0 0 0; }
+  @media (min-width: 900px) {
+    article {
+      width: 70%; } }
   @media (max-width: 899px) {
     article {
       width: clamp(220px, 90%, 620px);

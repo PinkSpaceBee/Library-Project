@@ -40,6 +40,13 @@ body {
 
         h1 { 
             color: #fff;
+
+            @include for-big-desktop;
+            @include for-desktop;
+            @include for-tablet-landscape {
+                height: #{"max(220px, 20vh)"};
+                margin-left: #{"min(25px, 2vw)"};
+            }
         }
 
         //hamburger menu
@@ -78,21 +85,49 @@ body {
             top: 0;
             left: 0;
 
-            background-color: mix($boston-blue, $dove-gray, 55%);
-            opacity: 0.9;
             color: #fff;
-            font-size: 14px;
 
-            margin-top: #{"clamp(30px, 15vh, 60px)"};
-            padding: 2vw 0;
+            @include for-big-desktop;
+            @include for-desktop;
+            @include for-tablet-landscape {
+                display: grid;
+                margin: 9vh #{"min(25px, 2vw)"};
+            }
 
-            * {
-                margin: #{"min(1.5vw, 9px)"} 3vw;
+            @include smol-bean;
+            @include for-phone;
+            @include for-phone-landscape;
+            @include for-tablet-portrait {
+                margin-top: #{"clamp(30px, 15vh, 60px)"};
+                padding: 2vw 0;
+
+                background-color: mix($boston-blue, $dove-gray, 55%);
+                opacity: 0.9;
+                font-size: 14px;
+    
+                * {
+                    margin: #{"min(1.5vw, 9px)"} 3vw;
+                }
             }
         }
 
         #js-add-btn {
             display: none;
+
+            @include for-big-desktop;
+            @include for-desktop;
+            @include for-tablet-landscape {
+                display: grid;
+                align-self: center;
+                width: #{"clamp(140px, 80%, 180px)"};
+                padding: #{"min(1.5vw, 15px)"} 0;
+
+                background-color: mix($boston-blue, $dove-gray, 55%);
+                border: 2px solid #fff;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 16px;
+            }
         }
     }
     
@@ -102,8 +137,6 @@ body {
 
         height: 100%;
 
-        @include for-big-desktop;
-        @include for-big-desktop;
         @include for-tablet-landscape {
             flex-wrap: nowrap;
             flex-direction: column;
