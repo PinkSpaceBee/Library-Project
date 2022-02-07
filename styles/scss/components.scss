@@ -50,6 +50,48 @@ article {
 
         .toggle{
             @include prefix('appearance', 'none');
+            position: relative;
+            margin: 0 0 0 1rem;
+            padding: 0;
+            border-radius: 50px;
+            background-color: mix($boston-blue, $dove-gray, 55%);
+            transition: background-color ease 0.3s;
+
+            //wow. if I set toggle's sizes in rem, it seems that I don't have to specify them for every breakpoint
+            $size: 0.7rem;
+
+            width: $size * 5;
+            height: $size;
+
+            //this round thingy 
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+
+                background: #fff;
+
+                border-radius: 50%;
+                transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+
+                width: $size * 0.8;
+                height: $size * 0.8;
+                
+                left: ($size - $size * 0.8) / 2;
+                top: ($size - $size * 0.8) / 2;
+            }
+
+            &:checked {
+                background-color: mix($boston-blue, $dove-gray, 75%);
+            }
+            //round thingy when checked
+            &:checked:before {
+                left: $size * 5 - ($size * 0.8 + (($size - $size * 0.8) / 2));
+            }
         }
+    }
+    //add gradient when checked
+    .checked {
+        @include gradient-background($angle: 45deg, $from: mix($boston-blue, $rock-blue, 50%), $to: $neptune);
     }
 }

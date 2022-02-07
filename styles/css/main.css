@@ -91,4 +91,29 @@ article {
       -moz-appearance: none;
       -ms-appearance: none;
       -o-appearance: none;
-      appearance: none; }
+      appearance: none;
+      position: relative;
+      margin: 0 0 0 1rem;
+      padding: 0;
+      border-radius: 50px;
+      background-color: #527997;
+      transition: background-color ease 0.3s;
+      width: 3.5rem;
+      height: 0.7rem; }
+      article div:last-of-type .toggle:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+        width: 0.56rem;
+        height: 0.56rem;
+        left: 0.07rem;
+        top: 0.07rem; }
+      article div:last-of-type .toggle:checked {
+        background-color: #487da6; }
+      article div:last-of-type .toggle:checked:before {
+        left: 2.87rem; }
+  article .checked {
+    background-image: -webkit-linear-gradient(45deg, #6a9cc3, #82b4bf); }
