@@ -42,6 +42,19 @@ body {
       body #stats-section #js-mob-stats-btn * {
         height: 3px;
         background-color: #fff; }
+    body #stats-section #js-stats {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #527997;
+      opacity: 0.9;
+      color: #fff;
+      font-size: 14px;
+      margin-top: clamp(30px, 15vh, 60px);
+      padding: 2vw 0; }
+      body #stats-section #js-stats * {
+        margin: min(1.5vw, 9px) 3vw; }
     body #stats-section #js-add-btn {
       display: none; }
   body main {
