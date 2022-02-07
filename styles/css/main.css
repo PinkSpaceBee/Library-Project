@@ -66,8 +66,6 @@ body {
         flex-wrap: nowrap;
         flex-direction: column;
         margin-top: clamp(60px, 17vh, 80px); } }
-    body main #js-new-book-card {
-      display: none; }
 
 /* MOBILE BUTTONS: ADD, SCROLL */
 #js-control-btns-phone * {
@@ -86,32 +84,32 @@ body {
   #js-control-btns-phone #up-btn:before, #js-control-btns-phone #up-btn:after {
     position: absolute;
     top: 33%;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #fff;
+    content: ''; }
+  #js-control-btns-phone #up-btn:before {
+    transform: rotate(45deg);
+    left: 37.75%; }
+  #js-control-btns-phone #up-btn:after {
+    transform: rotate(-45deg);
+    right: 37.75%; }
+
+#js-add-btn-phone {
+  bottom: 2rem; }
+  #js-add-btn-phone:before, #js-add-btn-phone:after {
+    position: absolute;
+    top: 33%;
     content: '';
     background-color: #fff;
     width: 0.1rem;
     height: 1.4rem;
     left: 1.45rem;
     top: 0.8rem; }
-  #js-control-btns-phone #up-btn:before {
+  #js-add-btn-phone:before {
     transform: rotate(180deg); }
-  #js-control-btns-phone #up-btn:after {
+  #js-add-btn-phone:after {
     transform: rotate(90deg); }
-
-#js-control-btns-phone #js-add-btn-phone {
-  bottom: 2rem; }
-  #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
-    position: absolute;
-    top: 33%;
-    width: 0.1rem;
-    height: 1rem;
-    background-color: #fff;
-    content: ''; }
-  #js-control-btns-phone #js-add-btn-phone:before {
-    transform: rotate(45deg);
-    left: 37.75%; }
-  #js-control-btns-phone #js-add-btn-phone:after {
-    transform: rotate(-45deg);
-    right: 37.75%; }
 
 /* BOOK CARD */
 article {
@@ -195,3 +193,34 @@ article {
         left: 2.48rem; }
   article .checked {
     background-image: -webkit-linear-gradient(45deg, #6a9cc3, #82b4bf); }
+
+/* ADD NEW BOOK CARD */
+#js-new-book-card {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  z-index: 2;
+  margin: 5vw;
+  width: 91vw;
+  background-color: #527997;
+  border-radius: 5px;
+  color: #fff; }
+  @media (max-width: 599px) {
+    #js-new-book-card {
+      grid-template-rows: repeat(5, 7vh);
+      height: 50vh;
+      padding: 7vw 0; } }
+  #js-new-book-card * {
+    display: grid; }
+
+/* DIV THAT DARKENS A PAGE WHEN THE FORM FOR ADDING A BOOK IS OPENED */
+#js-page-opaque {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #09141c;
+  opacity: 0.8; }
