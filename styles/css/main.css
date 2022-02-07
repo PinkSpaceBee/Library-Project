@@ -249,6 +249,13 @@ article {
   background-color: #527997;
   border-radius: 5px;
   color: #fff; }
+  @media (min-width: 900px) {
+    #js-new-book-card {
+      display: grid;
+      justify-self: center;
+      width: 600px;
+      height: 360px;
+      margin: 10vh clamp(180px, 15vw, 220px) 0 0; } }
   @media (max-device-width: 768px) and (orientation: landscape) {
     #js-new-book-card {
       margin-top: 0;
@@ -260,12 +267,19 @@ article {
     grid-column-end: 3;
     margin-bottom: 0;
     font-size: 18px; }
+    @media (min-width: 900px) {
+      #js-new-book-card p {
+        font-size: 22px;
+        align-self: end; } }
   #js-new-book-card label {
     grid-column-start: 1;
     grid-column-end: 3; }
     #js-new-book-card label:last-of-type {
       display: inline-flex;
       align-items: center; }
+      @media (min-width: 1200px) {
+        #js-new-book-card label:last-of-type {
+          align-self: flex-end; } }
   #js-new-book-card input {
     margin: 1.5vw 0;
     font: 14px "Be Vietnam Pro", sans-serif;
