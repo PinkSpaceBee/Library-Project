@@ -90,6 +90,7 @@ article {
 
     @include for-tablet-landscape {
         width: 70%;
+        margin: 2vh;
     }
 
     @include smol-bean;
@@ -133,6 +134,10 @@ article {
 
             border: none;
             background-color: mix($rock-blue, #fff, 25%);
+
+            @include for-tablet-landscape {
+                margin: 0 0 0 9%;
+            }
 
             &:before,
             &:after {

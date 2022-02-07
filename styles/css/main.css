@@ -155,7 +155,8 @@ article {
   padding: min(3vh, 20px) 0 0 0; }
   @media (min-width: 900px) {
     article {
-      width: 70%; } }
+      width: 70%;
+      margin: 2vh; } }
   @media (max-width: 899px) {
     article {
       width: clamp(220px, 90%, 620px);
@@ -182,6 +183,9 @@ article {
       height: 1rem;
       border: none;
       background-color: #e5edf2; }
+      @media (min-width: 900px) {
+        article div:first-of-type button {
+          margin: 0 0 0 9%; } }
       article div:first-of-type button:before, article div:first-of-type button:after {
         position: absolute;
         content: "";
