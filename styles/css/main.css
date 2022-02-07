@@ -56,6 +56,50 @@ body {
     body main #js-new-book-card {
       display: none; }
 
+/* MOBILE BUTTONS: ADD, SCROLL */
+#js-control-btns-phone * {
+  position: fixed;
+  right: 3%;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #527997;
+  opacity: 0.5;
+  height: 3rem;
+  width: 3rem; }
+
+#js-control-btns-phone #up-btn {
+  bottom: 6rem; }
+  #js-control-btns-phone #up-btn:before, #js-control-btns-phone #up-btn:after {
+    position: absolute;
+    top: 33%;
+    content: '';
+    background-color: #fff;
+    width: 0.1rem;
+    height: 1.4rem;
+    left: 1.45rem;
+    top: 0.8rem; }
+  #js-control-btns-phone #up-btn:before {
+    transform: rotate(180deg); }
+  #js-control-btns-phone #up-btn:after {
+    transform: rotate(90deg); }
+
+#js-control-btns-phone #js-add-btn-phone {
+  bottom: 2rem; }
+  #js-control-btns-phone #js-add-btn-phone:before, #js-control-btns-phone #js-add-btn-phone:after {
+    position: absolute;
+    top: 33%;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #fff;
+    content: ''; }
+  #js-control-btns-phone #js-add-btn-phone:before {
+    transform: rotate(45deg);
+    left: 37.75%; }
+  #js-control-btns-phone #js-add-btn-phone:after {
+    transform: rotate(-45deg);
+    right: 37.75%; }
+
 /* BOOK CARD */
 article {
   display: grid;

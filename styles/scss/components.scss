@@ -1,3 +1,82 @@
+/* MOBILE BUTTONS: ADD, SCROLL */
+#js-control-btns-phone {
+    *{
+        position: fixed;
+        right: 3%;
+    
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+    
+        background-color: mix($boston-blue, $dove-gray, 55%);
+        opacity: 0.5;
+    
+        $size-parent: 3rem;
+        height: $size-parent;
+        width: $size-parent;
+    }
+
+    #up-btn {
+        bottom: 6rem;
+
+        &:before,
+        &:after {
+            position: absolute;
+            top: 33%;
+            content: '';
+
+            background-color: #fff;
+
+            $size-parent: 3rem;
+            $width: 0.1rem;
+            $height: 1.4rem;
+
+            width: $width;
+            height: $height;
+
+            left: ($size-parent - $width) / 2;
+            top: ($size-parent - $height) / 2;
+        }
+
+        //vertical line 
+        &:before {
+            transform: rotate(180deg);
+        }
+
+        //horizontal line
+        &:after {
+            transform: rotate(90deg);
+        }
+    }
+
+    #js-add-btn-phone {
+        bottom: 2rem;
+
+        &:before,
+        &:after {
+            position: absolute;
+            top: 33%;
+
+            width: 0.1rem;
+            height: 1rem;
+            background-color: #fff;
+            content: '';
+        }
+
+        //slash
+        &:before {
+            transform: rotate(45deg);
+            left: 37.75%;
+        }
+
+        //backslash
+        &:after { 
+            transform: rotate(-45deg);
+            right: 37.75%;
+        }
+    }
+}
+
 /* BOOK CARD */
 article {
     display: grid;
@@ -123,6 +202,7 @@ article {
             }
         }
     }
+
     //add gradient when checked
     .checked {
         @include gradient-background($angle: 45deg, $from: mix($boston-blue, $rock-blue, 50%), $to: $neptune);
