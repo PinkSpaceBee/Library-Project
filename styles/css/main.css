@@ -95,6 +95,12 @@ body {
         flex-wrap: nowrap;
         flex-direction: column;
         margin-left: clamp(180px, 15vw, 220px); } }
+    @media (min-width: 1200px) {
+      body main {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start; } }
     @media (max-width: 899px) {
       body main {
         flex-wrap: nowrap;
@@ -157,6 +163,9 @@ article {
     article {
       width: 70%;
       margin: 2vh; } }
+  @media (min-width: 1200px) {
+    article {
+      width: 42%; } }
   @media (max-width: 899px) {
     article {
       width: clamp(220px, 90%, 620px);

@@ -93,6 +93,11 @@ article {
         margin: 2vh;
     }
 
+    @include for-big-desktop;
+    @include for-desktop {
+        width: 42%;
+    }
+
     @include smol-bean;
     @include for-phone;
     @include for-phone-landscape;
