@@ -14,6 +14,12 @@
         $size-parent: 3rem;
         height: $size-parent;
         width: $size-parent;
+
+        &:hover,
+        &:active {
+            transform: scale(1.1);
+            background-color: $boston-blue;
+        }
     }
 
     #up-btn {
@@ -191,6 +197,16 @@ article {
             &:after {
                 transform: rotate(-45deg);
             }
+
+            &:hover,
+            &:active {
+                transform: scale(1.3);
+
+                &:before,
+                &:after {
+                    background-color: $boston-blue;
+                }
+            }
         }
     }
 
@@ -285,11 +301,15 @@ article {
     @include for-big-desktop;
     @include for-desktop;
     @include for-tablet-landscape {
-        justify-self: center;
+        //justify-self: center;
 
         width: 600px;
         height: 360px;
-        margin: 10vh #{"clamp(180px, 15vw, 220px)"} 0 0;
+        margin: 10vh #{"clamp(180px, 15vw, 220px)"} 0;
+        position: absolute;
+        top: 35%;
+        left: 0;
+        margin-top: 0;
     }
 
     @include for-phone-landscape {
@@ -356,6 +376,11 @@ article {
 
         color: $catskill-white;
         font: 16px $be-vietnam-pro;
+
+        &:hover,
+        &:active {
+            transform: scale(1.1);
+        }
     }
 
     #js-submit-book-card {

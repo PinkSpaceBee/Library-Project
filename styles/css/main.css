@@ -120,6 +120,9 @@ body {
   opacity: 0.5;
   height: 3rem;
   width: 3rem; }
+  #js-control-btns-phone *:hover, #js-control-btns-phone *:active {
+    transform: scale(1.1);
+    background-color: #3c83b9; }
 
 #js-control-btns-phone #up-btn {
   bottom: 6rem; }
@@ -225,6 +228,10 @@ article {
         transform: rotate(45deg); }
       article div:first-of-type button:after {
         transform: rotate(-45deg); }
+      article div:first-of-type button:hover, article div:first-of-type button:active {
+        transform: scale(1.3); }
+        article div:first-of-type button:hover:before, article div:first-of-type button:hover:after, article div:first-of-type button:active:before, article div:first-of-type button:active:after {
+          background-color: #3c83b9; }
   article div:last-of-type {
     grid-column: 1/3;
     padding: min(14px, 3vh) 0;
@@ -284,10 +291,13 @@ article {
   color: #fff; }
   @media (min-width: 900px) {
     #js-new-book-card {
-      justify-self: center;
       width: 600px;
       height: 360px;
-      margin: 10vh clamp(180px, 15vw, 220px) 0 0; } }
+      margin: 10vh clamp(180px, 15vw, 220px) 0;
+      position: absolute;
+      top: 35%;
+      left: 0;
+      margin-top: 0; } }
   @media (max-device-width: 768px) and (orientation: landscape) {
     #js-new-book-card {
       margin-top: 0;
@@ -330,6 +340,8 @@ article {
     border-radius: 5px;
     color: #e4ecf1;
     font: 16px "Be Vietnam Pro", sans-serif; }
+    #js-new-book-card button:hover, #js-new-book-card button:active {
+      transform: scale(1.1); }
   #js-new-book-card #js-submit-book-card {
     background-color: #3c83b9; }
 
