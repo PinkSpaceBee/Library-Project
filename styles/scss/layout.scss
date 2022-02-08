@@ -14,6 +14,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        
+        z-index: 1;
 
         position: fixed;
         background-color: mix($boston-blue, $dove-gray, 55%);
@@ -142,11 +144,12 @@ body {
             flex-direction: column;
             margin-left: #{"clamp(180px, 15vw, 220px)"};
         }
-
+        @include gargantuan;
         @include for-big-desktop;
         @include for-desktop {
             flex-wrap: wrap;
             flex-direction: row;
+            align-items: stretch;
             place-content: start;
             padding: 0 4vw;
         }

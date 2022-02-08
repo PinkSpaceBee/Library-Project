@@ -104,8 +104,18 @@ article {
         $elem-width: 45%;
 
         width: $elem-width;
+        max-width: 800px;
         margin: ($container-width - ($elem-width * 2)) / 4;
 
+    }
+
+    @include gargantuan {
+        $container-width: 100%;
+        $elem-width: 20%;
+
+        width: $elem-width;
+        max-width: 800px;
+        margin: ($container-width - ($elem-width * 4)) / 8;
     }
 
     @include smol-bean;
@@ -138,9 +148,11 @@ article {
 
         button {
             display: grid;
-            position: absolute;
+            position: relative;
             padding: 0;
-            margin: 0 0 0 12%;
+            //margin: 0 0 0 55%;
+            margin: 0;
+            left: 60%;
 
             $size: 1rem;
             width: $size;
@@ -149,13 +161,18 @@ article {
             border: none;
             background-color: mix($rock-blue, #fff, 25%);
 
-            @include for-tablet-landscape {
-                margin: 0 0 0 9%;
+            @include for-tablet-portrait {
+                left: 72%;
             }
 
             @include for-big-desktop;
-            @include for-desktop {
-                margin: 0 0 0 5%;
+            @include for-desktop;
+            @include for-tablet-landscape {
+                left: 70%;
+            }
+
+            @include gargantuan {
+                left: 56%;
             }
 
             &:before,
@@ -187,6 +204,13 @@ article {
 
         background-color: mix($rock-blue, $dove-gray, 65%);
         color: #fff;
+
+        @include for-big-desktop;
+        @include for-desktop {
+            // I hardcoded its height so the toggle wrapper doesn't stretch when one of the p elements takes more than one line
+            height: 20px;
+            align-self: flex-end;
+        }
 
         .toggle{
             @include prefix('appearance', 'none');
@@ -257,10 +281,10 @@ article {
     border-radius: 5px;
     color: #fff;
 
+    @include gargantuan;
     @include for-big-desktop;
     @include for-desktop;
     @include for-tablet-landscape {
-        display: grid;
         justify-self: center;
 
         width: 600px;

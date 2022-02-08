@@ -86,6 +86,6 @@ $black: 900;
     @media (min-width: 1800px) { @content; }
 }
 
-@mixin test ($x, $elem-width) {
-    margin: ((100vw - $x) - ($elem-width * 2)) / 4;
+@mixin gargantuan {
+    @media (min-width: 2200px) { @content; }
 }

@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
     position: fixed;
     background-color: #527997; }
     @media (min-width: 900px) {
@@ -99,6 +100,7 @@ body {
       body main {
         flex-wrap: wrap;
         flex-direction: row;
+        align-items: stretch;
         place-content: start;
         padding: 0 4vw; } }
     @media (max-width: 899px) {
@@ -170,6 +172,12 @@ article {
   @media (min-width: 1200px) {
     article {
       width: 45%;
+      max-width: 800px;
+      margin: 2.5%; } }
+  @media (min-width: 2200px) {
+    article {
+      width: 20%;
+      max-width: 800px;
       margin: 2.5%; } }
   @media (max-width: 899px) {
     article {
@@ -190,19 +198,23 @@ article {
     padding: 0; }
     article div:first-of-type button {
       display: grid;
-      position: absolute;
+      position: relative;
       padding: 0;
-      margin: 0 0 0 12%;
+      margin: 0;
+      left: 60%;
       width: 1rem;
       height: 1rem;
       border: none;
       background-color: #e5edf2; }
+      @media (max-width: 899px) {
+        article div:first-of-type button {
+          left: 72%; } }
       @media (min-width: 900px) {
         article div:first-of-type button {
-          margin: 0 0 0 9%; } }
-      @media (min-width: 1200px) {
+          left: 70%; } }
+      @media (min-width: 2200px) {
         article div:first-of-type button {
-          margin: 0 0 0 5%; } }
+          left: 56%; } }
       article div:first-of-type button:before, article div:first-of-type button:after {
         position: absolute;
         content: "";
@@ -220,6 +232,10 @@ article {
     border-radius: 0 0 5px 5px;
     background-color: #899dab;
     color: #fff; }
+    @media (min-width: 1200px) {
+      article div:last-of-type {
+        height: 20px;
+        align-self: flex-end; } }
     article div:last-of-type .toggle {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -268,7 +284,6 @@ article {
   color: #fff; }
   @media (min-width: 900px) {
     #js-new-book-card {
-      display: grid;
       justify-self: center;
       width: 600px;
       height: 360px;
