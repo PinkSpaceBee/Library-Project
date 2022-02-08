@@ -135,6 +135,10 @@ body {
     transform: rotate(-45deg);
     right: 37.75%; }
 
+@media (min-width: 1200px) {
+  #js-control-btns-phone {
+    display: none; } }
+
 #js-add-btn-phone {
   bottom: 2rem; }
   #js-add-btn-phone:before, #js-add-btn-phone:after {
