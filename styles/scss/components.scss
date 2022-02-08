@@ -95,7 +95,12 @@ article {
 
     @include for-big-desktop;
     @include for-desktop {
-        width: 42%;
+        $container-width: 100%;
+        $elem-width: 45%;
+
+        width: $elem-width;
+        margin: ($container-width - ($elem-width * 2)) / 4;
+
     }
 
     @include smol-bean;
@@ -142,6 +147,11 @@ article {
 
             @include for-tablet-landscape {
                 margin: 0 0 0 9%;
+            }
+
+            @include for-big-desktop;
+            @include for-desktop {
+                margin: 0 0 0 5%;
             }
 
             &:before,

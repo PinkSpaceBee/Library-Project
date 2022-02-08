@@ -99,8 +99,8 @@ body {
       body main {
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-evenly;
-        align-items: flex-start; } }
+        place-content: start;
+        padding: 0 4vw; } }
     @media (max-width: 899px) {
       body main {
         flex-wrap: nowrap;
@@ -165,7 +165,8 @@ article {
       margin: 2vh; } }
   @media (min-width: 1200px) {
     article {
-      width: 42%; } }
+      width: 45%;
+      margin: 2.5%; } }
   @media (max-width: 899px) {
     article {
       width: clamp(220px, 90%, 620px);
@@ -195,6 +196,9 @@ article {
       @media (min-width: 900px) {
         article div:first-of-type button {
           margin: 0 0 0 9%; } }
+      @media (min-width: 1200px) {
+        article div:first-of-type button {
+          margin: 0 0 0 5%; } }
       article div:first-of-type button:before, article div:first-of-type button:after {
         position: absolute;
         content: "";
